@@ -719,12 +719,12 @@ ATTRACTIONS WITH ESTIMATED COSTS: ${JSON.stringify(attractionsWithCosts)}`;
 
     // If suggestions' sum exceeds (original total - new total) by > 1, adjust
     const actualDiff = Math.max(0, originalTotal - newTotal);
-    const claimedSum = validSuggestions.reduce((acc, curr) => acc + curr.amountSaved, 0);
+    const claimedSum = validSuggestions.reduce((acc: number, curr: { amountSaved: number }) => acc + curr.amountSaved, 0);
 
     let finalSuggestions = validSuggestions;
     if (claimedSum > actualDiff + 1 && claimedSum > 0) {
       // Scale down proportionally
-      finalSuggestions = validSuggestions.map((s) => ({
+      finalSuggestions = validSuggestions.map((s: { description: string; amountSaved: number }) => ({
         description: s.description,
         amountSaved: Math.round((s.amountSaved / claimedSum) * actualDiff)
       }));

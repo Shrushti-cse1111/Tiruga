@@ -3,15 +3,20 @@ import { initializeApp, getApps, cert, applicationDefault, App, Credential } fro
 import { getFirestore as getAdminFirestore, Firestore } from 'firebase-admin/firestore';
 import { getAuth as getAdminAuth, Auth } from 'firebase-admin/auth';
 import { config } from './config';
+import firebaseAppletConfig from '../firebase-applet-config.json';
 
 let app: App | null = null;
 let initError: Error | null = null;
 let isInitialized = false;
 
 /**
- * Safely initializes Firebase Admin SDK once.
+ * Safely initializes Firebase Admin SDK once per cold start.
  * Never logs credential values or tokens.
- * Handles GOOGLE_APPLICATION_CREDENTIALS as full JSON text or file path.
+ * Handles GOOGLE_APPLICATION_CREDENTIALS as:
+ *  - Full JSON text (service account credentials object)
+ *  - Base64 encoded JSON text
+ *  - File path to service account JSON
+ *  - Application Default Credentials fallback
  * If credentials are missing or invalid, marks service as not configured without crashing.
  */
 export function getFirebaseAdmin(): { app: App | null; error: Error | null; isReady: boolean } {
@@ -27,37 +32,60 @@ export function getFirebaseAdmin(): { app: App | null; error: Error | null; isRe
       return { app, error: null, isReady: true };
     }
 
-    const credRaw = (config.googleApplicationCredentials || '').trim();
-    let credential: Credential;
-    let projectId = 'tiruga-app-25000';
+    let credRaw = (process.env.GOOGLE_APPLICATION_CREDENTIALS || config.googleApplicationCredentials || '').trim();
 
-    if (credRaw.startsWith('{')) {
-      // Full JSON string
-      const parsed = JSON.parse(credRaw);
-      const tempPath = '/tmp/tiruga-sa-key.json';
-      try {
-        fs.writeFileSync(tempPath, credRaw, { mode: 0o600 });
-        process.env.GOOGLE_APPLICATION_CREDENTIALS = tempPath;
-      } catch {
-        // Fallback in case /tmp is read-only
-      }
-      credential = cert(parsed);
-      if (parsed.project_id) {
-        projectId = parsed.project_id;
-      }
-    } else if (credRaw.length > 0) {
-      // File path
-      if (fs.existsSync(credRaw)) {
-        const fileContent = JSON.parse(fs.readFileSync(credRaw, 'utf8'));
-        credential = cert(fileContent);
-        if (fileContent.project_id) {
-          projectId = fileContent.project_id;
+    // Remove wrapping quotes if present
+    if (
+      (credRaw.startsWith('"') && credRaw.endsWith('"')) ||
+      (credRaw.startsWith("'") && credRaw.endsWith("'"))
+    ) {
+      credRaw = credRaw.slice(1, -1).trim();
+    }
+
+    let credential: Credential | null = null;
+    let projectId = (firebaseAppletConfig as any).projectId || 'tiruga-app-25000';
+    let parsedServiceAccount: any = null;
+
+    if (credRaw.length > 0) {
+      // 1. Direct JSON text
+      if (credRaw.startsWith('{')) {
+        try {
+          parsedServiceAccount = JSON.parse(credRaw);
+        } catch {
+          try {
+            parsedServiceAccount = JSON.parse(credRaw.replace(/\\n/g, '\n'));
+          } catch {}
         }
-      } else {
-        credential = applicationDefault();
       }
+
+      // 2. Base64 encoded JSON
+      if (!parsedServiceAccount && !credRaw.startsWith('/') && !credRaw.startsWith('.')) {
+        try {
+          const decoded = Buffer.from(credRaw, 'base64').toString('utf8').trim();
+          if (decoded.startsWith('{')) {
+            parsedServiceAccount = JSON.parse(decoded);
+          }
+        } catch {}
+      }
+
+      // 3. File path on disk
+      if (!parsedServiceAccount && fs.existsSync(credRaw)) {
+        try {
+          const fileContent = fs.readFileSync(credRaw, 'utf8');
+          parsedServiceAccount = JSON.parse(fileContent);
+        } catch {}
+      }
+    }
+
+    if (parsedServiceAccount) {
+      if (parsedServiceAccount.project_id) {
+        projectId = parsedServiceAccount.project_id;
+      }
+      if (typeof parsedServiceAccount.private_key === 'string' && parsedServiceAccount.private_key.includes('\\n')) {
+        parsedServiceAccount.private_key = parsedServiceAccount.private_key.replace(/\\n/g, '\n');
+      }
+      credential = cert(parsedServiceAccount);
     } else {
-      // Application Default Credentials
       credential = applicationDefault();
     }
 
@@ -82,7 +110,10 @@ export function getFirestore(): Firestore {
   if (!isReady || !adminApp) {
     throw new Error('Not configured: GOOGLE_APPLICATION_CREDENTIALS');
   }
-  return getAdminFirestore(adminApp);
+  const dbId = (firebaseAppletConfig as any).firestoreDatabaseId;
+  return dbId && dbId !== '(default)'
+    ? getAdminFirestore(adminApp, dbId)
+    : getAdminFirestore(adminApp);
 }
 
 /**
