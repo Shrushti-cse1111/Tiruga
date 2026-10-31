@@ -12,3 +12,20 @@ service-account*.json
 *.key
 *-key.json
 *.pem
+
+# IDE and temporary archives
+.idea/
+public/assets/aistudio/*.zip
+
+# Android build outputs and local configuration
+.gradle/
+**/build/
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/.idea/
+android/*.iml
+android/app/*.iml
+*.keystore
+*.jks

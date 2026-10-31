@@ -1,0 +1,842 @@
+[
+  {
+    "id": "food_mango_tree",
+    "regionId": "reg_hampi",
+    "placeId": null,
+    "name": {
+      "en": "Mango Tree Restaurant Kamalapura",
+      "kn": "ಮ್ಯಾಂಗೋ ಟ್ರೀ ರೆಸ್ಟೋರೆಂಟ್ ಕಮಲಾಪುರ",
+      "mr": "मँगो ट्री रेस्टॉरंट"
+    },
+    "dish": {
+      "en": "Karnataka Veg Thali & Banana Lassi",
+      "kn": "ಕರ್ನಾಟಕ ಸಸ್ಯಾಹಾರಿ ಊಟ ಮತ್ತು ಬಾಳೆಹಣ್ಣಿನ ಲಸ್ಸಿ",
+      "mr": "कर्नाटक व्हेज थाळी आणि लस्सी"
+    },
+    "veg": true,
+    "avgCostInr": 180,
+    "lat": 15.3135,
+    "lng": 76.4795,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_kamat_kamalapura",
+    "regionId": "reg_hampi",
+    "placeId": null,
+    "name": {
+      "en": "Kamat Upachar Hampi Bypass",
+      "kn": "ಕಾಮತ್ ಉಪಾಹಾರ ಹಂಪಿ ಬೈಪಾಸ್",
+      "mr": "कामत उपहार"
+    },
+    "dish": {
+      "en": "Jolada Rotti Meals with Yennegai & Shenga Chutney",
+      "kn": "ಜೋಳದ ರೊಟ್ಟಿ ಊಟ, ಎಣ್ಣೆಗಾಯಿ ಬದನೆಕಾಯಿ ಮತ್ತು ಶೇಂಗಾ ಚಟ್ನಿ",
+      "mr": "ज्वारीची भाकरी आणि वांग्याची भाजी"
+    },
+    "veg": true,
+    "avgCostInr": 160,
+    "lat": 15.309,
+    "lng": 76.478,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_suresh_tea",
+    "regionId": "reg_hampi",
+    "placeId": null,
+    "name": {
+      "en": "Suresh Tea Stall & Mirchi Bajji",
+      "kn": "ಸುರೇಶ್ ಟೀ ಸ್ಟಾಲ್ ಮತ್ತು ಬಿಸಿ ಮೆಣಸಿನಕಾಯಿ ಬಜ್ಜಿ",
+      "mr": "सुरेश टी आणि मिरची भजी"
+    },
+    "dish": {
+      "en": "Piping hot Bellary Mirchi Bajji with Filter Coffee",
+      "kn": "ಬಳ್ಳಾರಿ ಗರಿಗರಿ ಮೆಣಸಿನಕಾಯಿ ಬಜ್ಜಿ ಮತ್ತು ಫಿಲ್ಟರ್ ಕಾಫಿ",
+      "mr": "गरमागरम मिरची भजी आणि फिल्टर कॉफी"
+    },
+    "veg": true,
+    "avgCostInr": 45,
+    "lat": 15.3348,
+    "lng": 76.4618,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_anegundi_khanavali",
+    "regionId": "reg_hampi",
+    "placeId": null,
+    "name": {
+      "en": "Ranganatha Khanavali Anegundi",
+      "kn": "ರಂಗನಾಥ ಖಾನಾವಳಿ ಆನೆಗುಂದಿ",
+      "mr": "रंगनाथ खानावळ"
+    },
+    "dish": {
+      "en": "Sajje Rotti with Kaalu Palya & Pure Cow Ghee",
+      "kn": "ಸಜ್ಜೆ ರೊಟ್ಟಿ, ಕಾಳು ಪಲ್ಯ ಮತ್ತು ತುಪ್ಪ",
+      "mr": "बाजरीची भाकरी आणि उसळ"
+    },
+    "veg": true,
+    "avgCostInr": 120,
+    "lat": 15.3525,
+    "lng": 76.469,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_hosapete_dosa",
+    "regionId": "reg_hampi",
+    "placeId": null,
+    "name": {
+      "en": "Shanbhag Dosa Corner Hosapete",
+      "kn": "ಶಾನಭಾಗ್ ದೋಸೆ ಕಾರ್ನರ್ ಹೊಸಪೇಟೆ",
+      "mr": "शणभाग डोसा कॉर्नर"
+    },
+    "dish": {
+      "en": "Crispy Benne Masala Dosa with White Coconut Chutney",
+      "kn": "ಗರಿಗರಿ ಬೆಣ್ಣೆ ಮಸಾಲೆ ದೋಸೆ ಮತ್ತು ಚಟ್ನಿ",
+      "mr": "मसाला डोसा आणि चटणी"
+    },
+    "veg": true,
+    "avgCostInr": 75,
+    "lat": 15.271,
+    "lng": 76.395,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_buddha_cafe_hampi",
+    "regionId": "reg_hampi",
+    "placeId": null,
+    "name": {
+      "en": "Laughing Buddha Riverfront Cafe",
+      "kn": "ಲಾಫಿಂಗ್ ಬುದ್ಧ ಕೆಫೆ ಹಂಪಿ",
+      "mr": "लाफिंग बुद्ध कॅफे"
+    },
+    "dish": {
+      "en": "Lemon Mint Juice and Woodfire Thin Crust Pizza",
+      "kn": "ಲೆಮನ್ ಮಿಂಟ್ ಜ್ಯೂಸ್ ಮತ್ತು ಪಿಜ್ಜಾ",
+      "mr": "लेमन मिंट ज्यूस आणि पिझ्झा"
+    },
+    "veg": true,
+    "avgCostInr": 220,
+    "lat": 15.339,
+    "lng": 76.464,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_bellary_biryani",
+    "regionId": "reg_hampi",
+    "placeId": null,
+    "name": {
+      "en": "Hotel Mayura Classic Hosapete",
+      "kn": "ಹೋಟೆಲ್ ಮಯೂರ ಕ್ಲಾಸಿಕ್ ಹೊಸಪೇಟೆ",
+      "mr": "हॉटेल मयूरा होसपेट"
+    },
+    "dish": {
+      "en": "South Karnataka Jeera Rice & Veg Biryani",
+      "kn": "ದಕ್ಷಿಣ ಕರ್ನಾಟಕ ಜೀರಾ ರೈಸ್ ಮತ್ತು ವೆಜ್ ಬಿರಿಯಾನಿ",
+      "mr": "व्हेज बिर्याणी"
+    },
+    "veg": true,
+    "avgCostInr": 150,
+    "lat": 15.275,
+    "lng": 76.391,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_badami_khanavali",
+    "regionId": "reg_north",
+    "placeId": null,
+    "name": {
+      "en": "Banashankari Khanavali Badami",
+      "kn": "ಬನಶಂಕರಿ ಖಾನಾವಳಿ ಬದಾಮಿ",
+      "mr": "बनशंकरी खानावळ बदामी"
+    },
+    "dish": {
+      "en": "Lingayat Jolada Rotti Meals with Shenga Chutney Pudi",
+      "kn": "ಲಿಂಗಾಯತ ಜೋಳದ ರೊಟ್ಟಿ ಊಟ ಮತ್ತು ಶೇಂಗಾ ಹಿಂಡಿ",
+      "mr": "ज्वारीची भाकरी आणि शेंगदाणा चटणी"
+    },
+    "veg": true,
+    "avgCostInr": 110,
+    "lat": 15.917,
+    "lng": 75.682,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_mylari_mysuru",
+    "regionId": "reg_mysuru",
+    "placeId": null,
+    "name": {
+      "en": "Original Vinayaka Mylari Nazarbad",
+      "kn": "ಒರಿಜಿನಲ್ ವಿನಾಯಕ ಮೈಲಾರಿ ಮೈಸೂರು",
+      "mr": "विनायक मैलारी म्हैसूर"
+    },
+    "dish": {
+      "en": "Signature Melt-in-Mouth Mylari Butter Dosa",
+      "kn": "ಬೆಣ್ಣೆ ಮೈಲಾರಿ ಮಸಾಲೆ ದೋಸೆ ಮತ್ತು ತೆಂಗಿನಕಾಯಿ ಚಟ್ನಿ",
+      "mr": "प्रसिद्ध मैलारी बटर डोसा"
+    },
+    "veg": true,
+    "avgCostInr": 90,
+    "lat": 12.312,
+    "lng": 76.662,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_dasaprakash",
+    "regionId": "reg_mysuru",
+    "placeId": null,
+    "name": {
+      "en": "Hotel Dasaprakash Traditional Dining",
+      "kn": "ಹೋಟೆಲ್ ದಾಸಪ್ರಕಾಶ್ ಸಾಂಪ್ರದಾಯಿಕ ಊಟ",
+      "mr": "हॉटेल दासप्रकाश"
+    },
+    "dish": {
+      "en": "Royal Mysore Masala Dosa & Mysore Pak",
+      "kn": "ಮೈಸೂರು ಮಸಾಲೆ ದೋಸೆ ಮತ್ತು ಬಿಸಿ ಮೈಸೂರು ಪಾಕ್",
+      "mr": "म्हैसूर मसाला डोसा आणि म्हैसूर पाक"
+    },
+    "veg": true,
+    "avgCostInr": 150,
+    "lat": 12.3085,
+    "lng": 76.649,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_guru_sweets",
+    "regionId": "reg_mysuru",
+    "placeId": null,
+    "name": {
+      "en": "Guru Sweet Mart (Inventors of Mysore Pak)",
+      "kn": "ಗುರು ಸ್ವೀಟ್ ಮಾರ್ಟ್ ಮೈಸೂರು",
+      "mr": "गुरु स्वीट मार्ट"
+    },
+    "dish": {
+      "en": "Authentic Traditional Ghee Mysore Pak",
+      "kn": "ಅಸಲಿ ಸಾಂಪ್ರದಾಯಿಕ ತುಪ್ಪದ ಮೈಸೂರು ಪಾಕ್",
+      "mr": "अस्सल म्हैसूर पाक"
+    },
+    "veg": true,
+    "avgCostInr": 80,
+    "lat": 12.3095,
+    "lng": 76.652,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_maddur_tiffany",
+    "regionId": "reg_mysuru",
+    "placeId": null,
+    "name": {
+      "en": "Maddur Tiffany Highway Stop",
+      "kn": "ಮದ್ದೂರು ಟಿಫಾನಿಸ್ ಹೆದ್ದಾರಿ ನಿಲ್ದಾಣ",
+      "mr": "मद्दूर टिफिन"
+    },
+    "dish": {
+      "en": "Original GI-Tagged Crispy Maddur Vada",
+      "kn": "ಅಸಲಿ ಮದ್ದೂರು ವಡೆ ಮತ್ತು ಫಿಲ್ಟರ್ ಕಾಫಿ",
+      "mr": "गरमागरम मद्दूर वडा"
+    },
+    "veg": true,
+    "avgCostInr": 60,
+    "lat": 12.584,
+    "lng": 77.042,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_gayatri_tiffin",
+    "regionId": "reg_mysuru",
+    "placeId": null,
+    "name": {
+      "en": "Gayatri Tiffin Room (GTR) Chamundipuram",
+      "kn": "ಗಾಯತ್ರಿ ಟಿಫಿನ್ ರೂಮ್ ಮೈಸೂರು",
+      "mr": "गायत्री टिफिन रूम"
+    },
+    "dish": {
+      "en": "Khara Bath, Kesari Bath & Filter Kaapi",
+      "kn": "ಖಾರಾ ಬಾತ್, ಕೇಸರಿ ಬಾತ್ ಮತ್ತು ಫಿಲ್ಟರ್ ಕಾಫಿ",
+      "mr": "उपमा आणि शिरा"
+    },
+    "veg": true,
+    "avgCostInr": 70,
+    "lat": 12.298,
+    "lng": 76.654,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_hanumanthu_mysuru",
+    "regionId": "reg_mysuru",
+    "placeId": null,
+    "name": {
+      "en": "Hotel Hanumanthu 1930 Mandi Mohalla",
+      "kn": "ಹೋಟೆಲ್ ಹನುಮಂತು ಮೈಸೂರು",
+      "mr": "हॉटेल हनुमंतू"
+    },
+    "dish": {
+      "en": "Mysore Mutton Pulao in Banana Leaf",
+      "kn": "ಮೈಸೂರು ಮಟನ್ ಪುಲಾವ್ ಮತ್ತು ಬೋಟಿ ಸಾರು",
+      "mr": "म्हैसूर मटन पुलाव"
+    },
+    "veg": false,
+    "avgCostInr": 250,
+    "lat": 12.318,
+    "lng": 76.651,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_brahmin_soda",
+    "regionId": "reg_mysuru",
+    "placeId": null,
+    "name": {
+      "en": "Brahmin Soda Factory Old Statue",
+      "kn": "ಬ್ರಾಹ್ಮಿನ್ ಸೋಡಾ ಫ್ಯಾಕ್ಟರಿ",
+      "mr": "सोडा फॅक्टरी"
+    },
+    "dish": {
+      "en": "Fizzy Ginger Masala Soda & Nannari Sherbet",
+      "kn": "ಶುಂಠಿ ಮಸಾಲೆ ಸೋಡಾ ಮತ್ತು ನನ್ನಾರಿ ಶರಬತ್",
+      "mr": "मसाला सोडा"
+    },
+    "veg": true,
+    "avgCostInr": 30,
+    "lat": 12.308,
+    "lng": 76.6518,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_shivamalli_dosa",
+    "regionId": "reg_mysuru",
+    "placeId": null,
+    "name": {
+      "en": "Hotel Shivamalli Mysore Express",
+      "kn": "ಹೋಟೆಲ್ ಶಿವಮಲ್ಲಿ",
+      "mr": "हॉटेल शिवमल्ली"
+    },
+    "dish": {
+      "en": "Open Butter Dosa with Potato Sagu",
+      "kn": "ಓಪನ್ ಬಟರ್ ದೋಸೆ ಮತ್ತು ಆಲೂ ಸಾಗು",
+      "mr": "बटर डोसा आणि सागू"
+    },
+    "veg": true,
+    "avgCostInr": 85,
+    "lat": 12.315,
+    "lng": 76.645,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_coorg_cuisine",
+    "regionId": "reg_coorg",
+    "placeId": null,
+    "name": {
+      "en": "Coorg Traditional Kitchen Madikeri",
+      "kn": "ಕೊಡಗು ಸಾಂಪ್ರದಾಯಿಕ ಅಡುಗೆ ಮನೆ ಮಡಿಕೇರಿ",
+      "mr": "कूर्ग पारंपारिक किचन"
+    },
+    "dish": {
+      "en": "Akki Rotti with Bamboo Shoot Curry / Kadambuttu",
+      "kn": "ಅಕ್ಕಿ ರೊಟ್ಟಿ, ಕಣಿಲೆ ಪಲ್ಯ ಮತ್ತು ಕಾದಂಬುಟ್ಟು",
+      "mr": "अक्की रोटी आणि बांबू करी"
+    },
+    "veg": true,
+    "avgCostInr": 180,
+    "lat": 12.421,
+    "lng": 75.738,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_taste_of_coorg",
+    "regionId": "reg_coorg",
+    "placeId": null,
+    "name": {
+      "en": "Taste of Coorg Club Road",
+      "kn": "ಟೇಸ್ಟ್ ಆಫ್ ಕೊಡಗು",
+      "mr": "टेस्ट ऑफ कूर्ग"
+    },
+    "dish": {
+      "en": "Traditional Coorg Pandi Curry with Steamed Kadambuttu",
+      "kn": "ಕೊಡಗಿನ ಪ್ರಸಿದ್ಧ ಪಾಂದಿ ಕರಿ ಮತ್ತು ಕಾದಂಬುಟ್ಟು",
+      "mr": "पारंपारिक पांदी करी"
+    },
+    "veg": false,
+    "avgCostInr": 260,
+    "lat": 12.423,
+    "lng": 75.737,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_coffee_cup_chik",
+    "regionId": "reg_coorg",
+    "placeId": null,
+    "name": {
+      "en": "The Coffee Cup Estate Cafe Chikkamagaluru",
+      "kn": "ದಿ ಕಾಫಿ ಕಪ್ ಚಿಕ್ಕಮಗಳೂರು",
+      "mr": "द कॉफी कप"
+    },
+    "dish": {
+      "en": "Artisanal Single-Origin Arabica Pour-Over & Banana Cake",
+      "kn": "ಅರೇಬಿಕಾ ಫಿಲ್ಟರ್ ಕಾಫಿ ಮತ್ತು ಬನಾನ ಕೇಕ್",
+      "mr": "अरेबिका कॉफी आणि केक"
+    },
+    "veg": true,
+    "avgCostInr": 140,
+    "lat": 13.318,
+    "lng": 75.768,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_town_canteen_chik",
+    "regionId": "reg_coorg",
+    "placeId": null,
+    "name": {
+      "en": "Town Canteen Chikkamagaluru (Since 1965)",
+      "kn": "ಟೌನ್ ಕ್ಯಾಂಟೀನ್ ಚಿಕ್ಕಮಗಳೂರು",
+      "mr": "टाऊन कॅन्टीन"
+    },
+    "dish": {
+      "en": "Legendary Gulab Jamun & Crisp Benne Masale",
+      "kn": "ಗುಲಾಬ್ ಜಾಮೂನ್ ಮತ್ತು ಬೆಣ್ಣೆ ಮಸಾಲೆ ದೋಸೆ",
+      "mr": "गुलाब जामुन आणि डोसा"
+    },
+    "veg": true,
+    "avgCostInr": 95,
+    "lat": 13.322,
+    "lng": 75.774,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_bylakuppe_tibetan",
+    "regionId": "reg_coorg",
+    "placeId": null,
+    "name": {
+      "en": "Tibetan Potala Kitchen Bylakuppe",
+      "kn": "ಟಿಬೆಟಿಯನ್ ಪೊಟಾಲ ಕಿಚನ್ ಬೈಲಕುಪ್ಪೆ",
+      "mr": "तिबेटी पोताला किचन"
+    },
+    "dish": {
+      "en": "Steamed Vegetable Momos with Clear Thukpa Soup",
+      "kn": "ತರಕಾರಿ ಮೊಮೋಸ್ ಮತ್ತು ತುಕ್ಪಾ ಸೂಪ್",
+      "mr": "मोमोज आणि थुकपा सूप"
+    },
+    "veg": true,
+    "avgCostInr": 130,
+    "lat": 12.431,
+    "lng": 75.965,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_devaraj_mess_madikeri",
+    "regionId": "reg_coorg",
+    "placeId": null,
+    "name": {
+      "en": "Devaraj Mess Bus Stand Madikeri",
+      "kn": "ದೇವರಾಜ್ ಮೆಸ್ ಮಡಿಕೇರಿ",
+      "mr": "देवराज मेस"
+    },
+    "dish": {
+      "en": "Noolputtu (String Hoppers) with Chicken Curry",
+      "kn": "ನೂಲ್ಪುಟ್ಟು ಮತ್ತು ನಾಟಿಕೋಳಿ ಸಾರು",
+      "mr": "नूलपुट्टू आणि चिकन करी"
+    },
+    "veg": false,
+    "avgCostInr": 210,
+    "lat": 12.42,
+    "lng": 75.741,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_woodlands_madikeri",
+    "regionId": "reg_coorg",
+    "placeId": null,
+    "name": {
+      "en": "Hotel Woodlands Veg Madikeri",
+      "kn": "ಹೋಟೆಲ್ ವುಡ್‌ಲ್ಯಾಂಡ್ಸ್ ಮಡಿಕೇರಿ",
+      "mr": "हॉटेल वूडलँड्स"
+    },
+    "dish": {
+      "en": "South Indian Filter Coffee and Neer Dosa",
+      "kn": "ನೀರು ದೋಸೆ ಮತ್ತು ಫಿಲ್ಟರ್ ಕಾಫಿ",
+      "mr": "नीर डोसा आणि कॉफी"
+    },
+    "veg": true,
+    "avgCostInr": 85,
+    "lat": 12.422,
+    "lng": 75.739,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_sri_krishna_bhavan_chik",
+    "regionId": "reg_coorg",
+    "placeId": null,
+    "name": {
+      "en": "Sri Krishna Bhavan MG Road Chikkamagaluru",
+      "kn": "ಶ್ರೀ ಕೃಷ್ಣ ಭವನ ಚಿಕ್ಕಮಗಳೂರು",
+      "mr": "श्रीकृष्ण भवन"
+    },
+    "dish": {
+      "en": "Akki Shavige with Sweet Coconut Milk",
+      "kn": "ಅಕ್ಕಿ ಶಾವಿಗೆ ಮತ್ತು ಸಿಹಿ ಕಾಯಿಹಾಲು",
+      "mr": "शेवया आणि नारळाचे दूध"
+    },
+    "veg": true,
+    "avgCostInr": 90,
+    "lat": 13.319,
+    "lng": 75.771,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_mitra_samaja_udupi",
+    "regionId": "reg_coast",
+    "placeId": null,
+    "name": {
+      "en": "Mitra Samaj Temple Square Udupi",
+      "kn": "ಮಿತ್ರ ಸಮಾಜ ಉಡುಪಿ ರಥಬೀದಿ",
+      "mr": "मित्र समाज उडुपी"
+    },
+    "dish": {
+      "en": "Goli Baje, Masala Dosa & Pure Filter Coffee",
+      "kn": "ಉಡುಪಿ ಗೋಳಿಬಜೆ, ಮಸಾಲೆ ದೋಸೆ ಮತ್ತು ಫಿಲ್ಟರ್ ಕಾಫಿ",
+      "mr": "उडुपी गोळी भजी आणि डोसा"
+    },
+    "veg": true,
+    "avgCostInr": 85,
+    "lat": 13.3412,
+    "lng": 74.7515,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_thamboolam_udupi",
+    "regionId": "reg_coast",
+    "placeId": null,
+    "name": {
+      "en": "Thamboolam Coastal Dining Udupi",
+      "kn": "ತಾಂಬೂಲಂ ಕೋಸ್ಟಲ್ ಡೈನಿಂಗ್ ಉಡುಪಿ",
+      "mr": "तांबूलम कोस्टल"
+    },
+    "dish": {
+      "en": "Anjal (Kingfish) Tawa Fry & Soft Neer Dosa",
+      "kn": "ಅಂಜಲ್ ತವಾ ಫ್ರೈ ಮತ್ತು ಮೃದು ನೀರು ದೋಸೆ",
+      "mr": "सुरमई तवा फ्राय आणि नीर डोसा"
+    },
+    "veg": false,
+    "avgCostInr": 280,
+    "lat": 13.344,
+    "lng": 74.748,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_pai_tiffin_gokarna",
+    "regionId": "reg_coast",
+    "placeId": null,
+    "name": {
+      "en": "Pai Tiffin Home Car Street Gokarna",
+      "kn": "ಪೈ ಟಿಫಿನ್ ಹೋಮ್ ಗೋಕರ್ಣ",
+      "mr": "पाई टिफिन होम"
+    },
+    "dish": {
+      "en": "Mangalore Buns with Spicy Chana Gassi",
+      "kn": "ಮಂಗಳೂರು ಬನ್ಸ್ ಮತ್ತು ಕಡಲೆ ಗಸ್ಸಿ",
+      "mr": "मंगळूर बन्स आणि चणा उसळ"
+    },
+    "veg": true,
+    "avgCostInr": 70,
+    "lat": 14.542,
+    "lng": 74.319,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_prema_restaurant_gokarna",
+    "regionId": "reg_coast",
+    "placeId": null,
+    "name": {
+      "en": "Prema Restaurant Beach Road Gokarna",
+      "kn": "ಪ್ರೇಮಾ ರೆಸ್ಟೋರೆಂಟ್ ಗೋಕರ್ಣ",
+      "mr": "प्रेमा रेस्टॉरंट"
+    },
+    "dish": {
+      "en": "Fresh Coconut Gadbad Ice Cream & Thali",
+      "kn": "ಗಡ್‌ಬಡ್ ಐಸ್‌ಕ್ರೀಮ್ ಮತ್ತು ಸಸ್ಯಾಹಾರಿ ಊಟ",
+      "mr": "गडबड आईस्क्रीम आणि थाळी"
+    },
+    "veg": true,
+    "avgCostInr": 120,
+    "lat": 14.544,
+    "lng": 74.316,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_machali_karwar",
+    "regionId": "reg_coast",
+    "placeId": null,
+    "name": {
+      "en": "Amrut Karwar Coastal Kitchen",
+      "kn": "ಅಮೃತ್ ಕಾರವಾರ ಕೋಸ್ಟಲ್ ಕಿಚನ್",
+      "mr": "अमृत कारवार"
+    },
+    "dish": {
+      "en": "Karwar Fish Curry Meals with Tisrya Masala (Clams)",
+      "kn": "ಕಾರವಾರ ಮೀನು ಸಾರು ಊಟ ಮತ್ತು ಚಿಪ್ಪುಮೀನು ಮಸಾಲೆ",
+      "mr": "कारवारी मासळी थाळी"
+    },
+    "veg": false,
+    "avgCostInr": 240,
+    "lat": 14.812,
+    "lng": 74.131,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_diana_udupi",
+    "regionId": "reg_coast",
+    "placeId": null,
+    "name": {
+      "en": "Hotel Diana Udupi (Home of Gadbad)",
+      "kn": "ಹೋಟೆಲ್ ಡಯಾನಾ ಉಡುಪಿ (ಗಡ್‌ಬಡ್ ಜನಕರು)",
+      "mr": "हॉटेल डायना उडुपी"
+    },
+    "dish": {
+      "en": "Original 1970s Invention: Layered Udupi Gadbad Ice Cream",
+      "kn": "ಅಸಲಿ ಉಡುಪಿ ಗಡ್‌ಬಡ್ ಐಸ್‌ಕ್ರೀಮ್",
+      "mr": "अस्सल गडबड आईस्क्रीम"
+    },
+    "veg": true,
+    "avgCostInr": 95,
+    "lat": 13.339,
+    "lng": 74.747,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_woodlands_udupi",
+    "regionId": "reg_coast",
+    "placeId": null,
+    "name": {
+      "en": "Woodlands Satvik Dining Udupi",
+      "kn": "ವುಡ್‌ಲ್ಯಾಂಡ್ಸ್ ಸಾತ್ವಿಕ ಭೋಜನ ಉಡುಪಿ",
+      "mr": "वूडलँड्स सात्विक भोजनालय"
+    },
+    "dish": {
+      "en": "Traditional Plantain Leaf Udupi Brahmin Lunch",
+      "kn": "ಬಾಳೆ ಎಲೆ ಊಟ, ಸಾರು, ಹುಳಿ ಮತ್ತು ಪಾಯಸ",
+      "mr": "केळीच्या पानावरील सात्विक जेवण"
+    },
+    "veg": true,
+    "avgCostInr": 160,
+    "lat": 13.342,
+    "lng": 74.75,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_bhatkal_biryani",
+    "regionId": "reg_coast",
+    "placeId": null,
+    "name": {
+      "en": "Kwality Navayathi Dining Bhatkal",
+      "kn": "ಕ್ವಾಲಿಟಿ ನವಾಯಿತಿ ಊಟ ಭಟ್ಕಳ",
+      "mr": "भटकळ बिर्याणी"
+    },
+    "dish": {
+      "en": "Authentic White Masala Bhatkali Chicken Biryani",
+      "kn": "ಅಸಲಿ ಬಿಳಿ ಮಸಾಲೆ ಭಟ್ಕಳಿ ಬಿರಿಯಾನಿ",
+      "mr": "अस्सल भटकळी बिर्याणी"
+    },
+    "veg": false,
+    "avgCostInr": 220,
+    "lat": 13.985,
+    "lng": 74.551,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_mishra_pedha",
+    "regionId": "reg_north",
+    "placeId": null,
+    "name": {
+      "en": "Mishra Pedha & Khanavali Hubballi",
+      "kn": "ಮಿಶ್ರಾ ಪೇಡಾ ಮತ್ತು ಖಾನಾವಳಿ ಹುಬ್ಬಳ್ಳಿ",
+      "mr": "मिश्रा पेढा"
+    },
+    "dish": {
+      "en": "Authentic Dharwad Pedha & Jolada Rotti Oota",
+      "kn": "ಅಸಲಿ ಧಾರವಾಡ ಪೇಡಾ ಮತ್ತು ಜೋಳದ ರೊಟ್ಟಿ ಊಟ",
+      "mr": "धारवाड पेढा आणि ज्वारीची भाकरी"
+    },
+    "veg": true,
+    "avgCostInr": 140,
+    "lat": 15.3647,
+    "lng": 75.124,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_davangere_benne_dosa",
+    "regionId": "reg_north",
+    "placeId": null,
+    "name": {
+      "en": "Sagar Benne Dosa Hubballi Circle",
+      "kn": "ಸಾಗರ್ ಬೆಣ್ಣೆ ದೋಸೆ ಹುಬ್ಬಳ್ಳಿ",
+      "mr": "दावणगेरे बटर डोसा"
+    },
+    "dish": {
+      "en": "GI-Famous Davangere Benne Dosa with Aloo Palya",
+      "kn": "ದಾವಣಗೆರೆ ಬೆಣ್ಣೆ ದೋಸೆ ಮತ್ತು ಆಲೂಗೆಡ್ಡೆ ಪಲ್ಯ",
+      "mr": "लोणी डोसा आणि बटाटा भाजी"
+    },
+    "veg": true,
+    "avgCostInr": 80,
+    "lat": 15.359,
+    "lng": 75.138,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_vijayapura_khanavali",
+    "regionId": "reg_north",
+    "placeId": null,
+    "name": {
+      "en": "Basaveshwara Khanavali Vijayapura",
+      "kn": "ಬಸವೇಶ್ವರ ಖಾನಾವಳಿ ವಿಜಯಪುರ",
+      "mr": "बसवेश्वर खानावळ विजापूर"
+    },
+    "dish": {
+      "en": "North Karnataka Jolada Rotti, Shenga Chutney & Jhunka",
+      "kn": "ಜೋಳದ ರೊಟ್ಟಿ, ಶೇಂಗಾ ಚಟ್ನಿ ಮತ್ತು ಜುಣಕ",
+      "mr": "ज्वारीची भाकरी आणि झुणका"
+    },
+    "veg": true,
+    "avgCostInr": 120,
+    "lat": 16.831,
+    "lng": 75.718,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_kalaburagi_malpuri",
+    "regionId": "reg_north",
+    "placeId": null,
+    "name": {
+      "en": "Siddharth Sweet Stall Kalaburagi",
+      "kn": "ಸಿದ್ಧಾರ್ಥ ಸ್ವೀಟ್ಸ್ ಕಲಬುರಗಿ",
+      "mr": "सिद्धार्थ स्वीट्स कलबुर्गी"
+    },
+    "dish": {
+      "en": "Famous Kalaburagi Malpuri & Mawa Khaja",
+      "kn": "ಕಲಬುರಗಿ ಮಾಲ್‌ಪುರಿ ಮತ್ತು ಮಾವಾ ಖಾಜಾ",
+      "mr": "कलबुर्गी मालपोआ आणि खवा खाजा"
+    },
+    "veg": true,
+    "avgCostInr": 65,
+    "lat": 17.338,
+    "lng": 76.829,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_line_bazaar_pedha",
+    "regionId": "reg_north",
+    "placeId": null,
+    "name": {
+      "en": "Thakur Line Bazaar Pedha Dharwad",
+      "kn": "ಠಾಕೂರ್ ಲೈನ್ ಬಜಾರ್ ಪೇಡಾ ಧಾರವಾಡ",
+      "mr": "ठाकूर पेढा धारवाड"
+    },
+    "dish": {
+      "en": "GI Heritage Babu Singh Thakur Dharwad Pedha",
+      "kn": "ಬಾಬು ಸಿಂಗ್ ಠಾಕೂರ್ ಅಸಲಿ ಧಾರವಾಡ ಪೇಡಾ",
+      "mr": "अस्सल धारवाड पेढा"
+    },
+    "veg": true,
+    "avgCostInr": 90,
+    "lat": 15.459,
+    "lng": 75.008,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_ilkal_tea",
+    "regionId": "reg_north",
+    "placeId": null,
+    "name": {
+      "en": "Ilkal Chowk Tea & Girmit Stall",
+      "kn": "ಇಲಕಲ್ ಚೌಕ್ ಟೀ ಮತ್ತು ಗಿರ್ಮಿಟ್ ಅಂಗಡಿ",
+      "mr": "गिरमिट आणि चहा"
+    },
+    "dish": {
+      "en": "Spicy North Karnataka Girmit with Mirchi Bajji",
+      "kn": "ಉತ್ತರ ಕರ್ನಾಟಕದ ಖಾರ ಗಿರ್ಮಿಟ್ ಮತ್ತು ಮೆಣಸಿನಕಾಯಿ ಬಜ್ಜಿ",
+      "mr": "मसालेदार गिरमिट आणि भजी"
+    },
+    "veg": true,
+    "avgCostInr": 40,
+    "lat": 15.962,
+    "lng": 76.121,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_badami_chutney_pudi",
+    "regionId": "reg_north",
+    "placeId": null,
+    "name": {
+      "en": "Chalukya Rural Kitchen Station Road Badami",
+      "kn": "ಚಾಲುಕ್ಯ ಗ್ರಾಮೀಣ ಅಡುಗೆ ಮನೆ ಬದಾಮಿ",
+      "mr": "चालुक्य किचन बदामी"
+    },
+    "dish": {
+      "en": "Freshly Pounded Shenga & Agasi (Flaxseed) Chutney Meals",
+      "kn": "ಶೇಂಗಾ ಮತ್ತು ಅಗಸಿ ಚಟ್ನಿ ಪುಡಿ ರೊಟ್ಟಿ ಊಟ",
+      "mr": "ज्वारीची भाकरी आणि जवस चटणी"
+    },
+    "veg": true,
+    "avgCostInr": 110,
+    "lat": 15.921,
+    "lng": 75.684,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "food_kalaburagi_tahri",
+    "regionId": "reg_north",
+    "placeId": null,
+    "name": {
+      "en": "Gulbarga Dastarkhwan Heritage Dining",
+      "kn": "ಗುಲ್ಬರ್ಗಾ ದಸ್ತರ್‌ಖಾನ್ ಕಲಬುರಗಿ",
+      "mr": "कलबुर्गी दस्तरखान"
+    },
+    "dish": {
+      "en": "Deccan Mutton Tahri cooked in fragrant basmati",
+      "kn": "ದಖನಿ ಮಟನ್ ತೆಹರಿ",
+      "mr": "दख्खनी मटन ताहरी"
+    },
+    "veg": false,
+    "avgCostInr": 220,
+    "lat": 17.335,
+    "lng": 76.834,
+    "source": "Sample data: Local Culinary Association",
+    "lastChecked": "2026-10-25"
+  }
+]

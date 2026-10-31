@@ -43,6 +43,7 @@ Sliding-window in-memory rate limiting is applied to all incoming requests:
 | **aiGuest** | 8 requests | 60 seconds | Remote IP address |
 | **aiUser** | 20 requests | 60 seconds | Authenticated Firebase `uid` |
 | **general** | 120 requests | 60 seconds | Remote IP address |
+| **route** | 10 requests | 60 seconds | Remote IP address (guest) or Firebase `uid` |
 | **seed** | 3 requests | 1 hour | Remote IP address (requires `x-seed-secret`) |
 
 When exceeded, endpoints respond with HTTP `429 Too Many Requests` including a `Retry-After` header and `{ ok: false, error: { code: "RATE_LIMITED", message, retryable: true } }`.
@@ -61,4 +62,19 @@ When exceeded, endpoints respond with HTTP `429 Too Many Requests` including a `
 - **No private API keys or service account credentials** are ever packaged into the client bundle or stored in localStorage.
 - **No tokens or passwords** are stored in plain text.
 - **No server configuration values** are exposed to client code.
-- **Server logs** never record tokens, Authorization headers, passwords, request bodies, or prompt texts.
+- **Server logs** never record tokens, Authorization headers, passwords, request bodies, prompt texts, or waypoint coordinates tied to a user identity.
+
+---
+
+## 5. Route Proxy & Coordinate Security
+
+### Route Proxy (`POST /api/route`):
+- **Public with Strict Limits**: Available to both guest visitors and authenticated users with a dedicated sliding-window rate limiter (10 requests per minute per IP or `uid`).
+- **Strict Parameter Sanitization**: Accepts strictly 2 to 12 numerical waypoint coordinates (`lat`, `lng`) constrained inside `KARNATAKA_BOUNDS` (lat 11.5–18.5, lng 74.0–78.6). Accepts only mode `"driving"`. Rejects any non-numerical values or user-supplied text with `INVALID_INPUT`.
+- **Zero-Storage Architecture**: The proxy stores NO user travel patterns, routes, or trip history in database storage. Routes are held solely in a short-lived in-memory cache keyed by 4-decimal rounded coordinates for caching efficiency (24h TTL, max 200 entries).
+- **Privacy & Anonymous Logging**: Server logs never associate waypoint coordinates with a user identity (`uid`) or IP address.
+
+### Coordinate Data Integrity ("coords"):
+- **Pre-vetted Dataset**: Attraction and destination coordinates are verified against Karnataka geographical boundaries via `npm run data:check-coords` and reviewed in `data/coords.review.csv`.
+- **Approximate Coordinates**: All coordinates are catalogued as approximate estimates for routing and visual navigation and require a human check against a map.
+

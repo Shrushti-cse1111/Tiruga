@@ -1,0 +1,64 @@
+{
+  "shakti": {
+    "eligibleClasses": [
+      "non_ac",
+      "ordinary",
+      "express"
+    ],
+    "domicileRequired": true,
+    "proofReminder": "Carry Karnataka address proof ID (Aadhaar / Voter ID)",
+    "note": "Confirm current rules on the bus"
+  },
+  "scoringWeights": {
+    "interestAffinity": 0.4,
+    "crowdPenalty": 0.25,
+    "timeEfficiency": 0.2,
+    "rating": 0.15
+  },
+  "styleModifiers": {
+    "solo": {
+      "crowdTolerance": 0.6
+    },
+    "senior": {
+      "minSeniorFriendly": 4,
+      "pace": "relaxed"
+    },
+    "women_group": {
+      "duskSafety": true
+    }
+  },
+  "thresholds": {
+    "crowd": 70
+  },
+  "stopsPerDay": {
+    "relaxed": 3,
+    "balanced": 4,
+    "packed": 5
+  },
+  "emergencyNumbers": [
+    {
+      "label": "Police",
+      "number": "112",
+      "note": "verify"
+    },
+    {
+      "label": "Ambulance",
+      "number": "108",
+      "note": "verify"
+    },
+    {
+      "label": "Women Helpline",
+      "number": "181",
+      "note": "verify"
+    },
+    {
+      "label": "Karnataka Tourist Helpline",
+      "number": "1800-425-2425",
+      "note": "verify"
+    }
+  ],
+  "tips": {
+    "sunsetGoldenHour": "Hemakuta Hill and Raja's Seat get golden light between 17:15 and 17:50.",
+    "templeBlessings": "Temple elephant blessings start at 8:30 AM at Virupaksha Temple."
+  }
+}

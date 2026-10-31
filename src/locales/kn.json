@@ -229,26 +229,5 @@
     "sources_used": "ಬಳಸಿದ ಮೂಲಗಳು: {{sources}}",
     "read_aloud": "ಓದಿ ಹೇಳಿ",
     "mic_hint": "ಮಾತನಾಡಲು ಮೈಕ್ ಒತ್ತಿ"
-  },
-  "pdf": {
-    "download_pdf": "PDF ಡೌನ್‌ಲೋಡ್",
-    "download_trip_pdf": "ಪ್ರವಾಸದ PDF ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
-    "options_sheet_title": "ಪ್ರವಾಸದ PDF ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ",
-    "itinerary_section": "ಪ್ರವಾಸ ವಿವರ (ದಿನವಾರು)",
-    "always_included": "ಯಾವಾಗಲೂ ಒಳಗೊಂಡಿರುತ್ತದೆ",
-    "costs_summary": "ವೆಚ್ಚಗಳ ಸಾರಾಂಶ",
-    "travel_options": "ಪ್ರಯಾಣದ ಆಯ್ಕೆಗಳು (ಡೆಮೊ ಮಾಹಿತಿ)",
-    "plan_b_changes": "ಪ್ಲಾನ್ ಬಿ ಬದಲಾವಣೆಗಳು",
-    "swara_playlist": "ಸ್ವರ ಪ್ಲೇಲಿಸ್ಟ್",
-    "kannada_phrases": "ಕನ್ನಡ ನುಡಿಗಟ್ಟುಗಳು",
-    "culture_notes": "ಸಾಂಸ್ಕೃತಿಕ ಟಿಪ್ಪಣಿಗಳು",
-    "emergency_safety": "ತುರ್ತು ಮತ್ತು ಸುರಕ್ಷತಾ ಮಾಹಿತಿ",
-    "paper_size": "ಕಾಗದದ ಗಾತ್ರ",
-    "include_name": "ನನ್ನ ಹೆಸರನ್ನು ಸೇರಿಸಿ",
-    "create_pdf": "PDF ರಚಿಸಿ",
-    "phone_hint": "ಮೊಬೈಲ್‌ನಲ್ಲಿ, ಪ್ರಿಂಟ್ ಆಯ್ಕೆ ಮಾಡಿ ನಂತರ PDF ಆಗಿ ಸೇವ್ ಮಾಡಿ, ಅಥವಾ ಹಂಚಿಕೆ ಮೆನು ಬಳಸಿ.",
-    "print_save": "ಪ್ರಿಂಟ್ / PDF ಆಗಿ ಸೇವ್ ಮಾಡಿ",
-    "back": "ಹಿಂದೆ",
-    "could_not_load": "ಈ ಪ್ರವಾಸವನ್ನು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ"
   }
 }

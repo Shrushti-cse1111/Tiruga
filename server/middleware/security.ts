@@ -24,13 +24,23 @@ export function securityHeaders(req: Request, res: Response, next: NextFunction)
     res.setHeader('X-Frame-Options', 'SAMEORIGIN');
   }
 
+  // Optional custom tile host from VITE_MAP_TILE_URL
+  let customTileHost = '';
+  if (process.env.VITE_MAP_TILE_URL) {
+    try {
+      customTileHost = new URL(process.env.VITE_MAP_TILE_URL).origin;
+    } catch {
+      // ignore invalid URLs
+    }
+  }
+
   // Content-Security-Policy
   const cspDirectives = [
     "default-src 'self'",
     "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://accounts.google.com https://apis.google.com https://*.firebaseapp.com https://*.googleapis.com",
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "font-src 'self' https://fonts.gstatic.com data:",
-    "img-src 'self' data: blob: https://images.unsplash.com https://*.googleusercontent.com https://*.gstatic.com https://firestore.googleapis.com",
+    `img-src 'self' data: blob: https://images.unsplash.com https://*.googleusercontent.com https://*.gstatic.com https://firestore.googleapis.com https://tile.openstreetmap.org https://*.tile.openstreetmap.org ${customTileHost}`.trim(),
     "connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://*.run.app",
     "frame-src 'self' https://accounts.google.com https://*.firebaseapp.com",
     isDev

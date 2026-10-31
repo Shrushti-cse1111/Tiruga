@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import {
   ArrowLeft,
@@ -25,7 +25,7 @@ import {
   Bus,
   RefreshCw,
   WifiOff,
-  FileDown
+  Map as MapIcon
 } from 'lucide-react';
 import { Trip, Day, TripItem } from '../../data/types';
 import { askAboutPlace } from '../../data/seedTrip';
@@ -42,8 +42,10 @@ import {
 import { Itinerary } from '../../shared/aiTypes';
 import { getPreferences } from '../../lib/preferences';
 import demoTripJson from '../../../data/demoTrip.json';
+import attractionsCatalog from '../../../data/attractions.json';
+import { buildRoute } from '../../lib/route';
+import { RouteSketch } from '../../components/map/RouteSketch';
 import { AskAboutPlaceSheet } from '../../components/common/AskAboutPlaceSheet';
-import { DownloadPdfOptionsSheet } from '../../components/pdf/DownloadPdfOptionsSheet';
 import {
   ImageWithFallback,
   Button,
@@ -80,7 +82,6 @@ export const TripPlanScreen: React.FC = () => {
   const [isFullItineraryOpen, setIsFullItineraryOpen] = useState<boolean>(false);
   const [isModifySheetOpen, setIsModifySheetOpen] = useState<boolean>(false);
   const [isCheaperSheetOpen, setIsCheaperSheetOpen] = useState<boolean>(false);
-  const [isPdfOptionsOpen, setIsPdfOptionsOpen] = useState<boolean>(false);
   const [modifyPrompt, setModifyPrompt] = useState<string>('');
   const [isModifying, setIsModifying] = useState<boolean>(false);
   const [modifiedPreview, setModifiedPreview] = useState<Trip | null>(null);
@@ -109,6 +110,29 @@ export const TripPlanScreen: React.FC = () => {
     source: string;
   } | null>(null);
   const [isAskingPlace, setIsAskingPlace] = useState<boolean>(false);
+
+  // Map route preparation
+  const attractionsById = useMemo(() => {
+    const map: Record<string, any> = {};
+    if (Array.isArray(attractionsCatalog)) {
+      attractionsCatalog.forEach((att: any) => {
+        if (att && att.id) {
+          map[att.id] = att;
+        }
+      });
+    }
+    return map;
+  }, []);
+
+  const tripRoute = useMemo(() => {
+    if (!trip) return null;
+    return buildRoute(trip, attractionsById);
+  }, [trip, attractionsById]);
+
+  const totalStopsCount = useMemo(() => {
+    if (!tripRoute) return 0;
+    return tripRoute.days.reduce((acc, d) => acc + d.stops.length, 0);
+  }, [tripRoute]);
 
   const parseBudgetFromPref = (b?: string): number => {
     if (!b) return 6000;
@@ -571,8 +595,8 @@ export const TripPlanScreen: React.FC = () => {
 
       {/* Main Content */}
       <div className="flex-1">
-        {/* 1. Hero Destination Image (16:10, radius 24px) */}
-        <div className="relative rounded-[24px] overflow-hidden shadow-md mx-3 mt-3">
+        {/* 1. Hero Destination Image */}
+        <div className="relative rounded-b-[32px] overflow-hidden shadow-md">
           <ImageWithFallback
             src={trip.heroImage}
             alt={trip.destination}
@@ -581,14 +605,14 @@ export const TripPlanScreen: React.FC = () => {
             className="w-full h-full object-cover"
           />
           {/* Deep Teal Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-deep/95 via-deep/45 to-transparent flex flex-col justify-between p-4 sm:p-5">
+          <div className="absolute inset-0 bg-gradient-to-t from-deep-teal via-deep-teal/40 to-transparent flex flex-col justify-between p-4 sm:p-5">
             {/* Top Bar Navigation */}
             <div className="flex items-center justify-between z-10">
               <button
                 type="button"
                 onClick={() => navigate('/home')}
                 aria-label="Back to home"
-                className="w-11 h-11 rounded-full bg-deep/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-deep transition-colors border border-white/20 cursor-pointer"
+                className="w-11 h-11 rounded-full bg-deep-teal/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-deep-teal transition-colors border border-white/20 cursor-pointer"
               >
                 <ArrowLeft size={20} />
               </button>
@@ -596,30 +620,29 @@ export const TripPlanScreen: React.FC = () => {
               <div className="flex items-center space-x-2">
                 <button
                   type="button"
+                  onClick={() => navigate(`/trip/${trip.id || id || 'demo'}/map`)}
+                  aria-label="View trip route map"
+                  className="w-11 h-11 rounded-full bg-deep-teal/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-deep-teal transition-colors border border-white/20 cursor-pointer shadow-xs focus:outline-none focus:ring-2 focus:ring-primary-teal"
+                >
+                  <MapIcon size={18} />
+                </button>
+                <button
+                  type="button"
                   onClick={handleSaveToggle}
                   aria-label="Save trip"
                   className={`w-11 h-11 rounded-full backdrop-blur-md flex items-center justify-center border transition-colors cursor-pointer ${
                     isSaved
-                      ? 'bg-gold text-deep border-gold'
-                      : 'bg-deep/60 text-white border-white/20 hover:bg-deep'
+                      ? 'bg-gold text-deep-teal border-gold'
+                      : 'bg-deep-teal/60 text-white border-white/20 hover:bg-deep-teal'
                   }`}
                 >
                   <Bookmark size={18} fill={isSaved ? '#103F38' : 'none'} />
                 </button>
                 <button
                   type="button"
-                  onClick={() => setIsPdfOptionsOpen(true)}
-                  aria-label="Download trip PDF"
-                  title="Download trip PDF"
-                  className="w-11 h-11 rounded-full bg-deep/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-deep transition-colors border border-white/20 cursor-pointer"
-                >
-                  <FileDown size={18} />
-                </button>
-                <button
-                  type="button"
                   onClick={() => setIsModifySheetOpen(true)}
                   aria-label="Modify trip with AI"
-                  className="w-11 h-11 rounded-full bg-deep/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-deep transition-colors border border-white/20 cursor-pointer"
+                  className="w-11 h-11 rounded-full bg-deep-teal/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-deep-teal transition-colors border border-white/20 cursor-pointer"
                 >
                   <SlidersHorizontal size={18} />
                 </button>
@@ -636,11 +659,11 @@ export const TripPlanScreen: React.FC = () => {
                   </span>
                   <span className="text-[10px] opacity-80 ml-1.5 font-normal">(Estimated)</span>
                 </div>
-                <span className="bg-mint text-deep font-bold text-[10px] px-2.5 py-1 rounded-full inline-flex items-center gap-1 shadow-xs">
-                  <Sparkles size={11} className="text-primary" /> AI-generated
+                <span className="bg-gold text-deep-teal font-extrabold text-[10px] px-2.5 py-1 rounded-full inline-flex items-center gap-1 shadow-xs">
+                  <Sparkles size={11} className="fill-deep-teal" /> AI-generated
                 </span>
               </div>
-              <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight text-white drop-shadow-sm">
+              <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight font-heading leading-tight">
                 {trip.destination}
               </h1>
               <p className="text-xs sm:text-sm text-white/90 mt-1 font-medium">
@@ -652,38 +675,120 @@ export const TripPlanScreen: React.FC = () => {
 
         {/* Padding Container for Body */}
         <div className="px-4 py-4 space-y-5">
-          {/* 2. Summary Row (Three equal white mini-cards: Duration, Est. Budget, Travel Style) */}
+          {/* 2. Summary Row (Three equal mini-cards) */}
           <div className="grid grid-cols-3 gap-2.5">
-            <div className="bg-white p-3.5 rounded-[20px] border border-border shadow-xs flex flex-col items-center text-center">
-              <div className="w-9 h-9 rounded-full bg-mint flex items-center justify-center text-deep mb-1">
+            <div className="bg-white p-3 rounded-2xl border border-[#E2DFD3] shadow-xs flex flex-col items-center text-center">
+              <div className="w-8 h-8 rounded-full bg-mint flex items-center justify-center text-deep-teal mb-1">
                 <Calendar size={16} />
               </div>
-              <span className="text-xs font-bold text-deep">{trip.totalDays} Days</span>
-              <span className="text-[10px] text-muted mt-0.5">Duration</span>
+              <span className="text-xs font-bold text-text-main">{trip.totalDays} Days</span>
+              <span className="text-[10px] text-muted-text mt-0.5">Duration</span>
             </div>
 
-            <div className="bg-white p-3.5 rounded-[20px] border border-border shadow-xs flex flex-col items-center text-center">
-              <div className="w-9 h-9 rounded-full bg-[#FFF7E6] flex items-center justify-center text-[#543b00] mb-1">
+            <div className="bg-white p-3 rounded-2xl border border-[#E2DFD3] shadow-xs flex flex-col items-center text-center">
+              <div className="w-8 h-8 rounded-full bg-mint flex items-center justify-center text-deep-teal mb-1">
                 <Wallet size={16} />
               </div>
-              <span className="text-xs font-bold text-deep">
+              <span className="text-xs font-bold text-text-main">
                 ₹{trip.estimatedBudget.toLocaleString('en-IN')}
               </span>
-              <span className="text-[10px] text-muted mt-0.5">Est. Budget</span>
+              <span className="text-[10px] text-muted-text mt-0.5">Estimated</span>
             </div>
 
-            <div className="bg-white p-3.5 rounded-[20px] border border-border shadow-xs flex flex-col items-center text-center">
-              <div className="w-9 h-9 rounded-full bg-mint flex items-center justify-center text-primary mb-1">
+            <div className="bg-white p-3 rounded-2xl border border-[#E2DFD3] shadow-xs flex flex-col items-center text-center">
+              <div className="w-8 h-8 rounded-full bg-mint flex items-center justify-center text-deep-teal mb-1">
                 <Sparkles size={16} className="text-gold" />
               </div>
-              <span className="text-xs font-bold text-deep truncate max-w-full">
+              <span className="text-xs font-bold text-text-main truncate max-w-full">
                 {trip.travelStyle}
               </span>
-              <span className="text-[10px] text-muted mt-0.5">Travel Style</span>
+              <span className="text-[10px] text-muted-text mt-0.5">Style</span>
             </div>
           </div>
 
-          {/* 3. Day Tabs as Pills (active primary with white text) */}
+          {/* Quick Access Action Banners (Travel Options & Plan B) */}
+          <div className="grid grid-cols-2 gap-2.5">
+            <Link
+              to="/travel-options"
+              className="bg-white p-3 rounded-2xl border border-[#E2DFD3] shadow-xs flex items-center justify-between hover:border-primary-teal transition-colors group cursor-pointer"
+            >
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 rounded-full bg-mint text-deep-teal flex items-center justify-center">
+                  <Bus size={16} />
+                </div>
+                <div className="text-left">
+                  <div className="text-xs font-bold text-text-main group-hover:text-primary-teal transition-colors">
+                    Travel Options
+                  </div>
+                  <div className="text-[10px] text-muted-text">Buses, Trains, Cabs</div>
+                </div>
+              </div>
+              <ChevronRight size={14} className="text-muted-text" />
+            </Link>
+
+            <Link
+              to="/plan-b"
+              className="bg-white p-3 rounded-2xl border border-terracotta/30 bg-terracotta/5 shadow-xs flex items-center justify-between hover:border-terracotta transition-colors group cursor-pointer"
+            >
+              <div className="flex items-center space-x-2">
+                <div className="w-8 h-8 rounded-full bg-terracotta/15 text-terracotta flex items-center justify-center">
+                  <Umbrella size={16} />
+                </div>
+                <div className="text-left">
+                  <div className="text-xs font-bold text-text-main group-hover:text-terracotta transition-colors">
+                    Plan B & Weather
+                  </div>
+                  <div className="text-[10px] text-muted-text">Rain & Heat Adapt</div>
+                </div>
+              </div>
+              <ChevronRight size={14} className="text-terracotta" />
+            </Link>
+          </div>
+
+          {/* Compact Route Preview Card */}
+          {tripRoute && tripRoute.days.length > 0 && totalStopsCount > 0 && (
+            <div
+              role="button"
+              tabIndex={0}
+              onClick={() => navigate(`/trip/${trip.id || id || 'demo'}/map`)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  navigate(`/trip/${trip.id || id || 'demo'}/map`);
+                }
+              }}
+              aria-label="Your route preview, opens full map"
+              className="bg-white rounded-2xl border border-[#E2DFD3] shadow-xs overflow-hidden cursor-pointer hover:border-primary-teal transition-all group focus:outline-none focus:ring-2 focus:ring-primary-teal"
+            >
+              <div className="p-3 pb-2 flex items-center justify-between border-b border-[#F0ECE1] bg-white">
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 rounded-md bg-mint text-deep-teal flex items-center justify-center">
+                    <MapIcon size={14} />
+                  </div>
+                  <span className="text-xs font-bold text-text-main group-hover:text-primary-teal transition-colors">
+                    Your route
+                  </span>
+                  <span className="text-[10px] text-muted-text font-medium">
+                    ({totalStopsCount} stops)
+                  </span>
+                </div>
+                <div className="flex items-center space-x-1 text-primary-teal text-xs font-bold">
+                  <span>Open full map</span>
+                  <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                </div>
+              </div>
+              <div className="h-[180px] w-full relative pointer-events-none bg-[#FDFCF7]">
+                <RouteSketch
+                  days={tripRoute.days}
+                  activeDay="all"
+                  className="h-full w-full rounded-b-2xl border-none shadow-none"
+                  disclaimerText="Route sketch · Tap to open interactive map"
+                />
+              </div>
+            </div>
+          )}
+
+          {/* 3. Day Tabs (Pill segmented tabs) */}
           <div className="flex space-x-2 overflow-x-auto pb-1 no-scrollbar">
             {trip.days.map((d, idx) => {
               const isActive = idx === activeDayIndex;
@@ -692,10 +797,10 @@ export const TripPlanScreen: React.FC = () => {
                   key={d.dayNumber}
                   type="button"
                   onClick={() => setActiveDayIndex(idx)}
-                  className={`h-[40px] px-5 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+                  className={`min-h-[44px] px-5 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
                     isActive
-                      ? 'bg-primary text-white shadow-xs'
-                      : 'bg-white text-muted border border-border hover:text-text'
+                      ? 'bg-deep-teal text-white shadow-sm'
+                      : 'bg-white text-muted-text border border-[#E2DFD3] hover:text-text-main'
                   }`}
                 >
                   Day {d.dayNumber}
@@ -704,68 +809,69 @@ export const TripPlanScreen: React.FC = () => {
             })}
           </div>
 
-          {/* 4. Day Header "Day 1 - Hampi" in deep with day total in a gold chip */}
-          <div className="bg-white p-4 rounded-[22px] border border-border shadow-xs">
+          {/* 4. Day Header */}
+          <div className="bg-white/80 backdrop-blur-xs p-4 rounded-2xl border border-[#E2DFD3]">
             <div className="flex items-center justify-between">
-              <h2 className="text-base font-bold text-deep">
+              <h2 className="text-base font-bold text-text-main">
                 Day {currentDay.dayNumber} – {trip.destination}
               </h2>
-              <span className="text-xs font-bold text-deep bg-gold px-3 py-1 rounded-full shadow-2xs">
-                ₹{dayTotalCost} est.
+              <span className="text-xs font-bold text-primary-teal bg-mint px-2.5 py-1 rounded-full">
+                ₹{dayTotalCost} · Estimated
               </span>
             </div>
-            <p className="text-xs text-muted mt-1 leading-relaxed">{currentDay.summary}</p>
+            <p className="text-xs text-muted-text mt-1 leading-relaxed">{currentDay.summary}</p>
           </div>
 
-          {/* 5. Vertical Timeline: 2px mint line, 40px circular icon nodes */}
-          <div className="relative pl-7 space-y-5 before:absolute before:left-[19px] before:top-3 before:bottom-3 before:w-0.5 before:bg-mint">
+          {/* 5. Vertical Timeline */}
+          <div className="relative pl-6 space-y-5 before:absolute before:left-[17px] before:top-3 before:bottom-3 before:w-0.5 before:bg-[#E2DFD3]">
             {currentDay.items.map((item, index) => {
               return (
                 <div key={item.attractionId + index} className="relative group">
-                  {/* 40px Circular Icon Node */}
-                  <div className="absolute -left-[27px] top-1.5 w-10 h-10 rounded-full bg-mint border-2 border-primary shadow-xs flex items-center justify-center z-10 text-deep">
+                  {/* Circular Node */}
+                  <div className="absolute -left-[23px] top-1.5 w-8 h-8 rounded-full bg-white border-2 border-primary-teal shadow-xs flex items-center justify-center z-10">
                     {getCategoryIcon(item.category)}
                   </div>
 
                   {/* Timeline Card */}
-                  <div className="bg-white p-4 rounded-[20px] border border-border shadow-xs hover:border-primary/40 transition-all">
-                    <div className="flex items-start justify-between gap-2">
+                  <div className="bg-white p-4 rounded-2xl border border-[#E2DFD3] shadow-xs hover:border-primary-teal/40 transition-all">
+                    <div className="flex items-start justify-between">
                       <div>
                         <div className="flex items-center space-x-2">
-                          <span className="text-xs font-bold text-primary font-mono">
+                          <span className="text-xs font-bold text-primary-teal font-mono">
                             {item.time}
                           </span>
-                          <span className="text-[11px] text-muted flex items-center">
+                          <span className="text-[11px] text-muted-text flex items-center">
                             <Clock size={12} className="mr-1" />
                             {item.durationMinutes} min
                           </span>
                         </div>
-                        <h3 className="text-sm font-bold text-deep mt-1 leading-snug">{item.title}</h3>
+                        <h3 className="text-sm font-bold text-text-main mt-1">{item.title}</h3>
                       </div>
 
-                      {/* Cost chip: "Rs 450 est." or "Free" */}
+                      {/* Cost chip */}
                       <span
-                        className={`text-[11px] font-bold px-2.5 py-1 rounded-full shrink-0 ${
+                        className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
                           item.estimatedCost === 0
-                            ? 'bg-mint text-deep'
-                            : 'bg-[#FFF7E6] text-[#543b00]'
+                            ? 'bg-mint text-deep-teal'
+                            : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
                         }`}
                       >
-                        {item.estimatedCost === 0 ? 'Free' : `Rs ${item.estimatedCost} est.`}
+                        {item.estimatedCost === 0 ? 'Free (Estimated)' : `₹${item.estimatedCost} · Estimated`}
                       </span>
                     </div>
 
-                    {/* Two-line reason */}
-                    <p className="text-xs text-muted mt-2 leading-relaxed line-clamp-2">
+                    {/* Why this was picked */}
+                    <p className="text-xs text-muted-text mt-2 leading-relaxed bg-cream/70 p-2 rounded-xl">
+                      <span className="font-semibold text-text-main">Why picked: </span>
                       {item.reason}
                     </p>
 
-                    {/* Small AI reason chips in mint or gold tints */}
-                    <div className="flex flex-wrap items-center gap-1.5 mt-2.5">
-                      {item.tags.slice(0, 2).map((tag, tIdx) => (
+                    {/* Small Reason Chips */}
+                    <div className="flex flex-wrap gap-1.5 mt-2.5">
+                      {item.tags.map((tag, tIdx) => (
                         <span
                           key={tIdx}
-                          className="text-[10px] font-medium bg-mint text-deep px-2 py-0.5 rounded-full"
+                          className="text-[10px] font-medium bg-[#F0ECE1] text-text-main px-2 py-0.5 rounded-full"
                         >
                           {tag}
                         </span>
@@ -782,11 +888,11 @@ export const TripPlanScreen: React.FC = () => {
                           setAskPlaceName(item.title);
                         }}
                         className={`text-[10px] font-semibold flex items-center ml-auto cursor-pointer ${
-                          !isOnline ? 'text-muted opacity-50' : 'text-primary hover:underline'
+                          !isOnline ? 'text-muted-text opacity-50' : 'text-primary-teal hover:underline'
                         }`}
                         title={!isOnline ? 'AI features need an internet connection.' : undefined}
                       >
-                        <HelpCircle size={12} className="mr-1 text-primary" />
+                        <HelpCircle size={12} className="mr-1" />
                         Ask about this place
                       </button>
                     </div>
@@ -794,9 +900,9 @@ export const TripPlanScreen: React.FC = () => {
 
                   {/* Travel Time to Next Item */}
                   {item.travelToNextMinutes && (
-                    <div className="flex items-center space-x-1.5 py-1.5 pl-2 text-xs text-muted font-normal">
-                      <Car size={13} className="text-primary" />
-                      <span>approx. {item.travelToNextMinutes} min drive</span>
+                    <div className="flex items-center space-x-2 py-2 text-[11px] text-muted-text font-medium">
+                      <Car size={13} className="text-primary-teal ml-1" />
+                      <span>~{item.travelToNextMinutes} min auto / walk to next spot</span>
                     </div>
                   )}
                 </div>
@@ -804,20 +910,23 @@ export const TripPlanScreen: React.FC = () => {
             })}
           </div>
 
-          {/* 6. Action Area: Primary pill "View Full Itinerary", 2x2 grid of secondary buttons, "See travel options" link */}
+          {/* 6. Action Area */}
           <div className="space-y-3 pt-3">
-            <Button
-              variant="primary"
-              size="lg"
-              className="w-full h-[52px]"
-              onClick={() => setIsFullItineraryOpen(true)}
-            >
-              View Full Itinerary
-            </Button>
+            <div className="grid grid-cols-2 gap-3">
+              <Button
+                variant="white"
+                size="md"
+                className="w-full text-xs"
+                onClick={() => setIsFullItineraryOpen(true)}
+              >
+                View Full Itinerary
+              </Button>
 
-            <div className="grid grid-cols-2 gap-2.5">
-              <button
-                type="button"
+              <Button
+                variant="primary"
+                size="md"
+                className={`w-full text-xs ${!isOnline ? 'opacity-50' : ''}`}
+                disabled={!isOnline}
                 onClick={() => {
                   if (!isOnline) {
                     showToast('AI features need an internet connection.');
@@ -825,77 +934,52 @@ export const TripPlanScreen: React.FC = () => {
                   }
                   setIsModifySheetOpen(true);
                 }}
-                className="h-[52px] rounded-full bg-white hover:bg-cream text-deep border border-border shadow-xs text-xs font-semibold flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-[0.98]"
+                title={!isOnline ? 'AI features need an internet connection.' : undefined}
               >
-                <Sparkles size={14} className="text-gold" />
-                <span>Modify with AI</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => {
-                  if (!isOnline) {
-                    showToast('AI features need an internet connection.');
-                    return;
-                  }
-                  setAskPlaceName(trip.destination);
-                }}
-                className="h-[52px] rounded-full bg-white hover:bg-cream text-deep border border-border shadow-xs text-xs font-semibold flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-[0.98]"
-              >
-                <HelpCircle size={14} className="text-primary" />
-                <span>Ask about this place</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={handleSaveToggle}
-                className="h-[52px] rounded-full bg-white hover:bg-cream text-deep border border-border shadow-xs text-xs font-semibold flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-[0.98]"
-              >
-                <Bookmark size={14} className={isSaved ? 'text-primary fill-primary' : 'text-deep'} />
-                <span>{isSaved ? 'Saved Trip' : 'Save Trip'}</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={handleDownload}
-                disabled={isDownloaded || isDownloading}
-                className="h-[52px] rounded-full bg-white hover:bg-cream text-deep border border-border shadow-xs text-xs font-semibold flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-[0.98] disabled:opacity-50"
-              >
-                {isDownloading ? (
-                  <span>Saving ({downloadProgress}%)...</span>
-                ) : isDownloaded ? (
-                  <>
-                    <Check size={14} className="text-primary" />
-                    <span>Downloaded</span>
-                  </>
-                ) : (
-                  <>
-                    <Download size={14} className="text-deep" />
-                    <span>Download offline</span>
-                  </>
-                )}
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setIsPdfOptionsOpen(true)}
-                className="h-[52px] rounded-full bg-white hover:bg-cream text-deep border border-border shadow-xs text-xs font-semibold flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-[0.98]"
-              >
-                <FileDown size={14} className="text-primary" />
-                <span>Download PDF</span>
-              </button>
+                <Sparkles size={14} className="mr-1.5 text-gold" />
+                Modify with AI
+              </Button>
             </div>
 
-            {/* "See travel options" link */}
-            <div className="text-center pt-1">
-              <Link
-                to="/travel-options"
-                className="text-xs font-bold text-primary hover:underline inline-flex items-center gap-1 py-1"
-              >
-                <span>See travel options</span>
-                <ChevronRight size={14} />
-              </Link>
-            </div>
+            {/* Make it Cheaper (Budget Optimizer) Button */}
+            <Button
+              variant="white"
+              size="md"
+              className="w-full text-xs border border-primary-teal text-primary-teal hover:bg-mint/30 font-bold flex items-center justify-center cursor-pointer"
+              onClick={() => setIsCheaperSheetOpen(true)}
+            >
+              <Wallet size={14} className="mr-1.5 text-primary-teal" />
+              Make it cheaper (Budget Optimizer)
+            </Button>
+
+            {/* Offline Download Button */}
+            <button
+              type="button"
+              onClick={handleDownload}
+              disabled={isDownloaded || isDownloading}
+              className={`w-full min-h-[48px] rounded-full border px-4 py-2.5 text-xs font-bold flex items-center justify-center transition-all cursor-pointer ${
+                isDownloaded
+                  ? 'bg-mint text-deep-teal border-primary-teal/30'
+                  : 'bg-white text-text-main border-[#E2DFD3] hover:border-primary-teal'
+              }`}
+            >
+              {isDownloading ? (
+                <div className="w-full flex items-center justify-center space-x-2">
+                  <div className="w-4 h-4 border-2 border-deep-teal border-t-transparent rounded-full animate-spin" />
+                  <span>Downloading offline maps ({downloadProgress}%)...</span>
+                </div>
+              ) : isDownloaded ? (
+                <div className="flex items-center space-x-1.5">
+                  <Check size={16} className="text-deep-teal" />
+                  <span>Downloaded for Offline Use ✓</span>
+                </div>
+              ) : (
+                <div className="flex items-center space-x-1.5">
+                  <Download size={15} />
+                  <span>Download for Offline Use</span>
+                </div>
+              )}
+            </button>
           </div>
         </div>
       </div>
@@ -1414,15 +1498,6 @@ export const TripPlanScreen: React.FC = () => {
         isOpen={!!askPlaceName}
         onClose={() => setAskPlaceName(null)}
       />
-
-      {/* Download PDF Options Sheet */}
-      {trip && (
-        <DownloadPdfOptionsSheet
-          isOpen={isPdfOptionsOpen}
-          onClose={() => setIsPdfOptionsOpen(false)}
-          trip={trip}
-        />
-      )}
     </div>
   );
 };

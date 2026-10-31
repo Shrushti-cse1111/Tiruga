@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Tiruga</string>
+    <string name="title_activity_main">Tiruga</string>
+    <string name="package_name">com.tiruga.app</string>
+    <string name="custom_url_scheme">com.tiruga.app</string>
+</resources>

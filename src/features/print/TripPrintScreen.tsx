@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import {
   Printer,
@@ -16,7 +16,8 @@ import {
   BookOpen,
   PhoneCall,
   Sparkles,
-  Info
+  Info,
+  Map as MapIcon
 } from 'lucide-react';
 import { Trip, Day, TripItem, TransportOption } from '../../data/types';
 import { getTrip } from '../../lib/db';
@@ -28,12 +29,16 @@ import { getPdfString } from '../../i18n';
 import { SEED_HAMPI_TRIP } from '../../data/seedTrip';
 import { SEED_PHRASES } from '../../data/seedPhrases';
 import { SEED_TRANSPORT_OPTIONS } from '../../data/seedTransport';
+import attractionsCatalog from '../../../data/attractions.json';
+import { buildRoute, haversineKm, estimateMinutes } from '../../lib/route';
+import { RouteSketch } from '../../components/map/RouteSketch';
 import '../../styles/print.css';
 
 interface PrintOptions {
   includeItinerary: boolean;
   includeCosts: boolean;
   includeTravel: boolean;
+  includeRouteMap: boolean;
   includePlanB: boolean;
   includePlaylist: boolean;
   includePhrases: boolean;
@@ -96,6 +101,7 @@ export const TripPrintScreen: React.FC = () => {
     includeItinerary: true, // always included
     includeCosts: navOptions?.includeCosts ?? queryParams.get('costs') !== '0',
     includeTravel: navOptions?.includeTravel ?? queryParams.get('travel') !== '0',
+    includeRouteMap: navOptions?.includeRouteMap ?? queryParams.get('map') !== '0',
     includePlanB: navOptions?.includePlanB ?? queryParams.get('planb') === '1',
     includePlaylist: navOptions?.includePlaylist ?? queryParams.get('playlist') !== '0',
     includePhrases: navOptions?.includePhrases ?? queryParams.get('phrases') !== '0',
@@ -194,6 +200,22 @@ export const TripPrintScreen: React.FC = () => {
     }
     return null;
   }, [options.includeName, user?.displayName]);
+
+  // Route calculation for print
+  const attractionsById = useMemo(() => {
+    const map: Record<string, any> = {};
+    if (Array.isArray(attractionsCatalog)) {
+      attractionsCatalog.forEach((att: any) => {
+        if (att && att.id) map[att.id] = att;
+      });
+    }
+    return map;
+  }, []);
+
+  const tripRoute = useMemo(() => {
+    if (!trip) return null;
+    return buildRoute(trip, attractionsById);
+  }, [trip, attractionsById]);
 
   // Travel style & type
   const travelStyle = trip?.travelStyle || getPreferences()?.travelStyle || 'Balanced';
@@ -739,6 +761,78 @@ export const TripPrintScreen: React.FC = () => {
                 </div>
               );
             })}
+          </section>
+        )}
+
+        {/* ============================================================== */}
+        {/* SECTION: ROUTE MAP SKETCH & STOPS                              */}
+        {/* ============================================================== */}
+        {options.includeRouteMap && tripRoute && tripRoute.days.length > 0 && (
+          <section className="avoid-break space-y-4 pt-3">
+            <div className="border-b border-deep-teal pb-1 flex items-center justify-between">
+              <h2 className="text-base font-bold text-deep-teal font-heading">
+                {lang === 'kn' ? 'ಪ್ರವಾಸ ಮಾರ್ಗ ನಕ್ಷೆ' : 'Trip Route Map'}
+              </h2>
+              <span className="text-[9pt] text-muted-text italic">
+                Route sketch, not to scale. Distances are approximate.
+              </span>
+            </div>
+
+            <div className="rounded-xl border border-[#D2DFD8] bg-[#FAF8F2] overflow-hidden p-3">
+              <RouteSketch
+                days={tripRoute.days}
+                activeDay="all"
+                className="w-full h-64 border-none shadow-none"
+                disclaimerText="Route sketch, not to scale. Distances are approximate."
+              />
+            </div>
+
+            {tripRoute.days.map((day) => (
+              <div key={day.dayNumber} className="avoid-break space-y-2">
+                <h3 className="font-bold text-deep-teal text-xs font-heading">
+                  Day {day.dayNumber} Route Segments
+                </h3>
+                <table className="w-full text-[9.5pt] border border-[#E2DFD3]">
+                  <thead>
+                    <tr>
+                      <th className="w-12 text-center">#</th>
+                      <th>Stop Attraction</th>
+                      <th className="w-28 text-right">To Next Stop</th>
+                      <th className="w-32 text-right">Est. Transit Time</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {day.stops.map((stop, sIdx) => {
+                      const nextStop = day.stops[sIdx + 1];
+                      const distKm = nextStop ? haversineKm(stop, nextStop) : 0;
+                      const mins = nextStop ? estimateMinutes(distKm, 'car') : 0;
+                      return (
+                        <tr key={stop.attractionId + sIdx}>
+                          <td className="text-center font-bold text-deep-teal font-mono">
+                            {stop.order}
+                          </td>
+                          <td>
+                            <span className="font-semibold text-text-main block">{stop.name}</span>
+                            <span className="text-[8pt] text-muted-text font-mono">
+                              ({stop.lat.toFixed(4)}, {stop.lng.toFixed(4)})
+                            </span>
+                          </td>
+                          <td className="text-right font-mono text-xs">
+                            {nextStop ? `${distKm.toFixed(1)} km` : '— (Final stop)'}
+                          </td>
+                          <td className="text-right text-xs text-muted-text">
+                            {nextStop ? `~${mins} min (car)` : '—'}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            ))}
+            <p className="text-[8.5pt] text-muted-text italic text-center">
+              Route sketch, not to scale. Distances are approximate.
+            </p>
           </section>
         )}
 

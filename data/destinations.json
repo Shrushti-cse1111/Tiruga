@@ -5,9 +5,22 @@
     "nameKn": "ಹಂಪಿ",
     "kannadaName": "ಹಂಪಿ",
     "district": "Vijayanagara",
-    "categories": ["Heritage", "Culture", "Adventure"],
-    "tags": ["UNESCO", "Temples", "Architecture", "Sunsets"],
-    "highlights": ["Virupaksha Temple", "Stone Chariot", "Matanga Hill Sunset"],
+    "categories": [
+      "Heritage",
+      "Culture",
+      "Adventure"
+    ],
+    "tags": [
+      "UNESCO",
+      "Temples",
+      "Architecture",
+      "Sunsets"
+    ],
+    "highlights": [
+      "Virupaksha Temple",
+      "Stone Chariot",
+      "Matanga Hill Sunset"
+    ],
     "description": "UNESCO World Heritage boulder landscape, monumental ruins of Vijayanagara, and serene Tungabhadra sunsets.",
     "image": "https://images.unsplash.com/photo-1600100397608-f010f443b74e?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "₹3,000 - ₹5,000",
@@ -15,7 +28,13 @@
     "recommendedDays": 3,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["Jolada Rotti Meals", "Banana Leaf Thali", "Davangere Benne Dosa"]
+    "foodHighlights": [
+      "Jolada Rotti Meals",
+      "Banana Leaf Thali",
+      "Davangere Benne Dosa"
+    ],
+    "lat": 15.335,
+    "lng": 76.46
   },
   {
     "id": "mysuru",
@@ -23,9 +42,22 @@
     "nameKn": "ಮೈಸೂರು",
     "kannadaName": "ಮೈಸೂರು",
     "district": "Mysuru",
-    "categories": ["Heritage", "Culture", "Food"],
-    "tags": ["Palaces", "Silk", "Sandalwood", "Heritage"],
-    "highlights": ["Amba Vilas Palace", "Chamundi Hill", "Devaraja Market"],
+    "categories": [
+      "Heritage",
+      "Culture",
+      "Food"
+    ],
+    "tags": [
+      "Palaces",
+      "Silk",
+      "Sandalwood",
+      "Heritage"
+    ],
+    "highlights": [
+      "Amba Vilas Palace",
+      "Chamundi Hill",
+      "Devaraja Market"
+    ],
     "description": "The City of Palaces renowned for royal architecture, silk weavers, sandalwood heritage, and authentic Mysore Pak.",
     "image": "https://images.unsplash.com/photo-1590766940554-634a7ed41450?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "₹3,000 - ₹5,000",
@@ -33,7 +65,13 @@
     "recommendedDays": 2,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["Mylari Dosa", "Mysore Pak", "Filter Coffee"]
+    "foodHighlights": [
+      "Mylari Dosa",
+      "Mysore Pak",
+      "Filter Coffee"
+    ],
+    "lat": 12.3052,
+    "lng": 76.6552
   },
   {
     "id": "coorg",
@@ -41,9 +79,22 @@
     "nameKn": "ಕೊಡಗು",
     "kannadaName": "ಕೊಡಗು",
     "district": "Kodagu",
-    "categories": ["Nature", "Food", "Culture"],
-    "tags": ["Coffee", "Hills", "Waterfalls", "Western Ghats"],
-    "highlights": ["Abbey Falls", "Raja Seat", "Namdroling Golden Temple"],
+    "categories": [
+      "Nature",
+      "Food",
+      "Culture"
+    ],
+    "tags": [
+      "Coffee",
+      "Hills",
+      "Waterfalls",
+      "Western Ghats"
+    ],
+    "highlights": [
+      "Abbey Falls",
+      "Raja Seat",
+      "Namdroling Golden Temple"
+    ],
     "description": "Misty Western Ghats coffee plantations, fragrant cardamom hills, Abbey falls, and authentic Kodava cuisine.",
     "image": "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "₹5,000 - ₹10,000",
@@ -51,7 +102,13 @@
     "recommendedDays": 3,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["Pandi Curry", "Kadambuttu (Rice Dumplings)", "Coorg Fresh Roast Coffee"]
+    "foodHighlights": [
+      "Pandi Curry",
+      "Kadambuttu (Rice Dumplings)",
+      "Coorg Fresh Roast Coffee"
+    ],
+    "lat": 12.4244,
+    "lng": 75.7382
   },
   {
     "id": "gokarna",
@@ -59,9 +116,22 @@
     "nameKn": "ಗೋಕರ್ಣ",
     "kannadaName": "ಗೋಕರ್ಣ",
     "district": "Uttara Kannada",
-    "categories": ["Beaches", "Adventure", "Heritage"],
-    "tags": ["Coastal", "Trekking", "Temples", "Arabian Sea"],
-    "highlights": ["Om Beach Trek", "Kudle Beach", "Mahabaleshwar Temple"],
+    "categories": [
+      "Beaches",
+      "Adventure",
+      "Heritage"
+    ],
+    "tags": [
+      "Coastal",
+      "Trekking",
+      "Temples",
+      "Arabian Sea"
+    ],
+    "highlights": [
+      "Om Beach Trek",
+      "Kudle Beach",
+      "Mahabaleshwar Temple"
+    ],
     "description": "Rugged cliffside beaches, Om Beach trekking, Arabian Sea sunsets, and the ancient Mahabaleshwar temple.",
     "image": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "₹3,000 - ₹5,000",
@@ -69,7 +139,13 @@
     "recommendedDays": 3,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["Karavali Seafood Thali", "Gadbad Ice Cream", "Toddy Palm Jaggery"]
+    "foodHighlights": [
+      "Karavali Seafood Thali",
+      "Gadbad Ice Cream",
+      "Toddy Palm Jaggery"
+    ],
+    "lat": 14.5479,
+    "lng": 74.3188
   },
   {
     "id": "chikmagalur",
@@ -77,9 +153,21 @@
     "nameKn": "ಚಿಕ್ಕಮಗಳೂರು",
     "kannadaName": "ಚಿಕ್ಕಮಗಳೂರು",
     "district": "Chikkamagaluru",
-    "categories": ["Nature", "Adventure"],
-    "tags": ["Coffee Estates", "Trekking", "High Peaks", "Mullayanagiri"],
-    "highlights": ["Mullayanagiri Peak", "Baba Budangiri", "Coffee Estates"],
+    "categories": [
+      "Nature",
+      "Adventure"
+    ],
+    "tags": [
+      "Coffee Estates",
+      "Trekking",
+      "High Peaks",
+      "Mullayanagiri"
+    ],
+    "highlights": [
+      "Mullayanagiri Peak",
+      "Baba Budangiri",
+      "Coffee Estates"
+    ],
     "description": "The birthplace of Indian coffee, crowning peak of Mullayanagiri, and tranquil cloud valleys.",
     "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "₹5,000 - ₹10,000",
@@ -87,7 +175,13 @@
     "recommendedDays": 2,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["Akki Rotti", "Kaadu Menasu Rasam", "Single-Origin Arabica"]
+    "foodHighlights": [
+      "Akki Rotti",
+      "Kaadu Menasu Rasam",
+      "Single-Origin Arabica"
+    ],
+    "lat": 13.3161,
+    "lng": 75.772
   },
   {
     "id": "udupi",
@@ -95,9 +189,22 @@
     "nameKn": "ಉಡುಪಿ",
     "kannadaName": "ಉಡುಪಿ",
     "district": "Udupi",
-    "categories": ["Food", "Beaches", "Culture"],
-    "tags": ["Cuisine", "Temples", "Islands", "Coastal"],
-    "highlights": ["Sri Krishna Matha", "St. Mary’s Island", "Malpe Beach"],
+    "categories": [
+      "Food",
+      "Beaches",
+      "Culture"
+    ],
+    "tags": [
+      "Cuisine",
+      "Temples",
+      "Islands",
+      "Coastal"
+    ],
+    "highlights": [
+      "Sri Krishna Matha",
+      "St. Mary’s Island",
+      "Malpe Beach"
+    ],
     "description": "Pristine coastal town renowned for Sri Krishna Matha, St. Mary’s volcanic basalt islands, and authentic Udupi meals.",
     "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "Under ₹3,000",
@@ -105,7 +212,13 @@
     "recommendedDays": 2,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["Udupi Oota (Banana Leaf Thali)", "Goli Baje", "Neer Dosa with Chutney"]
+    "foodHighlights": [
+      "Udupi Oota (Banana Leaf Thali)",
+      "Goli Baje",
+      "Neer Dosa with Chutney"
+    ],
+    "lat": 13.3409,
+    "lng": 74.7421
   },
   {
     "id": "badami",
@@ -113,9 +226,22 @@
     "nameKn": "ಬಾದಾಮಿ",
     "kannadaName": "ಬಾದಾಮಿ",
     "district": "Bagalkote",
-    "categories": ["Heritage", "Culture", "Adventure"],
-    "tags": ["Chalukya", "Cave Temples", "Red Sandstone", "Agastya Lake"],
-    "highlights": ["Badami Cave Temples", "Agastya Lake", "Bhuthanatha Temples"],
+    "categories": [
+      "Heritage",
+      "Culture",
+      "Adventure"
+    ],
+    "tags": [
+      "Chalukya",
+      "Cave Temples",
+      "Red Sandstone",
+      "Agastya Lake"
+    ],
+    "highlights": [
+      "Badami Cave Temples",
+      "Agastya Lake",
+      "Bhuthanatha Temples"
+    ],
     "description": "Capital of the early Chalukyas famed for 6th-century rock-cut sandstone cave sanctuaries and the serene Agastya Lake.",
     "image": "https://images.unsplash.com/photo-1600100397608-f010f443b74e?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "Under ₹3,000",
@@ -123,7 +249,13 @@
     "recommendedDays": 2,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["Shenga Holige", "Jowar Rotti with Badanekayi", "Spiced Buttermilk"]
+    "foodHighlights": [
+      "Shenga Holige",
+      "Jowar Rotti with Badanekayi",
+      "Spiced Buttermilk"
+    ],
+    "lat": 15.9187,
+    "lng": 75.6766
   },
   {
     "id": "pattadakal",
@@ -131,9 +263,21 @@
     "nameKn": "ಪಟ್ಟದಕಲ್ಲು",
     "kannadaName": "ಪಟ್ಟದಕಲ್ಲು",
     "district": "Bagalkote",
-    "categories": ["Heritage", "Culture"],
-    "tags": ["UNESCO", "Chalukya", "Dravida & Nagara", "Malaprabha"],
-    "highlights": ["Virupaksha Temple Pattadakal", "Mallikarjuna Complex", "Papanatha Temple"],
+    "categories": [
+      "Heritage",
+      "Culture"
+    ],
+    "tags": [
+      "UNESCO",
+      "Chalukya",
+      "Dravida & Nagara",
+      "Malaprabha"
+    ],
+    "highlights": [
+      "Virupaksha Temple Pattadakal",
+      "Mallikarjuna Complex",
+      "Papanatha Temple"
+    ],
     "description": "UNESCO World Heritage site illustrating the harmonious fusion of Nagara and Dravidian architectural idioms on the Malaprabha river.",
     "image": "https://images.unsplash.com/photo-1590766940554-634a7ed41450?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "Under ₹3,000",
@@ -141,7 +285,13 @@
     "recommendedDays": 1,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["North Karnataka Khara Mandakki", "Mirchi Bajji", "Sugarcane Juice"]
+    "foodHighlights": [
+      "North Karnataka Khara Mandakki",
+      "Mirchi Bajji",
+      "Sugarcane Juice"
+    ],
+    "lat": 15.949,
+    "lng": 75.816
   },
   {
     "id": "aihole",
@@ -149,9 +299,20 @@
     "nameKn": "ಐಹೊಳೆ",
     "kannadaName": "ಐಹೊಳೆ",
     "district": "Bagalkote",
-    "categories": ["Heritage", "Culture"],
-    "tags": ["Cradle of Architecture", "Chalukyan Experimentation", "Durga Temple"],
-    "highlights": ["Durga Temple Apsidal", "Lad Khan Temple", "Ravanaphadi Cave"],
+    "categories": [
+      "Heritage",
+      "Culture"
+    ],
+    "tags": [
+      "Cradle of Architecture",
+      "Chalukyan Experimentation",
+      "Durga Temple"
+    ],
+    "highlights": [
+      "Durga Temple Apsidal",
+      "Lad Khan Temple",
+      "Ravanaphadi Cave"
+    ],
     "description": "The cradle of Hindu temple architecture with over 120 stone temples spanning experimental apsidal and curvilinear styles.",
     "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "Under ₹3,000",
@@ -159,7 +320,13 @@
     "recommendedDays": 1,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["Ilkal Poha", "Curd Avalakki", "Jaggery Peanut Chikki"]
+    "foodHighlights": [
+      "Ilkal Poha",
+      "Curd Avalakki",
+      "Jaggery Peanut Chikki"
+    ],
+    "lat": 16.021,
+    "lng": 75.882
   },
   {
     "id": "sakleshpur",
@@ -167,9 +334,21 @@
     "nameKn": "ಸಕಲೇಶಪುರ",
     "kannadaName": "ಸಕಲೇಶಪುರ",
     "district": "Hassan",
-    "categories": ["Nature", "Adventure"],
-    "tags": ["Western Ghats", "Trekking", "Star Fort", "Plantations"],
-    "highlights": ["Manjarabad Star Fort", "Bisle Ghat Viewpoint", "Green Route Trek"],
+    "categories": [
+      "Nature",
+      "Adventure"
+    ],
+    "tags": [
+      "Western Ghats",
+      "Trekking",
+      "Star Fort",
+      "Plantations"
+    ],
+    "highlights": [
+      "Manjarabad Star Fort",
+      "Bisle Ghat Viewpoint",
+      "Green Route Trek"
+    ],
     "description": "Enchanting hill town nestled in the biodiversity hotspot of the Western Ghats with star-shaped fortresses and cloud ridges.",
     "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "₹3,000 - ₹5,000",
@@ -177,7 +356,13 @@
     "recommendedDays": 2,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["Bamboo Shoot Curry", "Jackfruit Biryani", "Cardamom Infused Chai"]
+    "foodHighlights": [
+      "Bamboo Shoot Curry",
+      "Jackfruit Biryani",
+      "Cardamom Infused Chai"
+    ],
+    "lat": 12.9438,
+    "lng": 75.7865
   },
   {
     "id": "kudremukh",
@@ -185,9 +370,21 @@
     "nameKn": "ಕುದುರೆಮುಖ",
     "kannadaName": "ಕುದುರೆಮುಖ",
     "district": "Chikkamagaluru",
-    "categories": ["Nature", "Adventure"],
-    "tags": ["Horse Face Peak", "National Park", "Grasslands", "Shola Forests"],
-    "highlights": ["Kudremukh Peak Trek", "Hanuman Gundi Falls", "Kalasa Temple"],
+    "categories": [
+      "Nature",
+      "Adventure"
+    ],
+    "tags": [
+      "Horse Face Peak",
+      "National Park",
+      "Grasslands",
+      "Shola Forests"
+    ],
+    "highlights": [
+      "Kudremukh Peak Trek",
+      "Hanuman Gundi Falls",
+      "Kalasa Temple"
+    ],
     "description": "Majestic horse-face peak rising above rolling shola-grasslands inside one of Karnataka's grandest rainforest national parks.",
     "image": "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "₹3,000 - ₹5,000",
@@ -195,7 +392,13 @@
     "recommendedDays": 2,
     "familySuitable": false,
     "studentSuitable": true,
-    "foodHighlights": ["Malnad Huli Tovve", "Pathrode", "Wild Honey"]
+    "foodHighlights": [
+      "Malnad Huli Tovve",
+      "Pathrode",
+      "Wild Honey"
+    ],
+    "lat": 13.2185,
+    "lng": 75.2559
   },
   {
     "id": "murudeshwar",
@@ -203,9 +406,22 @@
     "nameKn": "ಮುರುಡೇಶ್ವರ",
     "kannadaName": "ಮುರುಡೇಶ್ವರ",
     "district": "Uttara Kannada",
-    "categories": ["Beaches", "Culture", "Heritage"],
-    "tags": ["Shiva Statue", "Raja Gopura", "Arabian Sea", "Scuba Diving"],
-    "highlights": ["Giant Shiva Statue", "20-Storey Raja Gopura", "Netrani Island Diving"],
+    "categories": [
+      "Beaches",
+      "Culture",
+      "Heritage"
+    ],
+    "tags": [
+      "Shiva Statue",
+      "Raja Gopura",
+      "Arabian Sea",
+      "Scuba Diving"
+    ],
+    "highlights": [
+      "Giant Shiva Statue",
+      "20-Storey Raja Gopura",
+      "Netrani Island Diving"
+    ],
     "description": "Colossal world-second tallest Shiva statue set against three sides of the Arabian Sea with towering modern Dravidian gopuras.",
     "image": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "Under ₹3,000",
@@ -213,7 +429,13 @@
     "recommendedDays": 2,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["Coastal Fish Curry", "Mangalore Buns", "Coconut Water"]
+    "foodHighlights": [
+      "Coastal Fish Curry",
+      "Mangalore Buns",
+      "Coconut Water"
+    ],
+    "lat": 14.094,
+    "lng": 74.4899
   },
   {
     "id": "srirangapatna",
@@ -221,9 +443,21 @@
     "nameKn": "ಶ್ರೀರಂಗಪಟ್ಟಣ",
     "kannadaName": "ಶ್ರೀರಂಗಪಟ್ಟಣ",
     "district": "Mandya",
-    "categories": ["Heritage", "Culture"],
-    "tags": ["Kaveri Island", "Tipu Sultan", "Ranganathaswamy", "Fort"],
-    "highlights": ["Sri Ranganathaswamy Temple", "Tipu’s Summer Palace (Daria Daulat)", "Gumbaz"],
+    "categories": [
+      "Heritage",
+      "Culture"
+    ],
+    "tags": [
+      "Kaveri Island",
+      "Tipu Sultan",
+      "Ranganathaswamy",
+      "Fort"
+    ],
+    "highlights": [
+      "Sri Ranganathaswamy Temple",
+      "Tipu’s Summer Palace (Daria Daulat)",
+      "Gumbaz"
+    ],
     "description": "Island citadel on river Kaveri steeped in Ganga, Hoysala, and Vijayanagara history and the capital fortress of Tipu Sultan.",
     "image": "https://images.unsplash.com/photo-1590766940554-634a7ed41450?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "Under ₹3,000",
@@ -231,7 +465,13 @@
     "recommendedDays": 1,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["Maddur Vada", "Tender Coconut Kheer", "Ragi Mudde with Sambar"]
+    "foodHighlights": [
+      "Maddur Vada",
+      "Tender Coconut Kheer",
+      "Ragi Mudde with Sambar"
+    ],
+    "lat": 12.4234,
+    "lng": 76.6946
   },
   {
     "id": "bengaluru",
@@ -239,9 +479,22 @@
     "nameKn": "ಬೆಂಗಳೂರು",
     "kannadaName": "ಬೆಂಗಳೂರು",
     "district": "Bengaluru Urban",
-    "categories": ["Heritage", "Culture", "Food"],
-    "tags": ["Garden City", "Vidhana Soudha", "Cubbon Park", "Tiffin Rooms"],
-    "highlights": ["Bangalore Palace", "Lalbagh Botanical Garden", "Cubbon Park & Vidhana Soudha"],
+    "categories": [
+      "Heritage",
+      "Culture",
+      "Food"
+    ],
+    "tags": [
+      "Garden City",
+      "Vidhana Soudha",
+      "Cubbon Park",
+      "Tiffin Rooms"
+    ],
+    "highlights": [
+      "Bangalore Palace",
+      "Lalbagh Botanical Garden",
+      "Cubbon Park & Vidhana Soudha"
+    ],
     "description": "Karnataka’s cosmopolitan capital combining Tudor-style royal palaces, sprawling British-era botanical gardens, and legendary tiffin culture.",
     "image": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "₹5,000 - ₹10,000",
@@ -249,7 +502,13 @@
     "recommendedDays": 3,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["CTR Benne Masala Dosa", "Brahmins' Idli Vada", "Vidyarthi Bhavan Dosa"]
+    "foodHighlights": [
+      "CTR Benne Masala Dosa",
+      "Brahmins' Idli Vada",
+      "Vidyarthi Bhavan Dosa"
+    ],
+    "lat": 12.9716,
+    "lng": 77.5946
   },
   {
     "id": "shivamogga",
@@ -257,9 +516,21 @@
     "nameKn": "ಶಿವಮೊಗ್ಗ",
     "kannadaName": "ಶಿವಮೊಗ್ಗ",
     "district": "Shivamogga",
-    "categories": ["Nature", "Adventure"],
-    "tags": ["Waterfalls", "Sharavathi", "Rainforest", "Sahyadri"],
-    "highlights": ["Jog Falls (Sharavathi)", "Sakrebyle Elephant Camp", "Gajanur Dam"],
+    "categories": [
+      "Nature",
+      "Adventure"
+    ],
+    "tags": [
+      "Waterfalls",
+      "Sharavathi",
+      "Rainforest",
+      "Sahyadri"
+    ],
+    "highlights": [
+      "Jog Falls (Sharavathi)",
+      "Sakrebyle Elephant Camp",
+      "Gajanur Dam"
+    ],
     "description": "Gateway to the Western Ghats known for the majestic 253-metre plunge of Jog Falls and lush Sharavathi river valleys.",
     "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
     "budgetLevel": "₹3,000 - ₹5,000",
@@ -267,6 +538,12 @@
     "recommendedDays": 2,
     "familySuitable": true,
     "studentSuitable": true,
-    "foodHighlights": ["Appe Payasa", "Malnad Thali", "Keladi Jackfruit Chips"]
+    "foodHighlights": [
+      "Appe Payasa",
+      "Malnad Thali",
+      "Keladi Jackfruit Chips"
+    ],
+    "lat": 13.9299,
+    "lng": 75.5681
   }
 ]

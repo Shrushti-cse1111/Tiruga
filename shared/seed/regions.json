@@ -1,0 +1,427 @@
+[
+  {
+    "id": "reg_hampi",
+    "slug": "hampi-badami",
+    "name": {
+      "en": "Hampi & Badami Heritage Valley",
+      "kn": "ಹಂಪಿ ಮತ್ತು ಬದಾಮಿ ಪರಂಪರೆ ಕಣಿವೆ",
+      "mr": "हंपी आणि बदामी हेरिटेज व्हॅली"
+    },
+    "centerLat": 15.335,
+    "centerLng": 76.46,
+    "climatology": [
+      {
+        "rainProb": 2,
+        "tempMin": 18,
+        "tempMax": 31,
+        "sunset": "18:10"
+      },
+      {
+        "rainProb": 3,
+        "tempMin": 20,
+        "tempMax": 34,
+        "sunset": "18:22"
+      },
+      {
+        "rainProb": 5,
+        "tempMin": 23,
+        "tempMax": 37,
+        "sunset": "18:31"
+      },
+      {
+        "rainProb": 15,
+        "tempMin": 26,
+        "tempMax": 39,
+        "sunset": "18:38"
+      },
+      {
+        "rainProb": 30,
+        "tempMin": 26,
+        "tempMax": 38,
+        "sunset": "18:47"
+      },
+      {
+        "rainProb": 60,
+        "tempMin": 24,
+        "tempMax": 33,
+        "sunset": "18:56"
+      },
+      {
+        "rainProb": 75,
+        "tempMin": 23,
+        "tempMax": 31,
+        "sunset": "18:58"
+      },
+      {
+        "rainProb": 70,
+        "tempMin": 23,
+        "tempMax": 30,
+        "sunset": "18:49"
+      },
+      {
+        "rainProb": 65,
+        "tempMin": 22,
+        "tempMax": 31,
+        "sunset": "18:30"
+      },
+      {
+        "rainProb": 35,
+        "tempMin": 21,
+        "tempMax": 32,
+        "sunset": "18:10"
+      },
+      {
+        "rainProb": 10,
+        "tempMin": 19,
+        "tempMax": 31,
+        "sunset": "17:58"
+      },
+      {
+        "rainProb": 4,
+        "tempMin": 17,
+        "tempMax": 30,
+        "sunset": "18:00"
+      }
+    ]
+  },
+  {
+    "id": "reg_mysuru",
+    "slug": "bengaluru-mysuru",
+    "name": {
+      "en": "Bengaluru & Mysuru Royal Circuit",
+      "kn": "ಬೆಂಗಳೂರು ಮತ್ತು ಮೈಸೂರು ರಾಜಮನೆತನ ಪ್ರವಾಸ",
+      "mr": "बंगळुरू आणि म्हैसूर रॉयल सर्किट"
+    },
+    "centerLat": 12.2958,
+    "centerLng": 76.6394,
+    "climatology": [
+      {
+        "rainProb": 4,
+        "tempMin": 17,
+        "tempMax": 30,
+        "sunset": "18:14"
+      },
+      {
+        "rainProb": 5,
+        "tempMin": 18,
+        "tempMax": 32,
+        "sunset": "18:25"
+      },
+      {
+        "rainProb": 12,
+        "tempMin": 20,
+        "tempMax": 34,
+        "sunset": "18:31"
+      },
+      {
+        "rainProb": 35,
+        "tempMin": 21,
+        "tempMax": 34,
+        "sunset": "18:34"
+      },
+      {
+        "rainProb": 55,
+        "tempMin": 21,
+        "tempMax": 32,
+        "sunset": "18:41"
+      },
+      {
+        "rainProb": 65,
+        "tempMin": 20,
+        "tempMax": 29,
+        "sunset": "18:49"
+      },
+      {
+        "rainProb": 75,
+        "tempMin": 20,
+        "tempMax": 28,
+        "sunset": "18:52"
+      },
+      {
+        "rainProb": 70,
+        "tempMin": 20,
+        "tempMax": 28,
+        "sunset": "18:45"
+      },
+      {
+        "rainProb": 65,
+        "tempMin": 20,
+        "tempMax": 29,
+        "sunset": "18:29"
+      },
+      {
+        "rainProb": 60,
+        "tempMin": 20,
+        "tempMax": 30,
+        "sunset": "18:11"
+      },
+      {
+        "rainProb": 30,
+        "tempMin": 18,
+        "tempMax": 29,
+        "sunset": "18:00"
+      },
+      {
+        "rainProb": 10,
+        "tempMin": 16,
+        "tempMax": 29,
+        "sunset": "18:03"
+      }
+    ]
+  },
+  {
+    "id": "reg_coorg",
+    "slug": "coorg-chikkamagaluru",
+    "name": {
+      "en": "Coorg & Chikkamagaluru Mist Hills",
+      "kn": "ಕೂರ್ಗ್ ಮತ್ತು ಚಿಕ್ಕಮಗಳೂರು ಮಂಜಿನ ಗಿರಿಧಾಮ",
+      "mr": "कूर्ग आणि चिकमंगळूर हिल्स"
+    },
+    "centerLat": 12.4244,
+    "centerLng": 75.7382,
+    "climatology": [
+      {
+        "rainProb": 2,
+        "tempMin": 18,
+        "tempMax": 31,
+        "sunset": "18:10"
+      },
+      {
+        "rainProb": 3,
+        "tempMin": 20,
+        "tempMax": 34,
+        "sunset": "18:22"
+      },
+      {
+        "rainProb": 5,
+        "tempMin": 23,
+        "tempMax": 37,
+        "sunset": "18:31"
+      },
+      {
+        "rainProb": 15,
+        "tempMin": 26,
+        "tempMax": 39,
+        "sunset": "18:38"
+      },
+      {
+        "rainProb": 30,
+        "tempMin": 26,
+        "tempMax": 38,
+        "sunset": "18:47"
+      },
+      {
+        "rainProb": 60,
+        "tempMin": 24,
+        "tempMax": 33,
+        "sunset": "18:56"
+      },
+      {
+        "rainProb": 75,
+        "tempMin": 23,
+        "tempMax": 31,
+        "sunset": "18:58"
+      },
+      {
+        "rainProb": 70,
+        "tempMin": 23,
+        "tempMax": 30,
+        "sunset": "18:49"
+      },
+      {
+        "rainProb": 65,
+        "tempMin": 22,
+        "tempMax": 31,
+        "sunset": "18:30"
+      },
+      {
+        "rainProb": 35,
+        "tempMin": 21,
+        "tempMax": 32,
+        "sunset": "18:10"
+      },
+      {
+        "rainProb": 10,
+        "tempMin": 19,
+        "tempMax": 31,
+        "sunset": "17:58"
+      },
+      {
+        "rainProb": 4,
+        "tempMin": 17,
+        "tempMax": 30,
+        "sunset": "18:00"
+      }
+    ]
+  },
+  {
+    "id": "reg_coast",
+    "slug": "coast",
+    "name": {
+      "en": "Karavali Coast (Udupi & Gokarna)",
+      "kn": "ಕರಾವಳಿ ತೀರ (ಉಡುಪಿ ಮತ್ತು ಗೋಕರ್ಣ)",
+      "mr": "करावेली किनारपट्टी (उडुपी आणि गोकर्ण)"
+    },
+    "centerLat": 13.3409,
+    "centerLng": 74.7421,
+    "climatology": [
+      {
+        "rainProb": 2,
+        "tempMin": 18,
+        "tempMax": 31,
+        "sunset": "18:10"
+      },
+      {
+        "rainProb": 3,
+        "tempMin": 20,
+        "tempMax": 34,
+        "sunset": "18:22"
+      },
+      {
+        "rainProb": 5,
+        "tempMin": 23,
+        "tempMax": 37,
+        "sunset": "18:31"
+      },
+      {
+        "rainProb": 15,
+        "tempMin": 26,
+        "tempMax": 39,
+        "sunset": "18:38"
+      },
+      {
+        "rainProb": 30,
+        "tempMin": 26,
+        "tempMax": 38,
+        "sunset": "18:47"
+      },
+      {
+        "rainProb": 60,
+        "tempMin": 24,
+        "tempMax": 33,
+        "sunset": "18:56"
+      },
+      {
+        "rainProb": 75,
+        "tempMin": 23,
+        "tempMax": 31,
+        "sunset": "18:58"
+      },
+      {
+        "rainProb": 70,
+        "tempMin": 23,
+        "tempMax": 30,
+        "sunset": "18:49"
+      },
+      {
+        "rainProb": 65,
+        "tempMin": 22,
+        "tempMax": 31,
+        "sunset": "18:30"
+      },
+      {
+        "rainProb": 35,
+        "tempMin": 21,
+        "tempMax": 32,
+        "sunset": "18:10"
+      },
+      {
+        "rainProb": 10,
+        "tempMin": 19,
+        "tempMax": 31,
+        "sunset": "17:58"
+      },
+      {
+        "rainProb": 4,
+        "tempMin": 17,
+        "tempMax": 30,
+        "sunset": "18:00"
+      }
+    ]
+  },
+  {
+    "id": "reg_north",
+    "slug": "north-karnataka",
+    "name": {
+      "en": "North Karnataka Heritage (Vijayapura & Kalaburagi)",
+      "kn": "ಉತ್ತರ ಕರ್ನಾಟಕ ಪರಂಪರೆ (ವಿಜಯಪುರ ಮತ್ತು ಕಲಬುರಗಿ)",
+      "mr": "उत्तर कर्नाटक वारसा (विजापूर आणि कलबुर्गी)"
+    },
+    "centerLat": 16.8302,
+    "centerLng": 75.71,
+    "climatology": [
+      {
+        "rainProb": 2,
+        "tempMin": 18,
+        "tempMax": 31,
+        "sunset": "18:10"
+      },
+      {
+        "rainProb": 3,
+        "tempMin": 20,
+        "tempMax": 34,
+        "sunset": "18:22"
+      },
+      {
+        "rainProb": 5,
+        "tempMin": 23,
+        "tempMax": 37,
+        "sunset": "18:31"
+      },
+      {
+        "rainProb": 15,
+        "tempMin": 26,
+        "tempMax": 39,
+        "sunset": "18:38"
+      },
+      {
+        "rainProb": 30,
+        "tempMin": 26,
+        "tempMax": 38,
+        "sunset": "18:47"
+      },
+      {
+        "rainProb": 60,
+        "tempMin": 24,
+        "tempMax": 33,
+        "sunset": "18:56"
+      },
+      {
+        "rainProb": 75,
+        "tempMin": 23,
+        "tempMax": 31,
+        "sunset": "18:58"
+      },
+      {
+        "rainProb": 70,
+        "tempMin": 23,
+        "tempMax": 30,
+        "sunset": "18:49"
+      },
+      {
+        "rainProb": 65,
+        "tempMin": 22,
+        "tempMax": 31,
+        "sunset": "18:30"
+      },
+      {
+        "rainProb": 35,
+        "tempMin": 21,
+        "tempMax": 32,
+        "sunset": "18:10"
+      },
+      {
+        "rainProb": 10,
+        "tempMin": 19,
+        "tempMax": 31,
+        "sunset": "17:58"
+      },
+      {
+        "rainProb": 4,
+        "tempMin": 17,
+        "tempMax": 30,
+        "sunset": "18:00"
+      }
+    ]
+  }
+]

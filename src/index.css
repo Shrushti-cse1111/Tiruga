@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 @theme {
   --color-primary-teal: #146B5B;
@@ -30,6 +31,14 @@
     --ink: #18312D;
     --muted: #60736E;
     --line: #E2DFD3;
+
+    /* Route Day Color Palette */
+    --day-1: #146B5B; /* Primary Teal */
+    --day-2: #D86D2D; /* Terracotta */
+    --day-3: #D49B28; /* Gold */
+    --day-4: #103F38; /* Deep Teal */
+    --day-5: #0E5A52; /* Mint Dark */
+    --location-pulse: #0284C7; /* Teal-Blue live dot */
   }
 
   .dark {

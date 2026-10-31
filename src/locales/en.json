@@ -229,26 +229,5 @@
     "sources_used": "Sources used: {{sources}}",
     "read_aloud": "Read aloud",
     "mic_hint": "Tap mic to speak"
-  },
-  "pdf": {
-    "download_pdf": "Download PDF",
-    "download_trip_pdf": "Download trip PDF",
-    "options_sheet_title": "Download trip PDF",
-    "itinerary_section": "Itinerary (day-by-day)",
-    "always_included": "Always included",
-    "costs_summary": "Costs summary",
-    "travel_options": "Travel options (demo data)",
-    "plan_b_changes": "Plan B changes",
-    "swara_playlist": "Swara playlist",
-    "kannada_phrases": "Kannada phrases",
-    "culture_notes": "Culture notes",
-    "emergency_safety": "Emergency and safety info",
-    "paper_size": "Paper size",
-    "include_name": "Include my name",
-    "create_pdf": "Create PDF",
-    "phone_hint": "On phones, choose Print, then Save as PDF, or use the Share menu.",
-    "print_save": "Print / Save as PDF",
-    "back": "Back",
-    "could_not_load": "We couldn't load this trip"
   }
 }

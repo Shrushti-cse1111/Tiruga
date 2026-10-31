@@ -1,0 +1,62 @@
+[
+  {
+    "id": "int_heritage",
+    "slug": "heritage",
+    "name": {
+      "en": "Heritage",
+      "kn": "ಪರಂಪರೆ",
+      "mr": "वारसा"
+    },
+    "icon": "Landmark"
+  },
+  {
+    "id": "int_nature",
+    "slug": "nature",
+    "name": {
+      "en": "Nature",
+      "kn": "ಪ್ರಕೃತಿ",
+      "mr": "निसर्ग"
+    },
+    "icon": "Trees"
+  },
+  {
+    "id": "int_food",
+    "slug": "food",
+    "name": {
+      "en": "Food",
+      "kn": "ಆಹಾರ",
+      "mr": "खाद्यसंस्कृती"
+    },
+    "icon": "Utensils"
+  },
+  {
+    "id": "int_adventure",
+    "slug": "adventure",
+    "name": {
+      "en": "Adventure",
+      "kn": "ಸಾಹಸ",
+      "mr": "साहस"
+    },
+    "icon": "Compass"
+  },
+  {
+    "id": "int_spiritual",
+    "slug": "spiritual",
+    "name": {
+      "en": "Spiritual",
+      "kn": "ಆಧ್ಯಾತ್ಮಿಕ",
+      "mr": "अध्यात्म"
+    },
+    "icon": "Sparkles"
+  },
+  {
+    "id": "int_beach",
+    "slug": "beach",
+    "name": {
+      "en": "Beach",
+      "kn": "ಕಡಲತೀರ",
+      "mr": "समुद्रकिनारा"
+    },
+    "icon": "Waves"
+  }
+]

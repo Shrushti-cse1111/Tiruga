@@ -30,7 +30,7 @@ export const config: ServerConfig = {
   seedEnabled: process.env.SEED_ENABLED === 'true',
   seedSecret: process.env.SEED_SECRET || '',
   googleApplicationCredentials: process.env.GOOGLE_APPLICATION_CREDENTIALS || '',
-  port: Number(process.env.PORT) || 3000,
+  port: Number(process.env.PORT) || 8080,
   nodeEnv: process.env.NODE_ENV || 'development',
   allowedOrigins: parsedOrigins
 };

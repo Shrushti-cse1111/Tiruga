@@ -12,7 +12,6 @@ import { SavedScreen } from './features/saved/SavedScreen';
 import { ProfileScreen } from './features/profile/ProfileScreen';
 import { AuthScreen } from './features/auth/AuthScreen';
 import { AdminScreen } from './features/admin/AdminScreen';
-import { TripPrintScreen } from './features/print/TripPrintScreen';
 import { AssistantSheet } from './features/assistant/AssistantSheet';
 import { DemoToolsPanel } from './components/common/DemoToolsPanel';
 import { LoadingSkeleton } from './components/common/CommonComponents';
@@ -35,6 +34,12 @@ const OfflineScreen = lazy(() =>
 );
 const DevAiTestScreen = lazy(() =>
   import('./features/dev/DevAiTestScreen').then((m) => ({ default: m.DevAiTestScreen }))
+);
+const TripMapScreen = lazy(() =>
+  import('./features/map/TripMapScreen').then((m) => ({ default: m.TripMapScreen }))
+);
+const TripPrintScreen = lazy(() =>
+  import('./features/print/TripPrintScreen').then((m) => ({ default: m.TripPrintScreen }))
 );
 
 const queryClient = new QueryClient({
@@ -145,14 +150,12 @@ const AppLayout: React.FC = () => {
     }
   }, []);
 
-  const isPrint = location.pathname.endsWith('/print') || location.pathname.includes('/print');
-
   const hideChrome =
-    isPrint ||
     location.pathname === '/' ||
     location.pathname === '/onboarding' ||
     location.pathname === '/start' ||
-    location.pathname === '/auth';
+    location.pathname === '/auth' ||
+    location.pathname.endsWith('/print');
 
   if (loading) {
     return (
@@ -162,27 +165,6 @@ const AppLayout: React.FC = () => {
         </div>
         <h2 className="text-2xl font-black font-heading tracking-wide">Tiruga (ತಿರು ಗ)</h2>
         <p className="text-xs text-white/70 mt-1">Connecting to Karnataka Yatri...</p>
-      </div>
-    );
-  }
-
-  // If on printable route, render full-width clean document without mobile frame
-  if (isPrint) {
-    return (
-      <div className="min-h-screen bg-white text-[#18312D]">
-        <main className="w-full">
-          <Suspense
-            fallback={
-              <div className="p-8 text-center text-sm font-semibold text-[#103F38]">
-                Loading print document...
-              </div>
-            }
-          >
-            <Routes>
-              <Route path="/trip/:id/print" element={<TripPrintScreen />} />
-            </Routes>
-          </Suspense>
-        </main>
       </div>
     );
   }
@@ -245,8 +227,10 @@ const AppLayout: React.FC = () => {
               <Route path="/kannada" element={<KannadaCompanionScreen />} />
               <Route path="/home" element={<HomeScreen />} />
               <Route path="/trip/:id" element={<TripPlanScreen />} />
+              <Route path="/trip/:id/map" element={<TripMapScreen />} />
               <Route path="/trip/:id/travel" element={<TravelScreen />} />
               <Route path="/trip/:id/planb" element={<PlanBScreen />} />
+              <Route path="/trip/:id/print" element={<TripPrintScreen />} />
               <Route path="/offline" element={<OfflineScreen />} />
               <Route path="/trip/:id/offline" element={<OfflineScreen />} />
               <Route path="/saved" element={<SavedScreen />} />

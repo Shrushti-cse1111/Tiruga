@@ -1,0 +1,47 @@
+[
+  {
+    "id": "evt_hampi_utsav",
+    "regionId": "reg_hampi",
+    "placeId": "plc_virupaksha",
+    "kind": "festival",
+    "title": {
+      "en": "Hampi Utsav Cultural Gathering",
+      "kn": "ಹಂಪಿ ಉತ್ಸವ ಸಾಂಸ್ಕೃತಿಕ ಸಮ್ಮಿಲನ",
+      "mr": "हंपी उत्सव सांस्कृतिक सोहळा"
+    },
+    "startsOn": "2026-11-03",
+    "endsOn": "2026-11-05",
+    "crowdMultiplier": 1.8,
+    "closed": false
+  },
+  {
+    "id": "evt_mysore_dasara",
+    "regionId": "reg_mysuru",
+    "placeId": "plc_mysuru_palace",
+    "kind": "festival",
+    "title": {
+      "en": "Mysuru Dasara Jumboo Savari",
+      "kn": "ಮೈಸೂರು ದಸರಾ ಜಂಬೂ ಸವಾರಿ",
+      "mr": "म्हैसूर दसरा जंबो सवारी"
+    },
+    "startsOn": "2026-10-20",
+    "endsOn": "2026-10-24",
+    "crowdMultiplier": 2.5,
+    "closed": false
+  },
+  {
+    "id": "evt_jog_monsoon_maintenance",
+    "regionId": "reg_coast",
+    "placeId": "plc_st_marys_island",
+    "kind": "weather",
+    "title": {
+      "en": "Monsoon Ferry Restrictions",
+      "kn": "ಮಳೆಗಾಲದ ಬೋಟ್ ನಿರ್ಬಂಧಗಳು",
+      "mr": "पावसाळी बोट सेवा निर्बंध"
+    },
+    "startsOn": "2026-06-01",
+    "endsOn": "2026-09-30",
+    "crowdMultiplier": 0.1,
+    "closed": true
+  }
+]

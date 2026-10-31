@@ -119,5 +119,97 @@ export function getPdfString(key: keyof typeof PDF_STRINGS['en'], lang: 'en' | '
   return dictionary[key] || PDF_STRINGS['en'][key] || key;
 }
 
+export const MAP_STRINGS = {
+  en: {
+    your_route: 'Your route',
+    map: 'Map',
+    trip_route_map: 'Trip route map',
+    all_days: 'All',
+    day: 'Day',
+    car: 'Car',
+    bus: 'Bus',
+    bike: 'Bike',
+    walk: 'Walk',
+    road_route: 'Road route',
+    straight_line_preview: 'Straight-line preview',
+    play: 'Play',
+    pause: 'Pause',
+    restart: 'Restart',
+    speed: 'Speed',
+    heading_to: 'Heading to',
+    reached_destination: "You've reached",
+    not_shown_on_map: 'Not shown on map',
+    route_preview_disclaimer: 'Route preview, not live navigation. Distances and times are approximate.',
+    route_sketch_note: 'Map tiles need an internet connection. Showing a route sketch.',
+    not_enough_locations: 'Not enough locations to draw a route',
+    open_in_maps: 'Open in Maps',
+    free: 'Free',
+    est: 'est.',
+    show_my_location: 'Show my location',
+    stop_sharing_location: 'Stop sharing',
+    location_dialog_title: 'Share your location',
+    location_dialog_desc: 'Tiruga will show your position on this map only. Your location is not sent to our servers and not stored.',
+    allow: 'Allow',
+    cancel: 'Cancel',
+    location_permission_denied: 'Location permission was denied. You can re-enable it in browser settings.',
+    location_unavailable: 'Location signal currently unavailable.',
+    location_timeout: 'Location request timed out.',
+    next_stop: 'Next stop',
+    previous_stop: 'Previous stop',
+    route_map: 'Route map',
+    route_sketch_disclaimer: 'Route sketch, not to scale. Distances are approximate.',
+    km: 'km',
+    min: 'min',
+    approx: 'approx.'
+  },
+  kn: {
+    your_route: 'ನಿಮ್ಮ ಮಾರ್ಗ',
+    map: 'ನಕ್ಷೆ',
+    trip_route_map: 'ಪ್ರವಾಸ ಮಾರ್ಗ ನಕ್ಷೆ',
+    all_days: 'ಎಲ್ಲಾ',
+    day: 'ದಿನ',
+    car: 'ಕಾರು',
+    bus: 'ಬಸ್ಸು',
+    bike: 'ಬೈಕು',
+    walk: 'ಕಾಲ್ನಡಿಗೆ',
+    road_route: 'ರಸ್ತೆ ಮಾರ್ಗ',
+    straight_line_preview: 'ನೇರ ರೇಖೆಯ ಮುನ್ನೋಟ',
+    play: 'ಪ್ಲೇ',
+    pause: 'ವಿರಾಮ',
+    restart: 'ಮರುಪ್ರಾರಂಭಿಸಿ',
+    speed: 'ವೇಗ',
+    heading_to: 'ಇತ್ತ ಸಾಗುತ್ತಿದೆ',
+    reached_destination: 'ನೀವು ತಲುಪಿದ್ದೀರಿ',
+    not_shown_on_map: 'ನಕ್ಷೆಯಲ್ಲಿ ತೋರಿಸಲಾಗಿಲ್ಲ',
+    route_preview_disclaimer: 'ಮಾರ್ಗ ಮುನ್ನೋಟ, ನೇರ ಸಂಚಾರವಲ್ಲ. ದೂರ ಮತ್ತು ಸಮಯ ಅಂದಾಜು.',
+    route_sketch_note: 'ನಕ್ಷೆಯ ಟೈಲ್‌ಗಳಿಗೆ ಇಂಟರ್ನೆಟ್ ಸಂಪರ್ಕ ಅಗತ್ಯವಿದೆ. ಮಾರ್ಗದ ರೇಖಾಚಿತ್ರವನ್ನು ತೋರಿಸಲಾಗುತ್ತಿದೆ.',
+    not_enough_locations: 'ಮಾರ್ಗ ರಚಿಸಲು ಸಾಕಷ್ಟು ಸ್ಥಳಗಳಿಲ್ಲ',
+    open_in_maps: 'ಗೂಗಲ್ ಮ್ಯಾಪ್ಸ್‌ನಲ್ಲಿ ತೆರೆಯಿರಿ',
+    free: 'ಉಚಿತ',
+    est: 'ಅಂದಾಜು',
+    show_my_location: 'ನನ್ನ ಸ್ಥಳ ತೋರಿಸಿ',
+    stop_sharing_location: 'ಸ್ಥಳ ಹಂಚಿಕೆ ನಿಲ್ಲಿಸಿ',
+    location_dialog_title: 'ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಹಂಚಿಕೊಳ್ಳಿ',
+    location_dialog_desc: 'ತಿರುಗ ನಿಮ್ಮ ಸ್ಥಾನವನ್ನು ಈ ನಕ್ಷೆಯಲ್ಲಿ ಮಾತ್ರ ತೋರಿಸುತ್ತದೆ. ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ನಮ್ಮ ಸರ್ವರ್‌ಗಳಿಗೆ ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ ಮತ್ತು ಸಂಗ್ರಹಿಸಲಾಗುವುದಿಲ್ಲ.',
+    allow: 'ಅನುಮತಿಸಿ',
+    cancel: 'ರದ್ದುಮಾಡಿ',
+    location_permission_denied: 'ಸ್ಥಳದ ಅನುಮತಿಯನ್ನು ನಿರಾಕರಿಸಲಾಗಿದೆ. ಬ್ರೌಸರ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಸಕ್ರಿಯಗೊಳಿಸಬಹುದು.',
+    location_unavailable: 'ಸ್ಥಳದ ಸಿಗ್ನಲ್ ಪ್ರಸ್ತುತ ಲಭ್ಯವಿಲ್ಲ.',
+    location_timeout: 'ಸ್ಥಳದ ವಿನಂತಿಯ ಸಮಯ ಮೀರಿದೆ.',
+    next_stop: 'ಮುಂದಿನ ನಿಲ್ದಾಣ',
+    previous_stop: 'ಹಿಂದಿನ ನಿಲ್ದಾಣ',
+    route_map: 'ಮಾರ್ಗ ನಕ್ಷೆ',
+    route_sketch_disclaimer: 'ಮಾರ್ಗ ರೇಖಾಚಿತ್ರ, ಅಳತೆಗೆ ತಕ್ಕದ್ದಲ್ಲ. ದೂರಗಳು ಅಂದಾಜು.',
+    km: 'ಕಿ.ಮೀ',
+    min: 'ನಿಮಿಷ',
+    approx: 'ಸುಮಾರು'
+  }
+} as const;
+
+export function getMapString(key: keyof typeof MAP_STRINGS['en'], lang: 'en' | 'kn' = 'en'): string {
+  const dictionary = MAP_STRINGS[lang] || MAP_STRINGS['en'];
+  return dictionary[key] || MAP_STRINGS['en'][key] || key;
+}
+
 export { i18n, changeLanguage, getI18nText };
 export default i18n;

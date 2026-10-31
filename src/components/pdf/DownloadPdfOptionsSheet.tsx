@@ -12,7 +12,8 @@ import {
   Languages,
   BookOpen,
   ShieldAlert,
-  User
+  User,
+  Map as MapIcon
 } from 'lucide-react';
 import { Trip } from '../../data/types';
 import { useLanguage } from '../../lib/languageContext';
@@ -22,6 +23,7 @@ export interface DownloadPdfOptions {
   includeItinerary: boolean; // always true
   includeCosts: boolean;
   includeTravel: boolean;
+  includeRouteMap: boolean;
   includePlanB: boolean;
   includePlaylist: boolean;
   includePhrases: boolean;
@@ -85,6 +87,7 @@ export const DownloadPdfOptionsSheet: React.FC<DownloadPdfOptionsSheetProps> = (
   // Section selections (all ON by default)
   const [includeCosts, setIncludeCosts] = useState<boolean>(true);
   const [includeTravel, setIncludeTravel] = useState<boolean>(true);
+  const [includeRouteMap, setIncludeRouteMap] = useState<boolean>(true);
   const [includePlanB, setIncludePlanB] = useState<boolean>(planBAvailable);
   const [includePlaylist, setIncludePlaylist] = useState<boolean>(playlistAvailable);
   const [includePhrases, setIncludePhrases] = useState<boolean>(true);
@@ -174,6 +177,7 @@ export const DownloadPdfOptionsSheet: React.FC<DownloadPdfOptionsSheetProps> = (
       includeItinerary: true,
       includeCosts,
       includeTravel,
+      includeRouteMap,
       includePlanB: planBAvailable && includePlanB,
       includePlaylist: playlistAvailable && includePlaylist,
       includePhrases,
@@ -187,6 +191,7 @@ export const DownloadPdfOptionsSheet: React.FC<DownloadPdfOptionsSheetProps> = (
       paper: paperSize,
       costs: includeCosts ? '1' : '0',
       travel: includeTravel ? '1' : '0',
+      map: includeRouteMap ? '1' : '0',
       planb: planBAvailable && includePlanB ? '1' : '0',
       playlist: playlistAvailable && includePlaylist ? '1' : '0',
       phrases: includePhrases ? '1' : '0',
@@ -297,6 +302,24 @@ export const DownloadPdfOptionsSheet: React.FC<DownloadPdfOptionsSheetProps> = (
                   type="checkbox"
                   checked={includeTravel}
                   onChange={(e) => setIncludeTravel(e.target.checked)}
+                  className="w-5 h-5 rounded text-deep-teal accent-deep-teal cursor-pointer"
+                />
+              </label>
+
+              {/* Route Map Sketch (44px min-height) */}
+              <label className="min-h-[44px] flex items-center justify-between p-2.5 rounded-xl border border-[#E2DFD3] hover:bg-cream/40 transition-colors cursor-pointer">
+                <div className="flex items-center space-x-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-mint/50 text-deep-teal flex items-center justify-center shrink-0">
+                    <MapIcon size={14} />
+                  </div>
+                  <span className="text-xs font-semibold text-text-main">
+                    {lang === 'kn' ? 'ಮಾರ್ಗ ನಕ್ಷೆ ವಿವರ' : 'Route map sketch'}
+                  </span>
+                </div>
+                <input
+                  type="checkbox"
+                  checked={includeRouteMap}
+                  onChange={(e) => setIncludeRouteMap(e.target.checked)}
                   className="w-5 h-5 rounded text-deep-teal accent-deep-teal cursor-pointer"
                 />
               </label>

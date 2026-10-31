@@ -11,8 +11,7 @@ import {
   Star,
   LogIn,
   X,
-  AlertTriangle,
-  FileDown
+  AlertTriangle
 } from 'lucide-react';
 import { Trip, Attraction } from '../../data/types';
 import { SEED_HAMPI_TRIP } from '../../data/seedTrip';
@@ -21,7 +20,6 @@ import { hasOfflineTrip } from '../../lib/offlineStore';
 import { useAuth } from '../../lib/auth';
 import { useLanguage } from '../../lib/languageContext';
 import { listTrips, deleteTrip, toggleSavedPlace, listSavedPlaces } from '../../lib/db';
-import { DownloadPdfOptionsSheet } from '../../components/pdf/DownloadPdfOptionsSheet';
 import {
   ImageWithFallback,
   Button,
@@ -45,8 +43,6 @@ export const SavedScreen: React.FC = () => {
 
   // Delete Trip Confirmation Modal
   const [tripToDelete, setTripToDelete] = useState<Trip | null>(null);
-  // Download Trip PDF Sheet Modal
-  const [tripForPdf, setTripForPdf] = useState<Trip | null>(null);
 
   // Load Saved Trips & Places from localStorage
   useEffect(() => {
@@ -208,32 +204,17 @@ export const SavedScreen: React.FC = () => {
 
                     <div className="p-3 flex items-center justify-between text-xs border-t border-[#F0ECE1]">
                       <span className="text-muted-text text-[11px]">Saved locally</span>
-                      <div className="flex items-center space-x-1.5">
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setTripForPdf(trip);
-                          }}
-                          aria-label="Download trip PDF"
-                          title="Download trip PDF"
-                          className="flex items-center space-x-1 px-2.5 py-1 rounded-full bg-mint/50 hover:bg-mint text-deep-teal font-bold text-[11px] transition-colors cursor-pointer"
-                        >
-                          <FileDown size={13} className="text-deep-teal" />
-                          <span>PDF</span>
-                        </button>
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setTripToDelete(trip);
-                          }}
-                          aria-label="Delete saved trip"
-                          className="text-terracotta hover:text-red-700 p-1.5 rounded-full hover:bg-rose-50 transition-colors cursor-pointer"
-                        >
-                          <Trash2 size={15} />
-                        </button>
-                      </div>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setTripToDelete(trip);
+                        }}
+                        aria-label="Delete saved trip"
+                        className="text-terracotta hover:text-red-700 p-1 rounded-full hover:bg-rose-50 transition-colors cursor-pointer"
+                      >
+                        <Trash2 size={15} />
+                      </button>
                     </div>
                   </div>
                 );
@@ -329,15 +310,6 @@ export const SavedScreen: React.FC = () => {
             </div>
           </div>
         </div>
-      )}
-
-      {/* Download Trip PDF Sheet */}
-      {tripForPdf && (
-        <DownloadPdfOptionsSheet
-          isOpen={!!tripForPdf}
-          onClose={() => setTripForPdf(null)}
-          trip={tripForPdf}
-        />
       )}
     </div>
   );

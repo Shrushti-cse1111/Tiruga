@@ -1,0 +1,482 @@
+[
+  {
+    "id": "sty_kstdc_hampi",
+    "regionId": "reg_hampi",
+    "name": {
+      "en": "KSTDC Hotel Mayura Bhuvaneshwari Kamalapura",
+      "kn": "ಕೆಎಸ್‌ಟಿಡಿಸಿ ಹೋಟೆಲ್ ಮಯೂರ ಭುವನೇಶ್ವರಿ ಕಮಲಾಪುರ",
+      "mr": "केएसटीडीसी हॉटेल मयूरा भुवनेश्वरी"
+    },
+    "lat": 15.3125,
+    "lng": 76.481,
+    "pricePerNightInr": 2200,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-KSTDC_",
+    "source": "KSTDC",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_clarks_hampi",
+    "regionId": "reg_hampi",
+    "name": {
+      "en": "Clarks Inn Hampi (Museum Road)",
+      "kn": "ಕ್ಲಾರ್ಕ್ಸ್ ಇನ್ ಹಂಪಿ",
+      "mr": "क्लार्क्स इन हंपी"
+    },
+    "lat": 15.313,
+    "lng": 76.482,
+    "pricePerNightInr": 3400,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-CLARKS",
+    "source": "KSTDC Registry",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_heritage_homestay",
+    "regionId": "reg_hampi",
+    "name": {
+      "en": "Hampi Heritage Farmers Homestay Anegundi",
+      "kn": "ಹಂಪಿ ಹೆರಿಟೇಜ್ ರೈತರ ಹೋಮ್‌ಸ್ಟೇ ಆನೆಗುಂದಿ",
+      "mr": "हंपी हेरिटेज होमस्टे"
+    },
+    "lat": 15.352,
+    "lng": 76.471,
+    "pricePerNightInr": 1400,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-HERITA",
+    "source": "Ecotourism Cell",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_tungabhadra_lodge",
+    "regionId": "reg_hampi",
+    "name": {
+      "en": "Tungabhadra Rest Lodge (Budget)",
+      "kn": "ತುಂಗಭದ್ರಾ ರೆಸ್ಟ್ ಲಾಡ್ಜ್",
+      "mr": "तुंगभद्रा लॉज"
+    },
+    "lat": 15.3345,
+    "lng": 76.4635,
+    "pricePerNightInr": 950,
+    "registrationStatus": "unverified",
+    "registrationNo": null,
+    "source": "Commercial Registry",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_gopi_guesthouse",
+    "regionId": "reg_hampi",
+    "name": {
+      "en": "Gopi Heritage Guesthouse Bazaar",
+      "kn": "ಗೋಪಿ ಹೆರಿಟೇಜ್ ಗೆಸ್ಟ್‌ಹೌಸ್",
+      "mr": "गोपी गेस्टहाऊस"
+    },
+    "lat": 15.3355,
+    "lng": 76.461,
+    "pricePerNightInr": 1100,
+    "registrationStatus": "unverified",
+    "registrationNo": null,
+    "source": "Local Registry",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_kstdc_badami",
+    "regionId": "reg_north",
+    "name": {
+      "en": "KSTDC Hotel Mayura Chalukya Badami",
+      "kn": "ಕೆಎಸ್‌ಟಿಡಿಸಿ ಹೋಟೆಲ್ ಮಯೂರ ಚಾಲುಕ್ಯ ಬದಾಮಿ",
+      "mr": "केएसटीडीसी हॉटेल मयूरा चालुक्य"
+    },
+    "lat": 15.9195,
+    "lng": 75.681,
+    "pricePerNightInr": 1950,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-KSTDC_",
+    "source": "KSTDC North",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_badami_court",
+    "regionId": "reg_north",
+    "name": {
+      "en": "The Badami Court Station Road",
+      "kn": "ದಿ ಬದಾಮಿ ಕೋರ್ಟ್",
+      "mr": "द बदामी कोर्ट"
+    },
+    "lat": 15.923,
+    "lng": 75.688,
+    "pricePerNightInr": 2600,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-BADAMI",
+    "source": "Bagalkot Tourism",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_mukambika_lodge_badami",
+    "regionId": "reg_north",
+    "name": {
+      "en": "Mookambika Deluxe Lodge Badami",
+      "kn": "ಮೂಕಾಂಬಿಕಾ ಡೀಲಕ್ಸ್ ಲಾಡ್ಜ್",
+      "mr": "मूकांबिका लॉज"
+    },
+    "lat": 15.918,
+    "lng": 75.679,
+    "pricePerNightInr": 850,
+    "registrationStatus": "unverified",
+    "registrationNo": null,
+    "source": "Local Registry",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_kstdc_mysuru",
+    "regionId": "reg_mysuru",
+    "name": {
+      "en": "KSTDC Hotel Mayura Hoysala Mysuru",
+      "kn": "ಕೆಎಸ್‌ಟಿಡಿಸಿ ಹೋಟೆಲ್ ಮಯೂರ ಹೊಯ್ಸಳ ಮೈಸೂರು",
+      "mr": "केएसटीडीसी हॉटेल मयूरा होयसळ"
+    },
+    "lat": 12.308,
+    "lng": 76.643,
+    "pricePerNightInr": 2100,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-KSTDC_",
+    "source": "KSTDC Mysuru",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_royal_heritage_mysuru",
+    "regionId": "reg_mysuru",
+    "name": {
+      "en": "Green Heritage Hotel near Palace",
+      "kn": "ಗ್ರೀನ್ ಹೆರಿಟೇಜ್ ಹೋಟೆಲ್ ಮೈಸೂರು",
+      "mr": "ग्रीन हेरिटेज हॉटेल म्हैसूर"
+    },
+    "lat": 12.303,
+    "lng": 76.658,
+    "pricePerNightInr": 2800,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-ROYAL_",
+    "source": "Mysuru Hotel Assoc",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_chamaraja_lodge",
+    "regionId": "reg_mysuru",
+    "name": {
+      "en": "Sri Chamaraja Rest House Gandhi Square",
+      "kn": "ಶ್ರೀ ಚಾಮರಾಜ ರೆಸ್ಟ್ ಹೌಸ್",
+      "mr": "श्री चामराज लॉज"
+    },
+    "lat": 12.311,
+    "lng": 76.653,
+    "pricePerNightInr": 900,
+    "registrationStatus": "unverified",
+    "registrationNo": null,
+    "source": "Local Registry",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_roopa_mysuru",
+    "regionId": "reg_mysuru",
+    "name": {
+      "en": "Hotel Roopa B.N. Road Mysuru",
+      "kn": "ಹೋಟೆಲ್ ರೂಪಾ ಮೈಸೂರು",
+      "mr": "हॉटेल रूपा"
+    },
+    "lat": 12.31,
+    "lng": 76.657,
+    "pricePerNightInr": 1600,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-ROOPA_",
+    "source": "Commercial Registry",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_kstdc_krs",
+    "regionId": "reg_mysuru",
+    "name": {
+      "en": "KSTDC Hotel Mayura Cauvery KRS",
+      "kn": "ಕೆಎಸ್‌ಟಿಡಿಸಿ ಹೋಟೆಲ್ ಮಯೂರ ಕಾವೇರಿ ಕೆಆರ್‌ಎಸ್",
+      "mr": "केएसटीडीसी हॉटेल मयूरा कावेरी"
+    },
+    "lat": 12.423,
+    "lng": 76.574,
+    "pricePerNightInr": 2400,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-KSTDC_",
+    "source": "KSTDC",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_chamundi_yatri_nivas",
+    "regionId": "reg_mysuru",
+    "name": {
+      "en": "Chamundi Hills Yatri Nivas Muzrai",
+      "kn": "ಚಾಮುಂಡಿ ಬೆಟ್ಟ ಯಾತ್ರಿ ನಿವಾಸ",
+      "mr": "चामुंडी यात्रि निवास"
+    },
+    "lat": 12.275,
+    "lng": 76.672,
+    "pricePerNightInr": 750,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-CHAMUN",
+    "source": "Muzrai Board",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_madikeri_homestay",
+    "regionId": "reg_coorg",
+    "name": {
+      "en": "Coffee Valley Registered Homestay Madikeri",
+      "kn": "ಕಾಫಿ ವ್ಯಾಲಿ ನೋಂದಾಯಿತ ಹೋಮ್‌ಸ್ಟೇ ಮಡಿಕೇರಿ",
+      "mr": "कॉफी व्हॅली होमस्टे मडिकेरी"
+    },
+    "lat": 12.42,
+    "lng": 75.74,
+    "pricePerNightInr": 2400,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-MADIKE",
+    "source": "Coorg Homestay Assoc",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_kstdc_madikeri",
+    "regionId": "reg_coorg",
+    "name": {
+      "en": "KSTDC Hotel Mayura Valley View Madikeri",
+      "kn": "ಕೆಎಸ್‌ಟಿಡಿಸಿ ಹೋಟೆಲ್ ಮಯೂರ ವ್ಯಾಲಿ ವ್ಯೂ ಮಡಿಕೇರಿ",
+      "mr": "केएसटीडीसी हॉटेल मयूरा व्हॅली व्ह्यू"
+    },
+    "lat": 12.417,
+    "lng": 75.735,
+    "pricePerNightInr": 2600,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-KSTDC_",
+    "source": "KSTDC",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_plantation_trails",
+    "regionId": "reg_coorg",
+    "name": {
+      "en": "Tata Coffee Heritage Bungalow Pollibetta",
+      "kn": "ಟಾಟಾ ಕಾಫಿ ಹೆರಿಟೇಜ್ ಬಂಗಲೆ",
+      "mr": "टाटा कॉफी हेरिटेज बंगला"
+    },
+    "lat": 12.26,
+    "lng": 75.91,
+    "pricePerNightInr": 4500,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-PLANTA",
+    "source": "Tourism Dept",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_coorg_backpacker",
+    "regionId": "reg_coorg",
+    "name": {
+      "en": "Madikeri Budget Backpackers Nest",
+      "kn": "ಮಡಿಕೇರಿ ಬಜೆಟ್ ಬ್ಯಾಕ್‌ಪ್ಯಾಕರ್ಸ್ ನೆಸ್ಟ್",
+      "mr": "मडिकेरी बॅकपॅकर्स"
+    },
+    "lat": 12.424,
+    "lng": 75.736,
+    "pricePerNightInr": 800,
+    "registrationStatus": "unverified",
+    "registrationNo": null,
+    "source": "Local Registry",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_chik_estate_stay",
+    "regionId": "reg_coorg",
+    "name": {
+      "en": "Mullayanagiri Mist Plantation Homestay",
+      "kn": "ಮುಳ್ಳಯ್ಯನಗಿರಿ ಮಿಸ್ಟ್ ಪ್ಲಾಂಟೇಶನ್ ಹೋಮ್‌ಸ್ಟೇ",
+      "mr": "मुल्लय्यनगिरी होमस्टे"
+    },
+    "lat": 13.385,
+    "lng": 75.73,
+    "pricePerNightInr": 2200,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-CHIK_E",
+    "source": "Chikkamagaluru Tourism",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_kstdc_kemmangundi",
+    "regionId": "reg_coorg",
+    "name": {
+      "en": "KSTDC Horticultural Guest House Kemmangundi",
+      "kn": "ತೋಟಗಾರಿಕೆ ಇಲಾಖೆ ಅತಿಥಿ ಗೃಹ ಕೆಮ್ಮಣ್ಣುಗುಂಡಿ",
+      "mr": "केएसटीडीसी गेस्ट हाऊस"
+    },
+    "lat": 13.548,
+    "lng": 75.752,
+    "pricePerNightInr": 1800,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-KSTDC_",
+    "source": "Horticulture Dept",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_udupi_kstdc",
+    "regionId": "reg_coast",
+    "name": {
+      "en": "KSTDC Hotel Mayura Kaup Beach",
+      "kn": "ಕೆಎಸ್‌ಟಿಡಿಸಿ ಹೋಟೆಲ್ ಮಯೂರ ಕಾಪು ಬೀಚ್",
+      "mr": "केएसटीडीसी हॉटेल मयूरा कापू"
+    },
+    "lat": 13.225,
+    "lng": 74.743,
+    "pricePerNightInr": 2200,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-UDUPI_",
+    "source": "KSTDC Coastal",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_malpe_sea_resort",
+    "regionId": "reg_coast",
+    "name": {
+      "en": "Malpe Beach View Heritage Stay",
+      "kn": "ಮಾಲ್ಪೆ ಬೀಚ್ ವ್ಯೂ ಹೆರಿಟೇಜ್ ಸ್ಟೇ",
+      "mr": "मालपे बीच स्टे"
+    },
+    "lat": 13.355,
+    "lng": 74.702,
+    "pricePerNightInr": 2900,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-MALPE_",
+    "source": "Coastal Tourism",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_udupi_krishna_nivas",
+    "regionId": "reg_coast",
+    "name": {
+      "en": "Sri Krishna Temple Yatri Nivas Car Street",
+      "kn": "ಶ್ರೀ ಕೃಷ್ಣ ಮಠ ಯಾತ್ರಿ ನಿವಾಸ ರಥಬೀದಿ",
+      "mr": "श्रीकृष्ण यात्री निवास"
+    },
+    "lat": 13.3415,
+    "lng": 74.753,
+    "pricePerNightInr": 700,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-UDUPI_",
+    "source": "Matha Trust",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_gokarna_namaste_cafe",
+    "regionId": "reg_coast",
+    "name": {
+      "en": "Namaste Cafe & Cottages Om Beach",
+      "kn": "ನಮಸ್ತೆ ಕೆಫೆ ಮತ್ತು ಕಾಟೇಜ್ ಗೋಕರ್ಣ",
+      "mr": "नमस्ते कॅफे ओम बीच"
+    },
+    "lat": 14.519,
+    "lng": 74.317,
+    "pricePerNightInr": 2400,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-GOKARN",
+    "source": "Uttara Kannada Reg",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_kudle_beach_shacks",
+    "regionId": "reg_coast",
+    "name": {
+      "en": "Kudle Eco Huts (Unverified)",
+      "kn": "ಕುಡ್ಲೆ ಇಕೋ ಹಟ್ಸ್",
+      "mr": "कुडले इको हट्स"
+    },
+    "lat": 14.529,
+    "lng": 74.313,
+    "pricePerNightInr": 900,
+    "registrationStatus": "unverified",
+    "registrationNo": null,
+    "source": "Local Gram Panchayat",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_murudeshwar_rns",
+    "regionId": "reg_coast",
+    "name": {
+      "en": "RNS Residency Sea View Murudeshwar",
+      "kn": "ಆರ್‌ಎನ್‌ಎಸ್ ರೆಸಿಡೆನ್ಸಿ ಮುರುಡೇಶ್ವರ",
+      "mr": "आरएनएस रेसिडेन्सी मुरुडेश्वर"
+    },
+    "lat": 14.095,
+    "lng": 74.485,
+    "pricePerNightInr": 2800,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-MURUDE",
+    "source": "Hotel Assoc",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_kstdc_vijayapura",
+    "regionId": "reg_north",
+    "name": {
+      "en": "KSTDC Hotel Mayura Adil Shahi Vijayapura",
+      "kn": "ಕೆಎಸ್‌ಟಿಡಿಸಿ ಹೋಟೆಲ್ ಮಯೂರ ಆದಿಲ್ ಶಾಹಿ ವಿಜಯಪುರ",
+      "mr": "केएसटीडीसी हॉटेल मयूरा विजापूर"
+    },
+    "lat": 16.828,
+    "lng": 75.715,
+    "pricePerNightInr": 1900,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-KSTDC_",
+    "source": "KSTDC",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_shashinag_residency",
+    "regionId": "reg_north",
+    "name": {
+      "en": "Shashinag Residency Station Road Vijayapura",
+      "kn": "ಶಶಿನಾಗ್ ರೆಸಿಡೆನ್ಸಿ ವಿಜಯಪುರ",
+      "mr": "शशिनाग रेसिडेन्सी"
+    },
+    "lat": 16.832,
+    "lng": 75.72,
+    "pricePerNightInr": 1500,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-SHASHI",
+    "source": "Commercial Reg",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_hubballi_kstdc",
+    "regionId": "reg_north",
+    "name": {
+      "en": "KSTDC Hotel Mayura Varun Hubballi",
+      "kn": "ಕೆಎಸ್‌ಟಿಡಿಸಿ ಹೋಟೆಲ್ ಮಯೂರ ವರುಣ ಹುಬ್ಬಳ್ಳಿ",
+      "mr": "केएसटीडीसी हॉटेल मयूरा हुबळी"
+    },
+    "lat": 15.358,
+    "lng": 75.132,
+    "pricePerNightInr": 2100,
+    "registrationStatus": "registered",
+    "registrationNo": "KSTDC-REG-HUBBAL",
+    "source": "KSTDC",
+    "lastChecked": "2026-10-25"
+  },
+  {
+    "id": "sty_kalaburagi_lodge",
+    "regionId": "reg_north",
+    "name": {
+      "en": "Bahmani Heritage Lodge Kalaburagi",
+      "kn": "ಬಹಮನಿ ಹೆರಿಟೇಜ್ ಲಾಡ್ಜ್ ಕಲಬುರಗಿ",
+      "mr": "बहामनी लॉज कलबुर्गी"
+    },
+    "lat": 17.339,
+    "lng": 76.831,
+    "pricePerNightInr": 850,
+    "registrationStatus": "unverified",
+    "registrationNo": null,
+    "source": "Local Registry",
+    "lastChecked": "2026-10-25"
+  }
+]
