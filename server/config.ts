@@ -26,11 +26,11 @@ const parsedOrigins = rawAllowedOrigins
 
 export const config: ServerConfig = {
   geminiApiKey: process.env.GEMINI_API_KEY || '',
-  geminiModel: process.env.GEMINI_MODEL || 'gemini-3.5-flash',
+  geminiModel: process.env.GEMINI_MODEL || 'gemini-2.5-flash',
   seedEnabled: process.env.SEED_ENABLED === 'true',
   seedSecret: process.env.SEED_SECRET || '',
   googleApplicationCredentials: process.env.GOOGLE_APPLICATION_CREDENTIALS || '',
-  port: Number(process.env.PORT) || 8080,
+  port: Number(process.env.PORT) || 3000,
   nodeEnv: process.env.NODE_ENV || 'development',
   allowedOrigins: parsedOrigins
 };
