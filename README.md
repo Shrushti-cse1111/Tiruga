@@ -63,6 +63,30 @@
 
 ---
 
+## 🌐 Languages Used
+
+### 1. 💻 Programming & Markup Languages
+As recognized in the repository breakdown:
+
+| Language | Proportion | Primary Role in Tiruga |
+| :--- | :---: | :--- |
+| **TypeScript** | **~98.8%** | Entire core codebase: React frontend components, type-safe API clients, route mathematics, AI schema validators, Express server routes, and test suites. |
+| **Java** | **Native** | Native Android platform bridge (`android/app/src/main/java/com/tiruga/app/MainActivity.java`), Capacitor runtime lifecycle hooks, and Android plugins. |
+| **JavaScript** | **Scripts** | Capacitor CLI scripts, verification scripts, and runtime polyfills. |
+| **HTML5 & CSS3** | **Styling** | Semantic DOM elements, Tailwind CSS v4 styling tokens, print media stylesheets (`print.css`), and Leaflet map marker layouts. |
+| **Groovy / Gradle** | **Build** | Android build orchestration (`build.gradle`, `settings.gradle`, `app/build.gradle`). |
+| **XML** | **Resources** | Android application manifest, vector drawables, mipmap icon sets, and layout definitions. |
+| **JSON** | **Data** | Local tourist gazetteers, attraction coordinates, translation dictionaries, and Firebase security configurations. |
+
+### 2. 🗣️ Spoken & Natural Languages (i18n Localization)
+Tiruga is designed from the ground up to empower both domestic and international travelers visiting Karnataka:
+
+- **Kannada (ಕನ್ನಡ)**: First-class native support throughout the entire application. Features custom Kannada typography (`Noto Sans Kannada`), full UI strings translation, situational phrases with voice audio pronunciations, cultural etiquette guidance, and bilingual itinerary exports.
+- **English**: Primary international interface language, timeline schedules, technical logs, and developer documentation.
+- **Marathi (मराठी)**: Regional locale support for travelers exploring northern Karnataka borders (Belagavi, Bidar, and Vijayapura circuits).
+
+---
+
 ## 📁 Repository Structure
 
 ```text
