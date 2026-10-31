@@ -54,10 +54,9 @@ export function checkConfigOnStartup(): void {
     console.log(`  - ${varName}: ${isPresent ? 'PRESENT' : 'MISSING'}`);
   }
 
-  // In production, refuse to start if GEMINI_API_KEY is missing
+  // In production, warn if GEMINI_API_KEY is missing
   if (config.nodeEnv === 'production' && !config.geminiApiKey) {
-    console.error('[Config Error] Fatal: GEMINI_API_KEY is required in production mode.');
-    process.exit(1);
+    console.warn('[Config Warning] GEMINI_API_KEY is not set. AI features will require this key.');
   }
 
   // Loud warning if SEED_ENABLED is true in production

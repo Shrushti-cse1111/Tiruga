@@ -4,11 +4,20 @@ dist/
 coverage/
 .DS_Store
 *.log
+# Environment variables
 .env
 .env.*
+.env.local
+.env.*.local
 !.env.example
+
+# Service accounts, key files and credentials
 service-account*.json
+*serviceAccount*.json
+*service-account*.json
 *credentials*.json
+firebase-admin*.json
+google-credentials*.json
 *.key
 *-key.json
 *.pem

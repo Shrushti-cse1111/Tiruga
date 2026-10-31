@@ -100,7 +100,7 @@ if (process.env.NODE_ENV !== 'test') {
 
   createServer()
     .then((app) => {
-      const port = config.port;
+      const port = Number(process.env.PORT) || config.port || 3000;
       const host = '0.0.0.0';
 
       const server = app.listen(port, host, () => {
