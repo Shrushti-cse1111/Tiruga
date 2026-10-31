@@ -1,0 +1,193 @@
+{
+  "id": "trip_hampi_demo_3d",
+  "title": "Hampi Friends Heritage & Nature Explorer",
+  "destination": "Hampi",
+  "destinationId": "hampi",
+  "totalDays": 3,
+  "estimatedBudget": 6450,
+  "preferences": {
+    "days": 3,
+    "budget": "₹5,000 - ₹10,000",
+    "travelStyle": "Friends",
+    "interests": ["Nature", "Culture", "Heritage"]
+  },
+  "heroImage": "https://images.unsplash.com/photo-1600100397608-f010f443b74e?auto=format&fit=crop&w=1200&q=80",
+  "tags": ["Friends", "Nature", "Heritage", "AI-Generated"],
+  "schemaVersion": 1,
+  "meta": {
+    "generatedBy": "Tiruga AI Engine",
+    "budgetCap": 7000,
+    "certifiedBudget": true
+  },
+  "days": [
+    {
+      "dayNumber": 1,
+      "summary": "Sacred Centre & Boulders with Friends",
+      "items": [
+        {
+          "time": "08:30",
+          "attractionId": "hampi_virupaksha",
+          "title": "Virupaksha Temple & River Ghats",
+          "category": "temple",
+          "estimatedCost": 0,
+          "durationMinutes": 90,
+          "reason": "Early morning light, gentle river breeze, and vibrant temple elephant blessings.",
+          "tags": ["Sacred morning", "Free entry"],
+          "travelToNextMinutes": 15
+        },
+        {
+          "time": "10:30",
+          "attractionId": "hampi_hemakuta",
+          "title": "Hemakuta Hill Monolithic Shrines",
+          "category": "nature",
+          "estimatedCost": 0,
+          "durationMinutes": 75,
+          "reason": "Expansive granite plateau with pre-Vijayanagara triple-chambered stone sanctuaries.",
+          "tags": ["Panoramic vista", "Boulder trails"],
+          "travelToNextMinutes": 20
+        },
+        {
+          "time": "12:30",
+          "attractionId": "hampi_mango_tree",
+          "title": "Local Banana-Leaf Thali at Mango Tree",
+          "category": "food",
+          "estimatedCost": 250,
+          "durationMinutes": 60,
+          "reason": "Beloved traveller haven serving piping hot Jolada rotti, ennegayi, and fresh lime soda.",
+          "tags": ["Local flavours", "Shaded seating"],
+          "travelToNextMinutes": 25
+        },
+        {
+          "time": "14:30",
+          "attractionId": "hampi_krishna_temple",
+          "title": "Krishna Temple Complex & Pushkarani",
+          "category": "temple",
+          "estimatedCost": 0,
+          "durationMinutes": 60,
+          "reason": "Carved Yali columns, sacred stepwell, and quiet courtyards.",
+          "tags": ["Intricate carvings", "Stepwell tank"],
+          "travelToNextMinutes": 30
+        },
+        {
+          "time": "16:30",
+          "attractionId": "hampi_hemakuta",
+          "title": "Sunset Viewpoint over Boulder Horizon",
+          "category": "viewpoint",
+          "estimatedCost": 0,
+          "durationMinutes": 90,
+          "reason": "Golden hour glow lighting up the Tungabhadra valley and distant ruins.",
+          "tags": ["Sunset icon", "Golden hour"]
+        }
+      ]
+    },
+    {
+      "dayNumber": 2,
+      "summary": "Royal Enclosure, Lotus Mahal & Vittala Chariot",
+      "items": [
+        {
+          "time": "09:00",
+          "attractionId": "hampi_vittala",
+          "title": "Vijaya Vittala & Monolithic Stone Chariot",
+          "category": "heritage",
+          "estimatedCost": 40,
+          "durationMinutes": 120,
+          "reason": "Pinnacle of Vijayanagara architecture with resonant musical granite pillars.",
+          "tags": ["UNESCO Monument", "Musical pillars"],
+          "travelToNextMinutes": 25
+        },
+        {
+          "time": "11:45",
+          "attractionId": "hampi_lotus_mahal",
+          "title": "Lotus Mahal & Zenana Royal Enclosure",
+          "category": "heritage",
+          "estimatedCost": 40,
+          "durationMinutes": 60,
+          "reason": "Indo-Islamic arcaded pavilion built for queens, surrounded by shaded green lawns.",
+          "tags": ["Royal pavilion", "Shaded lawn"],
+          "travelToNextMinutes": 10
+        },
+        {
+          "time": "12:55",
+          "attractionId": "hampi_elephant_stables",
+          "title": "Royal Elephant Stables (Gajashala)",
+          "category": "heritage",
+          "estimatedCost": 0,
+          "durationMinutes": 45,
+          "reason": "Eleven interconnected high-domed vaulted brick halls for ceremonial elephants.",
+          "tags": ["High vaulted arches", "Grand architecture"],
+          "travelToNextMinutes": 30
+        },
+        {
+          "time": "14:15",
+          "attractionId": "hampi_kstdc_mayura",
+          "title": "KSTDC Hotel Mayura Traditional Lunch",
+          "category": "food",
+          "estimatedCost": 320,
+          "durationMinutes": 60,
+          "reason": "Official tourism resort serving clean vegetarian and regional North Karnataka meals.",
+          "tags": ["AC comfort", "KSTDC certified"],
+          "travelToNextMinutes": 35
+        },
+        {
+          "time": "16:00",
+          "attractionId": "hampi_asi_museum",
+          "title": "Kamalapur Archaeological Museum",
+          "category": "heritage",
+          "estimatedCost": 25,
+          "durationMinutes": 90,
+          "reason": "Four air-cooled galleries with stone statuary, ancient coins, and terrain models.",
+          "tags": ["Indoor galleries", "Vijayanagara models"]
+        }
+      ]
+    },
+    {
+      "dayNumber": 3,
+      "summary": "Anegundi, Sanapur Lake & Coracle Experience",
+      "items": [
+        {
+          "time": "08:30",
+          "attractionId": "hampi_sanapur_lake",
+          "title": "Sanapur Lake Boulder Cliff Walk",
+          "category": "nature",
+          "estimatedCost": 0,
+          "durationMinutes": 90,
+          "reason": "Tranquil blue freshwater reservoir flanked by giant balanced granite boulders.",
+          "tags": ["Freshwater lake", "Granite rocks"],
+          "travelToNextMinutes": 25
+        },
+        {
+          "time": "10:30",
+          "attractionId": "hampi_sanapur_lake",
+          "title": "Traditional Coracle Boat Experience",
+          "category": "nature",
+          "estimatedCost": 150,
+          "durationMinutes": 60,
+          "reason": "Circular woven boat ride gliding peacefully over calm waters with local boatmen.",
+          "tags": ["Water adventure", "Local boatmen"],
+          "travelToNextMinutes": 25
+        },
+        {
+          "time": "12:30",
+          "attractionId": "hampi_mango_tree",
+          "title": "Riverside Cafe Lunch & Fresh Coconut",
+          "category": "food",
+          "estimatedCost": 280,
+          "durationMinutes": 75,
+          "reason": "Chilled tender coconut, wood-fired snacks, and relaxed conversation.",
+          "tags": ["Traveller vibe", "Local rest"],
+          "travelToNextMinutes": 30
+        },
+        {
+          "time": "16:00",
+          "attractionId": "hampi_virupaksha",
+          "title": "Tungabhadra Sunset & Bazaar Stroll",
+          "category": "heritage",
+          "estimatedCost": 0,
+          "durationMinutes": 90,
+          "reason": "Evening temple bell resonance, cool river mist, and local souvenir stalls.",
+          "tags": ["Evening bells", "Atmospheric farewell"]
+        }
+      ]
+    }
+  ]
+}

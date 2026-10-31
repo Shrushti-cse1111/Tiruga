@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-teal: #146B5B;
+  --color-deep-teal: #103F38;
+  --color-cream: #F8F6EF;
+  --color-gold: #F4B63E;
+  --color-terracotta: #D86D2D;
+  --color-mint: #DCEFE5;
+  --color-text-main: #18312D;
+  --color-muted-text: #60736E;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-kannada: 'Noto Sans Kannada', system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --primary-teal: #146B5B;
+    --deep-teal: #103F38;
+    --cream: #F8F6EF;
+    --gold: #F4B63E;
+    --terracotta: #D86D2D;
+    --mint: #DCEFE5;
+    --text-main: #18312D;
+    --muted-text: #60736E;
+
+    --bg: #F8F6EF;
+    --surface: #FFFFFF;
+    --ink: #18312D;
+    --muted: #60736E;
+    --line: #E2DFD3;
+  }
+
+  .dark {
+    --bg: #0C1D1A;
+    --surface: #102924;
+    --ink: #F8F6EF;
+    --muted: #9BB0AA;
+    --line: #1D3B34;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .font-kannada, [lang="kn"], .kn {
+    font-family: var(--font-kannada);
+  }
+}
+
+/* Fallback gradient for broken or loading images */
+.image-fallback-gradient {
+  background: linear-gradient(135deg, #103F38 0%, #D86D2D 100%);
+}
+
+/* Subtle transitions only */
+.subtle-fade {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide scrollbar for category pills and carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

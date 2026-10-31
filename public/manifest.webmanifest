@@ -1,0 +1,21 @@
+{
+  "name": "Tiruga (ತಿರುಗ)",
+  "short_name": "Tiruga",
+  "description": "AI-style Karnataka travel planner with Shakti scheme support and offline packs",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e5a52",
+  "theme_color": "#0e5a52",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

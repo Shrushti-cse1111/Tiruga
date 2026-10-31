@@ -1,0 +1,203 @@
+/* Tiruga Print & PDF Stylesheet */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm 18mm;
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 8pt;
+      font-family: Inter, sans-serif;
+      color: #60736E;
+    }
+    @bottom-left {
+      content: "Tiruga (ತಿರು ಗ)";
+      font-size: 8pt;
+      font-family: Inter, "Noto Sans Kannada", sans-serif;
+      color: #60736E;
+    }
+  }
+
+  /* Dynamic Paper Size classes */
+  html.paper-a4 {
+    size: A4;
+  }
+  html.paper-letter {
+    size: letter;
+  }
+
+  body {
+    background-color: #FFFFFF !important;
+    color: #18312D !important;
+    font-family: Inter, "Noto Sans Kannada", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 10.5pt !important;
+    line-height: 1.5 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide interactive / non-printable elements */
+  .no-print,
+  nav,
+  button,
+  .bottom-nav,
+  .toast,
+  .assistant-sheet {
+    display: none !important;
+  }
+
+  /* Unconstrain print layout from phone frame */
+  .print-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #FFFFFF !important;
+  }
+
+  /* Headings */
+  h1 {
+    font-size: 20pt !important;
+    line-height: 1.25 !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h2 {
+    font-size: 16pt !important;
+    line-height: 1.3 !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h3 {
+    font-size: 13pt !important;
+    line-height: 1.35 !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  h4 {
+    font-size: 11pt !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Avoid unwanted page splits */
+  .avoid-break,
+  .day-card,
+  .day-header,
+  .song-group,
+  .culture-qa-item,
+  .travel-option-card,
+  .summary-card {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Table styling */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 10pt !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  th {
+    background-color: #DCEFE5 !important;
+    color: #103F38 !important;
+    font-weight: 700 !important;
+    border: 1px solid #D2DFD8 !important;
+    padding: 6pt 8pt !important;
+    text-align: left !important;
+  }
+
+  td {
+    border: 1px solid #E2DFD3 !important;
+    padding: 5pt 7pt !important;
+    vertical-align: top !important;
+  }
+
+  /* Subtle zebra rows */
+  tbody tr:nth-child(even) {
+    background-color: #F8FBF9 !important;
+  }
+
+  /* Kannada text specific typography */
+  .kannada-text {
+    font-family: "Noto Sans Kannada", sans-serif !important;
+    font-size: 16pt !important;
+    line-height: 1.6 !important;
+    letter-spacing: normal !important;
+    text-transform: none !important;
+  }
+
+  .kannada-subtext {
+    font-family: "Noto Sans Kannada", sans-serif !important;
+    line-height: 1.55 !important;
+    letter-spacing: normal !important;
+    text-transform: none !important;
+  }
+
+  /* Cover banner with legible colors */
+  .cover-banner {
+    background: linear-gradient(135deg, #103F38 0%, #146B5B 55%, #D86D2D 100%) !important;
+    color: #FFFFFF !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Running footer line as fixed element fallback */
+  .print-running-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 8pt;
+    color: #60736E;
+    border-top: 1px solid #E2DFD3;
+    padding-top: 4pt;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Section starts on new page if needed */
+  .section-break-page {
+    page-break-before: always;
+    break-before: page;
+  }
+}
+
+/* Screen Preview Styling */
+@media screen {
+  .print-screen-preview {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    color: #18312D;
+    font-family: Inter, "Noto Sans Kannada", system-ui, sans-serif;
+    box-shadow: 0 10px 35px rgba(16, 63, 56, 0.08);
+  }
+
+  .kannada-text {
+    font-family: "Noto Sans Kannada", sans-serif;
+    font-size: 16pt;
+    line-height: 1.6;
+  }
+
+  .kannada-subtext {
+    font-family: "Noto Sans Kannada", sans-serif;
+    line-height: 1.55;
+  }
+}

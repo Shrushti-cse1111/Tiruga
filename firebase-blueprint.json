@@ -1,0 +1,151 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile document storing personal preferences and travel flags",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 150 },
+        "photoURL": { "type": "string", "maxLength": 500 },
+        "language": { "type": "string", "enum": ["en", "kn"] },
+        "travellerType": { "type": "string", "maxLength": 50 },
+        "budget": { "type": "string", "maxLength": 50 },
+        "interests": { "type": "array" },
+        "travelStyle": { "type": "string", "maxLength": 50 },
+        "days": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Trip": {
+      "title": "Trip",
+      "description": "User itinerary with pricing, preferences, embedded days and meta",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 120 },
+        "destination": { "type": "string", "maxLength": 80 },
+        "destinationId": { "type": "string", "maxLength": 64 },
+        "totalDays": { "type": "number" },
+        "estimatedBudget": { "type": "number" },
+        "preferences": { "type": "object" },
+        "days": { "type": "array" },
+        "meta": { "type": "object" },
+        "schemaVersion": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "destination", "destinationId", "totalDays", "estimatedBudget", "days", "schemaVersion"]
+    },
+    "Destination": {
+      "title": "Destination",
+      "description": "Curated catalog of Karnataka travel destinations",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "nameKn": { "type": "string", "maxLength": 100 },
+        "district": { "type": "string", "maxLength": 60 },
+        "categories": { "type": "array" },
+        "tags": { "type": "array" },
+        "description": { "type": "string", "maxLength": 1000 },
+        "image": { "type": "string", "maxLength": 500 },
+        "budgetLevel": { "type": "string", "maxLength": 50 },
+        "bestSeason": { "type": "string", "maxLength": 50 },
+        "recommendedDays": { "type": "number" },
+        "familySuitable": { "type": "boolean" },
+        "studentSuitable": { "type": "boolean" },
+        "foodHighlights": { "type": "array" }
+      },
+      "required": ["name", "nameKn", "district", "categories", "description"]
+    },
+    "Attraction": {
+      "title": "Attraction",
+      "description": "Point of interest, temple, waterfall or monument under a destination",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "category": { "type": "string", "maxLength": 50 },
+        "durationMinutes": { "type": "number" },
+        "estimatedCost": { "type": "number" },
+        "indoor": { "type": "boolean" },
+        "description": { "type": "string", "maxLength": 1000 },
+        "lat": { "type": "number" },
+        "lng": { "type": "number" },
+        "mapX": { "type": "number" },
+        "mapY": { "type": "number" }
+      },
+      "required": ["name", "category", "durationMinutes", "indoor", "description"]
+    },
+    "Phrase": {
+      "title": "Phrase",
+      "description": "Useful conversational Kannada phrase with translation and phonetic guide",
+      "type": "object",
+      "properties": {
+        "category": { "type": "string", "maxLength": 50 },
+        "english": { "type": "string", "maxLength": 300 },
+        "kannada": { "type": "string", "maxLength": 300 },
+        "pronunciation": { "type": "string", "maxLength": 300 },
+        "situation": { "type": "string", "maxLength": 300 }
+      },
+      "required": ["category", "english", "kannada", "pronunciation"]
+    },
+    "Transport": {
+      "title": "Transport",
+      "description": "Transit options between Karnataka hubs",
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "enum": ["bus", "train", "cab"] },
+        "operator": { "type": "string", "maxLength": 100 },
+        "from": { "type": "string", "maxLength": 60 },
+        "to": { "type": "string", "maxLength": 60 },
+        "departure": { "type": "string", "maxLength": 10 },
+        "durationMinutes": { "type": "number" },
+        "stops": { "type": "number" },
+        "priceEstimate": { "type": "number" },
+        "isDemo": { "type": "boolean" }
+      },
+      "required": ["type", "operator", "from", "to", "departure", "durationMinutes", "priceEstimate", "isDemo"]
+    },
+    "SavedPlace": {
+      "title": "SavedPlace",
+      "description": "User bookmarked place or attraction reference",
+      "type": "object",
+      "properties": {
+        "destinationId": { "type": "string", "maxLength": 64 },
+        "attractionId": { "type": "string", "maxLength": 64 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["destinationId", "attractionId"]
+    }
+  },
+  "firestore": {
+    "/destinations/{id}": {
+      "schema": "Destination",
+      "description": "Karnataka travel destinations catalog"
+    },
+    "/destinations/{id}/attractions/{aid}": {
+      "schema": "Attraction",
+      "description": "Attractions belonging to a specific destination"
+    },
+    "/phrases/{id}": {
+      "schema": "Phrase",
+      "description": "Categorized Kannada phrases for travellers"
+    },
+    "/transport/{id}": {
+      "schema": "Transport",
+      "description": "Verified demo transport options"
+    },
+    "/users/{uid}": {
+      "schema": "User",
+      "description": "User profile and travel preferences"
+    },
+    "/users/{uid}/trips/{tripId}": {
+      "schema": "Trip",
+      "description": "User saved itineraries with embedded days"
+    },
+    "/users/{uid}/savedPlaces/{savedId}": {
+      "schema": "SavedPlace",
+      "description": "User bookmarked attraction records"
+    }
+  }
+}

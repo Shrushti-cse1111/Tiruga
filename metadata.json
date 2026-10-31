@@ -1,0 +1,6 @@
+{
+  "name": "Tiruga (ತಿರುಗ) - Karnataka AI Travel Planner",
+  "description": "AI-style travel planner for Karnataka with Shakti scheme support, Plan B rerouting, crowd-aware quiet alternatives, and offline packs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

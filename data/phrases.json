@@ -1,0 +1,450 @@
+[
+  {
+    "id": "b-1",
+    "category": "Basic conversation",
+    "kannada": "ನಮಸ್ಕಾರ",
+    "english": "Hello / Greetings",
+    "pronunciation": "Namaskara",
+    "situation": "General polite greeting anytime of day"
+  },
+  {
+    "id": "b-2",
+    "category": "Basic conversation",
+    "kannada": "ಧನ್ಯವಾದಗಳು",
+    "english": "Thank you",
+    "pronunciation": "Dhanyavadagalu",
+    "situation": "Expressing genuine gratitude"
+  },
+  {
+    "id": "b-3",
+    "category": "Basic conversation",
+    "kannada": "ನನಗೆ ಕನ್ನಡ ಗೊತ್ತಿಲ್ಲ",
+    "english": "I don't know Kannada",
+    "pronunciation": "Nanage Kannada gottilla",
+    "situation": "Polite way to explain language barrier"
+  },
+  {
+    "id": "b-4",
+    "category": "Basic conversation",
+    "kannada": "ಹೌದು / ಇಲ್ಲ",
+    "english": "Yes / No",
+    "pronunciation": "Haudu / Illa",
+    "situation": "Simple affirmative or negative response"
+  },
+  {
+    "id": "b-5",
+    "category": "Basic conversation",
+    "kannada": "ನಿಮ್ಮ ಹೆಸರು ಏನು?",
+    "english": "What is your name?",
+    "pronunciation": "Nimma hesaru enu?",
+    "situation": "Friendly conversation starter"
+  },
+  {
+    "id": "b-6",
+    "category": "Basic conversation",
+    "kannada": "ನನ್ನ ಹೆಸರು...",
+    "english": "My name is...",
+    "pronunciation": "Nanna hesaru...",
+    "situation": "Introducing yourself"
+  },
+  {
+    "id": "b-7",
+    "category": "Basic conversation",
+    "kannada": "ದಯವಿಟ್ಟು ಕ್ಷಮಿಸಿ",
+    "english": "Excuse me / Sorry",
+    "pronunciation": "Dayavittu kshamisi",
+    "situation": "Apologizing or getting attention politely"
+  },
+  {
+    "id": "b-8",
+    "category": "Basic conversation",
+    "kannada": "ಶುಭ ದಿನ",
+    "english": "Have a good day",
+    "pronunciation": "Shubha dina",
+    "situation": "Parting words after an interaction"
+  },
+  {
+    "id": "r-1",
+    "category": "Restaurant",
+    "kannada": "ಒಂದು ನೀರು ಕೊಡಿ",
+    "english": "Please give me water",
+    "pronunciation": "Ondu neeru kodi",
+    "situation": "Asking for drinking water at dining tables"
+  },
+  {
+    "id": "r-2",
+    "category": "Restaurant",
+    "kannada": "ಬಿಲ್ ಕೊಡಿ",
+    "english": "Please bring the bill",
+    "pronunciation": "Bill kodi",
+    "situation": "Requesting checkout at café or restaurant"
+  },
+  {
+    "id": "r-3",
+    "category": "Restaurant",
+    "kannada": "ಇದು ಎಷ್ಟು?",
+    "english": "How much is this?",
+    "pronunciation": "Idu eshtu?",
+    "situation": "Asking price of a snack or dish"
+  },
+  {
+    "id": "r-4",
+    "category": "Restaurant",
+    "kannada": "ಸ್ವಲ್ಪ ಖಾರ ಕಡಿಮೆ ಮಾಡಿ",
+    "english": "Make it less spicy please",
+    "pronunciation": "Swalpa khaara kadime maadi",
+    "situation": "Ordering food with mild spice"
+  },
+  {
+    "id": "r-5",
+    "category": "Restaurant",
+    "kannada": "ಒಂದು ಕಾಫಿ ಕೊಡಿ",
+    "english": "One filter coffee please",
+    "pronunciation": "Ondu kaafi kodi",
+    "situation": "Ordering authentic South Indian filter kaapi"
+  },
+  {
+    "id": "r-6",
+    "category": "Restaurant",
+    "kannada": "ಇಲ್ಲಿ ಶುದ್ಧ ಸಸ್ಯಾಹಾರ ಇದೆಯಾ?",
+    "english": "Is this pure vegetarian?",
+    "pronunciation": "Illi shuddha sasyaahaara ideya?",
+    "situation": "Checking vegetarian dietary requirements"
+  },
+  {
+    "id": "r-7",
+    "category": "Restaurant",
+    "kannada": "ಊಟ ತುಂಬಾ ರುಚಿಯಾಗಿದೆ",
+    "english": "The food is very delicious",
+    "pronunciation": "Oota tumba ruchiyaagide",
+    "situation": "Complimenting the cook or server"
+  },
+  {
+    "id": "r-8",
+    "category": "Restaurant",
+    "kannada": "ಬಾಳೆ ಎಲೆ ಊಟ ಇದೆಯಾ?",
+    "english": "Do you have banana leaf meal?",
+    "pronunciation": "Baale ele oota ideya?",
+    "situation": "Asking for traditional thali service"
+  },
+  {
+    "id": "t-1",
+    "category": "Transport",
+    "kannada": "ಈ ಬಸ್ ಹಂಪಿಗೆ ಹೋಗುತ್ತದೆಯಾ?",
+    "english": "Does this bus go to Hampi?",
+    "pronunciation": "Ee bus Hampige hogutta?",
+    "situation": "Verifying route at KSRTC bus station"
+  },
+  {
+    "id": "t-2",
+    "category": "Transport",
+    "kannada": "ಇಲ್ಲಿ ನಿಲ್ಲಿಸಿ",
+    "english": "Stop here",
+    "pronunciation": "Illi nillisi",
+    "situation": "Telling auto or bus driver to drop you"
+  },
+  {
+    "id": "t-3",
+    "category": "Transport",
+    "kannada": "ಮೀಟರ್ ಹಾಕಿ",
+    "english": "Please turn on the meter",
+    "pronunciation": "Meter haaki",
+    "situation": "Requesting metered fare in auto-rickshaw"
+  },
+  {
+    "id": "t-4",
+    "category": "Transport",
+    "kannada": "ರೈಲ್ವೆ ನಿಲ್ದಾಣಕ್ಕೆ ಹೋಗಬೇಕು",
+    "english": "I need to go to the railway station",
+    "pronunciation": "Railway nildaana-kke hogabeku",
+    "situation": "Giving destination to cab or auto"
+  },
+  {
+    "id": "t-5",
+    "category": "Transport",
+    "kannada": "ಮುಂದಿನ ಬಸ್ ಎಷ್ಟು ಗಂಟೆಗೆ?",
+    "english": "What time is the next bus?",
+    "pronunciation": "Mundina bus eshtu gantege?",
+    "situation": "Asking station master or conductor"
+  },
+  {
+    "id": "t-6",
+    "category": "Transport",
+    "kannada": "ಹೊಸಪೇಟೆಗೆ ಒಂದು ಟಿಕೆಟ್",
+    "english": "One ticket to Hosapete please",
+    "pronunciation": "Hosapet-ege ondu ticket",
+    "situation": "Buying state bus ticket"
+  },
+  {
+    "id": "t-7",
+    "category": "Transport",
+    "kannada": "ಶಕ್ತಿ ಯೋಜನೆ ಅನ್ವಯಿಸುತ್ತದೆಯಾ?",
+    "english": "Is Shakti scheme applicable here?",
+    "pronunciation": "Shakti yojane anwayisutta?",
+    "situation": "Inquiring about women free state bus travel"
+  },
+  {
+    "id": "t-8",
+    "category": "Transport",
+    "kannada": "ಎಷ್ಟು ಸಮಯ ಬೇಕಾಗುತ್ತೆ?",
+    "english": "How much time will it take?",
+    "pronunciation": "Eshtu samaya bekaagutte?",
+    "situation": "Inquiring about journey duration"
+  },
+  {
+    "id": "d-1",
+    "category": "Directions",
+    "kannada": "ಶೌಚಾಲಯ ಎಲ್ಲಿದೆ?",
+    "english": "Where is the restroom?",
+    "pronunciation": "Shouchalaya ellide?",
+    "situation": "Asking for public washrooms or facilities"
+  },
+  {
+    "id": "d-2",
+    "category": "Directions",
+    "kannada": "ದೇವಸ್ಥಾನಕ್ಕೆ ದಾರಿ ಯಾವುದು?",
+    "english": "Which way to the temple?",
+    "pronunciation": "Devasthaan-akke daari yaavudu?",
+    "situation": "Finding entrance to monuments"
+  },
+  {
+    "id": "d-3",
+    "category": "Directions",
+    "kannada": "ಬಲಗಡೆ / ಎಡಗಡೆ",
+    "english": "Right side / Left side",
+    "pronunciation": "Balagade / Edagade",
+    "situation": "Understanding turn directions"
+  },
+  {
+    "id": "d-4",
+    "category": "Directions",
+    "kannada": "ನೇರವಾಗಿ ಹೋಗಿ",
+    "english": "Go straight ahead",
+    "pronunciation": "Nera-vaagi hogi",
+    "situation": "Confirming forward route"
+  },
+  {
+    "id": "d-5",
+    "category": "Directions",
+    "kannada": "ಇಲ್ಲಿಂದ ಎಷ್ಟು ದೂರ?",
+    "english": "How far is it from here?",
+    "pronunciation": "Illinda eshtu doora?",
+    "situation": "Estimating walking distance"
+  },
+  {
+    "id": "d-6",
+    "category": "Directions",
+    "kannada": "ಹತ್ತಿರದಲ್ಲಿ ಎಟಿಎಂ ಎಲ್ಲಿದೆ?",
+    "english": "Where is the nearest ATM?",
+    "pronunciation": "Hattiradalli ATM ellide?",
+    "situation": "Finding cash machines in rural towns"
+  },
+  {
+    "id": "d-7",
+    "category": "Directions",
+    "kannada": "ಹೊರಹೋಗುವ ದಾರಿ ಎಲ್ಲಿದೆ?",
+    "english": "Where is the exit gate?",
+    "pronunciation": "Hora-hoguva daari ellide?",
+    "situation": "Leaving large temple complexes"
+  },
+  {
+    "id": "d-8",
+    "category": "Directions",
+    "kannada": "ನಾನು ದಾರಿ ತಪ್ಪಿದ್ದೇನೆ",
+    "english": "I have lost my way",
+    "pronunciation": "Naanu daari tappiddene",
+    "situation": "Asking locals for navigation help"
+  },
+  {
+    "id": "h-1",
+    "category": "Hotel",
+    "kannada": "ರೂಮ್ ಇದೆಯಾ?",
+    "english": "Is a room available?",
+    "pronunciation": "Room ideya?",
+    "situation": "Inquiring at reception desk"
+  },
+  {
+    "id": "h-2",
+    "category": "Hotel",
+    "kannada": "ಒಂದು ರಾತ್ರಿಗೆ ಎಷ್ಟು?",
+    "english": "How much for one night?",
+    "pronunciation": "Ondu raatrige eshtu?",
+    "situation": "Asking room tariff"
+  },
+  {
+    "id": "h-3",
+    "category": "Hotel",
+    "kannada": "ಬಿಸಿ ನೀರು ಬರುತ್ತದೆಯಾ?",
+    "english": "Is hot water available?",
+    "pronunciation": "Bisi neeru baruttada?",
+    "situation": "Checking shower/geyser amenities"
+  },
+  {
+    "id": "h-4",
+    "category": "Hotel",
+    "kannada": "ವೈಫೈ ಪಾಸ್‌ವರ್ಡ್ ಏನು?",
+    "english": "What is the Wi-Fi password?",
+    "pronunciation": "Wi-Fi password enu?",
+    "situation": "Connecting to homestay internet"
+  },
+  {
+    "id": "h-5",
+    "category": "Hotel",
+    "kannada": "ಚೆಕ್-ಔಟ್ ಸಮಯ ಎಷ್ಟು ಗಂಟೆ?",
+    "english": "What time is check-out?",
+    "pronunciation": "Check-out samaya eshtu gante?",
+    "situation": "Confirming departure deadlines"
+  },
+  {
+    "id": "h-6",
+    "category": "Hotel",
+    "kannada": "ದಯವಿಟ್ಟು ರೂಮ್ ಸ್ವಚ್ಛಗೊಳಿಸಿ",
+    "english": "Please clean the room",
+    "pronunciation": "Dayavittu room swachhagolisi",
+    "situation": "Requesting housekeeping"
+  },
+  {
+    "id": "h-7",
+    "category": "Hotel",
+    "kannada": "ಬೆಳಗಿನ ಉಪಾಹಾರ ಎಷ್ಟು ಗಂಟೆಗೆ?",
+    "english": "What time is breakfast?",
+    "pronunciation": "Belagina upaahara eshtu gantege?",
+    "situation": "Planning morning schedule"
+  },
+  {
+    "id": "h-8",
+    "category": "Hotel",
+    "kannada": "ಹೆಚ್ಚುವರಿ ಬೆಡ್‌ಶೀಟ್ ಕೊಡಿ",
+    "english": "Please give an extra bedsheet",
+    "pronunciation": "Hecchuvari bedsheet kodi",
+    "situation": "Asking for extra linen at homestay"
+  },
+  {
+    "id": "s-1",
+    "category": "Shopping",
+    "kannada": "ಸ್ವಲ್ಪ ಕಡಿಮೆ ಮಾಡಿ",
+    "english": "Please reduce the price a little",
+    "pronunciation": "Swalpa kadime maadi",
+    "situation": "Polite bargaining at street bazaars"
+  },
+  {
+    "id": "s-2",
+    "category": "Shopping",
+    "kannada": "ಇದು ಶುದ್ಧವಾದದ್ದಾ?",
+    "english": "Is this genuine / authentic?",
+    "pronunciation": "Idu shuddhavaadaddaa?",
+    "situation": "Verifying silk or sandalwood souvenirs"
+  },
+  {
+    "id": "s-3",
+    "category": "Shopping",
+    "kannada": "ಯುಪಿಐ (ಫೋನ್‌ಪೇ/ಜಿಪೇ) ತಗೊಳ್ತೀರಾ?",
+    "english": "Do you accept UPI payment?",
+    "pronunciation": "UPI tagoltiraa?",
+    "situation": "Checking QR code payments"
+  },
+  {
+    "id": "s-4",
+    "category": "Shopping",
+    "kannada": "ಬೇರೆ ಬಣ್ಣ ಇದೆಯಾ?",
+    "english": "Do you have another colour?",
+    "pronunciation": "Bere banna ideya?",
+    "situation": "Browsing Ilkal or Khadi textiles"
+  },
+  {
+    "id": "s-5",
+    "category": "Shopping",
+    "kannada": "ನನಗೆ ಇದು ಬೇಕು",
+    "english": "I want this one",
+    "pronunciation": "Nanage idu beku",
+    "situation": "Selecting an item from display"
+  },
+  {
+    "id": "s-6",
+    "category": "Shopping",
+    "kannada": "ಒಂದು ಬ್ಯಾಗ್ ಕೊಡಿ",
+    "english": "Please give a bag",
+    "pronunciation": "Ondu bag kodi",
+    "situation": "Asking for carry bag"
+  },
+  {
+    "id": "s-7",
+    "category": "Shopping",
+    "kannada": "ಕೊನೆಯ ಬೆಲೆ ಎಷ್ಟು?",
+    "english": "What is your final price?",
+    "pronunciation": "Koneya bele eshtu?",
+    "situation": "Concluding market bargain"
+  },
+  {
+    "id": "s-8",
+    "category": "Shopping",
+    "kannada": "ನಾನು ಸುಮ್ಮನೆ ನೋಡುತ್ತಿದ್ದೇನೆ",
+    "english": "I am just looking around",
+    "pronunciation": "Naanu summane noduttiddene",
+    "situation": "Polite browsing without immediate purchase"
+  },
+  {
+    "id": "e-1",
+    "category": "Emergency",
+    "kannada": "ಸಹಾಯ ಮಾಡಿ",
+    "english": "Please help me",
+    "pronunciation": "Sahaya maadi",
+    "situation": "Urgent call for immediate assistance"
+  },
+  {
+    "id": "e-2",
+    "category": "Emergency",
+    "kannada": "ಪೊಲೀಸ್ ಕರೆಯಿರಿ",
+    "english": "Call the police",
+    "pronunciation": "Police kareyiri",
+    "situation": "Reporting theft or emergency safety issue"
+  },
+  {
+    "id": "e-3",
+    "category": "Emergency",
+    "kannada": "ವೈದ್ಯರನ್ನು ಕರೆಯಿರಿ / ಆಸ್ಪತ್ರೆ ಎಲ್ಲಿದೆ?",
+    "english": "Call a doctor / Where is the hospital?",
+    "pronunciation": "Vaidyaranu kareyiri / Aaspatre ellide?",
+    "situation": "Medical emergency in rural area"
+  },
+  {
+    "id": "e-4",
+    "category": "Emergency",
+    "kannada": "ನನಗೆ ಹುಷಾರಿಲ್ಲ",
+    "english": "I am not feeling well",
+    "pronunciation": "Nanage hushaarilla",
+    "situation": "Informing hotel or guide of illness"
+  },
+  {
+    "id": "e-5",
+    "category": "Emergency",
+    "kannada": "ಔಷಧಿ ಅಂಗಡಿ ಎಲ್ಲಿದೆ?",
+    "english": "Where is the pharmacy / medical store?",
+    "pronunciation": "Oushadhi angadi ellide?",
+    "situation": "Finding emergency medication"
+  },
+  {
+    "id": "e-6",
+    "category": "Emergency",
+    "kannada": "ನನ್ನ ಬ್ಯಾಗ್ ಕಳೆದುಹೋಗಿದೆ",
+    "english": "My bag is lost",
+    "pronunciation": "Nanna bag kaleduhogide",
+    "situation": "Reporting lost property at station"
+  },
+  {
+    "id": "e-7",
+    "category": "Emergency",
+    "kannada": "ದಯವಿಟ್ಟು ಆಂಬ್ಯುಲೆನ್ಸ್ ಕರೆಯಿರಿ",
+    "english": "Please call an ambulance (112)",
+    "pronunciation": "Dayavittu ambulance kareyiri",
+    "situation": "Calling emergency medical response"
+  },
+  {
+    "id": "e-8",
+    "category": "Emergency",
+    "kannada": "ನನ್ನ ಮೊಬೈಲ್ ಕೆಲಸ ಮಾಡುತ್ತಿಲ್ಲ",
+    "english": "My mobile is not working",
+    "pronunciation": "Nanna mobile kelasa maaduttilla",
+    "situation": "Asking to make an emergency call"
+  }
+]
