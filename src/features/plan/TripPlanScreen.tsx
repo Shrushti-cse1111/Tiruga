@@ -25,7 +25,8 @@ import {
   Bus,
   RefreshCw,
   WifiOff,
-  Map as MapIcon
+  Map as MapIcon,
+  FileDown
 } from 'lucide-react';
 import { Trip, Day, TripItem } from '../../data/types';
 import { askAboutPlace } from '../../data/seedTrip';
@@ -43,9 +44,11 @@ import { Itinerary } from '../../shared/aiTypes';
 import { getPreferences } from '../../lib/preferences';
 import demoTripJson from '../../../data/demoTrip.json';
 import attractionsCatalog from '../../../data/attractions.json';
+import destinationsCatalog from '../../../data/destinations.json';
 import { buildRoute } from '../../lib/route';
 import { RouteSketch } from '../../components/map/RouteSketch';
 import { AskAboutPlaceSheet } from '../../components/common/AskAboutPlaceSheet';
+import { DownloadPdfOptionsSheet } from '../../components/pdf/DownloadPdfOptionsSheet';
 import {
   ImageWithFallback,
   Button,
@@ -55,6 +58,80 @@ import {
   EmptyState,
   BottomNav
 } from '../../components/common/CommonComponents';
+
+function generateCatalogItinerary(
+  destIdParam: string,
+  daysParam: number,
+  budgetParam: number,
+  prefs: any
+): Trip {
+  const destId = (destIdParam || 'hampi').toLowerCase();
+  const allDestinations = Array.isArray(destinationsCatalog) ? destinationsCatalog : [];
+  let dest = allDestinations.find((d: any) => d.id === destId || d.name.toLowerCase() === destId);
+  if (!dest) {
+    dest = allDestinations[0] || {
+      id: 'hampi',
+      name: 'Hampi',
+      kannadaName: 'ಹಂಪಿ',
+      description: 'UNESCO World Heritage boulder landscape and monumental Vijayanagara ruins.',
+      image: 'https://images.unsplash.com/photo-1600100397608-f010f443b74e?auto=format&fit=crop&w=1200&q=80',
+      highlights: ['Virupaksha Temple', 'Stone Chariot', 'Matanga Hill']
+    };
+  }
+
+  const allAttractions = Array.isArray(attractionsCatalog) ? (attractionsCatalog as any[]) : [];
+  let destAttractions = allAttractions.filter((a: any) => a.destinationId === dest.id);
+  if (destAttractions.length === 0) {
+    destAttractions = allAttractions.slice(0, 12);
+  }
+
+  const times = ['09:00 AM', '11:30 AM', '02:30 PM', '05:00 PM'];
+  const totalDays = Math.max(1, Math.min(daysParam || 3, 7));
+  const days: Day[] = [];
+  let attIdx = 0;
+
+  for (let d = 1; d <= totalDays; d++) {
+    const dayItems: TripItem[] = [];
+    const itemsPerDay = Math.min(3, Math.max(2, Math.ceil(destAttractions.length / totalDays)));
+
+    for (let i = 0; i < itemsPerDay; i++) {
+      const att = destAttractions[attIdx % destAttractions.length];
+      attIdx++;
+
+      dayItems.push({
+        time: times[i % times.length],
+        attractionId: att.id,
+        title: att.name,
+        category: (att.category || 'heritage').toLowerCase(),
+        estimatedCost: att.estimatedCost ?? att.estimatedEntryFee ?? 0,
+        durationMinutes: att.durationMinutes || 90,
+        reason: att.description || `Curated top attraction in ${dest.name}`,
+        tags: [att.category || 'Heritage', 'Curated', 'Verified'],
+        travelToNextMinutes: i < itemsPerDay - 1 ? 15 : undefined
+      });
+    }
+
+    days.push({
+      dayNumber: d,
+      summary: `Day ${d} exploring iconic landmarks, cultural treasures, and scenic highlights of ${dest.name}.`,
+      items: dayItems
+    });
+  }
+
+  const tripId = `trip_${dest.id}_${Date.now()}`;
+  return {
+    id: tripId,
+    title: `${totalDays}-Day ${dest.name} Explorer`,
+    destination: dest.name,
+    destinationId: dest.id,
+    totalDays,
+    estimatedBudget: budgetParam > 500 ? budgetParam : 4500,
+    travelStyle: prefs?.travelStyle || 'Balanced',
+    heroImage: dest.image || 'https://images.unsplash.com/photo-1600100397608-f010f443b74e?auto=format&fit=crop&w=1200&q=80',
+    tags: [dest.name, `${totalDays} Days`, 'Curated Itinerary'],
+    days
+  };
+}
 
 export const TripPlanScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -72,6 +149,7 @@ export const TripPlanScreen: React.FC = () => {
   const [activeDayIndex, setActiveDayIndex] = useState<number>(0);
   const [isSaved, setIsSaved] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
+  const [isPdfSheetOpen, setIsPdfSheetOpen] = useState<boolean>(false);
 
   // Offline download simulation
   const [isDownloading, setIsDownloading] = useState<boolean>(false);
@@ -144,7 +222,7 @@ export const TripPlanScreen: React.FC = () => {
     return isNaN(num) || num < 500 ? 6000 : num;
   };
 
-  // Load trip on mount or generate via AI if on /plan
+  // Load trip on mount or generate via AI/catalog fallback if on /plan
   useEffect(() => {
     let mounted = true;
     setIsLoading(true);
@@ -190,85 +268,88 @@ export const TripPlanScreen: React.FC = () => {
         return;
       }
 
-      // 2. If route is /plan, generate a fresh AI trip
-      if (!isOnline) {
-        if (mounted) {
-          setError('AI Trip Planner requires an active internet connection.');
-          setIsLoading(false);
-        }
-        return;
-      }
-
+      // 2. If route is /plan, generate trip (AI or curated catalog fallback)
       try {
         const searchParams = new URLSearchParams(window.location.search);
         const prefs = getPreferences();
 
-        const destParam = searchParams.get('dest') || searchParams.get('destinationId') || 'surprise';
+        const destParam = searchParams.get('dest') || searchParams.get('destinationId') || 'hampi';
         const daysParam = parseInt(searchParams.get('days') || '', 10) || prefs.days || 3;
         const budgetParam = parseInt(searchParams.get('budget') || '', 10) || parseBudgetFromPref(prefs.budget);
 
-        const res = await planTrip({
-          destinationId: destParam,
-          days: daysParam,
-          budget: budgetParam,
-          travellerType: prefs.travelStyle || 'Solo',
-          travelStyle: prefs.travelStyle || 'Balanced',
-          interests: prefs.interests && prefs.interests.length > 0 ? prefs.interests : ['Heritage', 'Nature']
-        });
+        let finalTrip: Trip | null = null;
 
-        if (!res.ok) {
-          if (mounted) {
-            setError(res.error?.message || 'Unable to generate trip plan.');
-            setIsLoading(false);
+        // Try AI planning if online
+        if (isOnline) {
+          try {
+            const res = await planTrip({
+              destinationId: destParam,
+              days: daysParam,
+              budget: budgetParam,
+              travellerType: prefs.travelStyle || 'Solo',
+              travelStyle: prefs.travelStyle || 'Balanced',
+              interests: prefs.interests && prefs.interests.length > 0 ? prefs.interests : ['Heritage', 'Nature']
+            });
+
+            if (res.ok && res.data) {
+              const plan = res.data;
+              const tripId = `trip_${plan.destinationId}_${Date.now()}`;
+              const heroImages: Record<string, string> = {
+                hampi: 'https://images.unsplash.com/photo-1600100397608-f010f443b74e?auto=format&fit=crop&w=1200&q=80',
+                mysuru: 'https://images.unsplash.com/photo-1590766940554-634a7ed41450?auto=format&fit=crop&w=1200&q=80',
+                coorg: 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=1200&q=80',
+                gokarna: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80'
+              };
+
+              finalTrip = {
+                id: tripId,
+                title: plan.title,
+                destination: plan.destination,
+                destinationId: plan.destinationId,
+                totalDays: plan.totalDays,
+                estimatedBudget: plan.estimatedBudget,
+                travelStyle: prefs.travelStyle || 'Balanced',
+                heroImage: heroImages[plan.destinationId] || heroImages.hampi,
+                tags: [plan.destination, `${plan.totalDays} Days`, 'AI-generated'],
+                days: plan.days.map((d) => ({
+                  dayNumber: d.dayNumber,
+                  summary: d.summary,
+                  items: d.items.map((it) => ({
+                    time: it.time,
+                    attractionId: it.attractionId,
+                    title: it.title,
+                    category: 'heritage',
+                    estimatedCost: it.estimatedCost,
+                    durationMinutes: it.durationMinutes,
+                    reason: it.reason,
+                    tags: ['AI-selected', 'Estimated']
+                  }))
+                }))
+              };
+            }
+          } catch (aiErr) {
+            console.warn('AI planTrip call failed or key not configured, falling back to curated itinerary:', aiErr);
           }
-          return;
         }
 
-        const plan = res.data;
-        const tripId = `trip_${plan.destinationId}_${Date.now()}`;
-        const heroImages: Record<string, string> = {
-          hampi: 'https://images.unsplash.com/photo-1600100397608-f010f443b74e?auto=format&fit=crop&w=1200&q=80',
-          mysuru: 'https://images.unsplash.com/photo-1590766940554-634a7ed41450?auto=format&fit=crop&w=1200&q=80',
-          coorg: 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=1200&q=80',
-          gokarna: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80'
-        };
+        // If AI generation was not used or failed (e.g. no GEMINI_API_KEY in env, or offline), use rich curated catalog
+        if (!finalTrip) {
+          finalTrip = generateCatalogItinerary(destParam, daysParam, budgetParam, prefs);
+        }
 
-        const newTrip: Trip = {
-          id: tripId,
-          title: plan.title,
-          destination: plan.destination,
-          destinationId: plan.destinationId,
-          totalDays: plan.totalDays,
-          estimatedBudget: plan.estimatedBudget,
-          travelStyle: prefs.travelStyle || 'Balanced',
-          heroImage: heroImages[plan.destinationId] || heroImages.hampi,
-          tags: [plan.destination, `${plan.totalDays} Days`, 'AI-generated'],
-          days: plan.days.map((d) => ({
-            dayNumber: d.dayNumber,
-            summary: d.summary,
-            items: d.items.map((it) => ({
-              time: it.time,
-              attractionId: it.attractionId,
-              title: it.title,
-              category: 'heritage',
-              estimatedCost: it.estimatedCost,
-              durationMinutes: it.durationMinutes,
-              reason: it.reason,
-              tags: ['AI-selected', 'Estimated']
-            }))
-          }))
-        };
-
-        await saveTrip(newTrip, user?.uid);
+        await saveTrip(finalTrip, user?.uid);
 
         if (mounted) {
-          setTrip(newTrip);
+          setTrip(finalTrip);
           setIsLoading(false);
-          navigate(`/trip/${tripId}`, { replace: true });
+          navigate(`/trip/${finalTrip.id}`, { replace: true });
         }
       } catch (err: any) {
         if (mounted) {
-          setError(err.message || 'Failed to generate your Karnataka trip.');
+          // Final fallback to prevent any stalling
+          const prefs = getPreferences();
+          const fallback = generateCatalogItinerary('hampi', 3, 5000, prefs);
+          setTrip(fallback);
           setIsLoading(false);
         }
       }
@@ -620,6 +701,14 @@ export const TripPlanScreen: React.FC = () => {
               <div className="flex items-center space-x-2">
                 <button
                   type="button"
+                  onClick={() => setIsPdfSheetOpen(true)}
+                  aria-label="Download trip PDF guide"
+                  className="w-11 h-11 rounded-full bg-deep-teal/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-deep-teal transition-colors border border-white/20 cursor-pointer shadow-xs focus:outline-none focus:ring-2 focus:ring-primary-teal"
+                >
+                  <FileDown size={18} />
+                </button>
+                <button
+                  type="button"
                   onClick={() => navigate(`/trip/${trip.id || id || 'demo'}/map`)}
                   aria-label="View trip route map"
                   className="w-11 h-11 rounded-full bg-deep-teal/60 backdrop-blur-md text-white flex items-center justify-center hover:bg-deep-teal transition-colors border border-white/20 cursor-pointer shadow-xs focus:outline-none focus:ring-2 focus:ring-primary-teal"
@@ -867,7 +956,7 @@ export const TripPlanScreen: React.FC = () => {
                     </p>
 
                     {/* Small Reason Chips */}
-                    <div className="flex flex-wrap gap-1.5 mt-2.5">
+                    <div className="flex flex-wrap items-center gap-1.5 mt-2.5">
                       {item.tags.map((tag, tIdx) => (
                         <span
                           key={tIdx}
@@ -876,6 +965,27 @@ export const TripPlanScreen: React.FC = () => {
                           {tag}
                         </span>
                       ))}
+
+                      {/* Google Maps Live Link */}
+                      {(() => {
+                        const att = attractionsById[item.attractionId];
+                        const mapQuery = att?.lat && att?.lng
+                          ? `${att.lat},${att.lng}`
+                          : encodeURIComponent(`${item.title}, ${trip.destination}, Karnataka`);
+                        const gmapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
+                        return (
+                          <a
+                            href={gmapsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[10px] font-semibold flex items-center text-primary-teal hover:underline bg-mint/60 px-2 py-0.5 rounded-full border border-primary-teal/20"
+                            aria-label={`Open ${item.title} on Google Maps`}
+                          >
+                            <MapPin size={11} className="mr-1 text-primary-teal" />
+                            Google Maps ↗
+                          </a>
+                        );
+                      })()}
 
                       {/* Ask about this place link */}
                       <button
@@ -940,6 +1050,17 @@ export const TripPlanScreen: React.FC = () => {
                 Modify with AI
               </Button>
             </div>
+
+            {/* Download Trip PDF Guide */}
+            <Button
+              variant="white"
+              size="md"
+              className="w-full text-xs border border-deep-teal/40 text-deep-teal hover:bg-mint/20 font-bold flex items-center justify-center cursor-pointer min-h-[44px]"
+              onClick={() => setIsPdfSheetOpen(true)}
+            >
+              <FileDown size={15} className="mr-1.5 text-deep-teal" />
+              Download Trip PDF (Printable Guide)
+            </Button>
 
             {/* Make it Cheaper (Budget Optimizer) Button */}
             <Button
@@ -1498,6 +1619,15 @@ export const TripPlanScreen: React.FC = () => {
         isOpen={!!askPlaceName}
         onClose={() => setAskPlaceName(null)}
       />
+
+      {/* PDF Download Options Sheet */}
+      {trip && (
+        <DownloadPdfOptionsSheet
+          isOpen={isPdfSheetOpen}
+          onClose={() => setIsPdfSheetOpen(false)}
+          trip={trip}
+        />
+      )}
     </div>
   );
 };

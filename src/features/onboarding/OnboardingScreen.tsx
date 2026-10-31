@@ -105,11 +105,31 @@ export const OnboardingScreen: React.FC = () => {
     if (step < 4) {
       setStep((s) => s + 1);
     } else {
-      // Step 4 Finish
+      // Step 4 Finish: Persist preferences and immediately create the trip plan
       setIsSaving(true);
       await savePreferences(preferences, user?.uid);
       setIsSaving(false);
-      navigate('/home');
+
+      const searchParams = new URLSearchParams(window.location.search);
+      const destParam = searchParams.get('dest');
+
+      // Map interests to best Karnataka destination if none preselected
+      let targetDest = destParam || 'hampi';
+      if (!destParam) {
+        if (preferences.interests.includes('Beaches')) targetDest = 'gokarna';
+        else if (preferences.interests.includes('Nature') || preferences.interests.includes('Adventure')) targetDest = 'coorg';
+        else if (preferences.interests.includes('Heritage')) targetDest = 'hampi';
+        else if (preferences.interests.includes('Food')) targetDest = 'mysuru';
+      }
+
+      // Convert budget string to numeric estimate
+      let budgetNum = 5000;
+      if (preferences.budget?.includes('Under ₹3,000')) budgetNum = 2800;
+      else if (preferences.budget?.includes('₹3,000 - ₹5,000')) budgetNum = 4500;
+      else if (preferences.budget?.includes('₹5,000 - ₹10,000')) budgetNum = 8500;
+      else if (preferences.budget?.includes('₹10,000+')) budgetNum = 15000;
+
+      navigate(`/plan?dest=${targetDest}&days=${preferences.days || 3}&budget=${budgetNum}`);
     }
   };
 

@@ -360,7 +360,7 @@ export const HomeScreen: React.FC = () => {
               <DestinationCard
                 key={dest.id}
                 destination={dest}
-                onClick={() => navigate('/onboarding')}
+                onClick={() => navigate(`/plan?dest=${dest.id}`)}
               />
             ))}
 

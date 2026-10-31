@@ -1131,11 +1131,25 @@ export const TripMapScreen: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="text-right shrink-0">
-                    <div className="text-xs font-bold text-[#146B5B]">
-                      {stop.estimatedCost > 0 ? `₹${stop.estimatedCost}` : t('free')}
+                  <div className="flex items-center space-x-2 shrink-0">
+                    <div className="text-right">
+                      <div className="text-xs font-bold text-[#146B5B]">
+                        {stop.estimatedCost > 0 ? `₹${stop.estimatedCost}` : t('free')}
+                      </div>
+                      <span className="text-[10px] text-[#60736E] font-medium">{stop.category}</span>
                     </div>
-                    <span className="text-[10px] text-[#60736E] font-medium">{stop.category}</span>
+
+                    <a
+                      href={`https://www.google.com/maps/dir/?api=1&destination=${stop.lat},${stop.lng}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="min-h-[36px] min-w-[36px] w-9 h-9 rounded-xl bg-[#DCEFE5] text-[#103F38] flex items-center justify-center hover:bg-[#146B5B] hover:text-white transition-all shadow-2xs border border-[#146B5B]/20"
+                      title="Navigate with Google Maps"
+                      aria-label={`Navigate to ${stop.name} with Google Maps`}
+                    >
+                      <Navigation size={15} />
+                    </a>
                   </div>
                 </div>
               );
